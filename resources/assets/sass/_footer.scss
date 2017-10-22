@@ -1,0 +1,40 @@
+.footer {
+    height: 150px;
+    background-color: #3D3D3D;
+    color: white;
+    margin-top: 20px;
+    .footer-nav {
+        float: left;
+        margin-left: 4vw;
+        li {
+            a {
+                padding: 15px;
+            }
+        }
+    }
+    .footer-social {
+        float: right;
+        margin-right: 4vw;
+    }
+    ul {
+        display: inline;
+        padding-top: 4vw;
+        padding-left: 0;
+        list-style: none;
+        li {
+            display: inline;
+            margin-right: 20px;
+            a {
+                color: white;
+                &:hover {
+                    background-color: #494949;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .copyright {
+        margin-left: 4vw;
+        margin-top: 6vw;
+    }
+}

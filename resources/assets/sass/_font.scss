@@ -1,0 +1,32 @@
+@font-face {
+    font-family: CircularStd-Book;
+    src: url("../fonts/CircularStd-Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: CircularStd-Black;
+    src: url("../fonts/CircularStd-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: CircularStd-Bold;
+    src: url("../fonts/CircularStd-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: MinionPro-Regular;
+    src: url("../fonts/MinionPro-Regular.ttf") format("truetype");
+}
+
+body {
+    font-family: CircularStd-Book;
+}
+
+h1, h2, h3 {
+    font-family: CircularStd-Black;
+}
+
+p {
+    font-size: 120%;
+    font-family: MinionPro-Regular;
+}
