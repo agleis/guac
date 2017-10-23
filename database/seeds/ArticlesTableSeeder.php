@@ -14,9 +14,6 @@ class ArticlesTableSeeder extends Seeder
         DB::table('articles')->insert([
           'name' => 'a_visit_to_bariloche_argentina',
           'title' => 'A Visit To Bariloche, Argentina',
-          'summary' => 'Located in the foothills of the Andes and
-            overlooking Nahuel Huapei Lake,
-            San Carlos de Bariloche is a quiet resort city',
           'text' => "<p>Located in the foothills of the Andes and overlooking Nahuel Huapei Lake,
             San Carlos de Bariloche is a quiet resort city, modeled after Alpine
             ski resorts. We arrived in late July, one of the coldest months in Argentina,
@@ -66,8 +63,11 @@ class ArticlesTableSeeder extends Seeder
             don’t miss it if you ever travel to South America.</p>
             ",
           'user_id' => 1,
-          'image' => 'bariloche1.jpg',
-          'featured' => true
+          'image' => 'images/bariloche1.jpg',
+          'featured' => true,
+          'issue' => 'Issue 1',
+          'category_id' => 1,
+          'region_id' => 2
         ]);
     }
 }

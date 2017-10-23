@@ -13,12 +13,7 @@ class CreateConstantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('constants', function (Blueprint $table) {
-            $table->string('name')->unique();
-            $table->primary('name');
-            $table->text('content');
-            $table->timestamps();
-        });
+        //
     }
 
     /**

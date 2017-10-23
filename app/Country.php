@@ -16,4 +16,13 @@ class Country extends Model
       return $this->belongsToMany('App\User');
     }
 
+    /**
+     * Returns the guides this thing has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function guides() {
+      return $this->hasMany('App\Guide');
+    }
+
 }

@@ -49,5 +49,7 @@ CKEDITOR.stylesSet.add('my_styles', [
   { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }
 ]);
 
+// CKFinder.setupCKEditor({type: 'Images'});
+
 CKEDITOR.config.stylesSet = 'my_styles';
 CKEDITOR.config.extraPlugins = 'div';

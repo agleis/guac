@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Article;
 use App\User;
+use App\Guide;
+use App\Category;
+use App\Region;
 
 use Auth;
 
@@ -19,7 +22,8 @@ class ArticleController extends Controller
      */
     public function index() {
         $featured = Article::featured();
-        return view('index', ['featured' => $featured]);
+        $guides = Guide::featured();
+        return view('index', ['featured' => $featured, 'guides' => $guides]);
     }
 
     /**
@@ -51,9 +55,13 @@ class ArticleController extends Controller
     public function showEditText($name) {
         $article = Article::find($name);
         $authors = User::all();
+        $regions = Region::all();
+        $categories = Category::all();
         return view('article_edit', [
           'article' => $article,
-          'authors' => $authors
+          'authors' => $authors,
+          'regions' => $regions,
+          'categories' => $categories
         ]);
     }
 
@@ -67,9 +75,10 @@ class ArticleController extends Controller
         $article = Article::find($name);
         $article->text = $request->text;
         $article->title = $request->title;
-        $article->summary = $request->summary;
-        $article->name = $this->makeName($request->title);
+        $article->issue = $request->issue;
         $article->user_id = $request->author;
+        $article->region_id = $request->region;
+        $article->category_id = $request->category;
         $article->image = $this->getImage($request);
         $article->save();
         return redirect()->route('article', ['name' => $article->name]);
@@ -82,13 +91,17 @@ class ArticleController extends Controller
      */
     public function showUpload() {
       $authors = User::all();
+      $regions = Region::all();
+      $categories = Category::all();
       $article = new Article();
       $author = Auth::user();
       session()->flash('upload');
       return view('article_edit', [
         'article' => $article,
         'authors' => $authors,
-        'author' => $author
+        'author' => $author,
+        'regions' => $regions,
+        'categories' => $categories
       ]);
     }
 
@@ -102,9 +115,11 @@ class ArticleController extends Controller
       $article = new Article();
       $article->text = $request->text;
       $article->title = $request->title;
-      $article->summary = $request->summary;
+      $article->issue = $request->issue;
       $article->name = $this->makeName($request->title);
       $article->user_id = $request->author;
+      $article->region_id = $request->region;
+      $article->category_id = $request->category;
       $article->featured = false;
       $article->image = $this->getImage($request);
       $article->save();

@@ -32,7 +32,7 @@
               <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
                   <img src="{{asset($article->image)}}" />
-                  <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                  <p class="issue">{{$article->issue}} <span class="fa fa-circle blue circle"></span> {{$article->category->name}}</p>
                   <h3>{{$article->title}}</h3>
                   <h5>By {{$article->user->name}}</h5>
                 </a>
@@ -73,7 +73,23 @@
   <hr />
   <div class="content featured container-fluid">
     <h2 class="content-section">City Guides</h2>
-    {{--  City guides would be here  --}}
+    <div class="row content-row">
+      @foreach($guides as $guide)
+        @if($loop->index < 3)
+          <div class="col-md-4">
+            <div class="featured-article featured-3">
+              <a href="{{route('guide', ['id' => $guide->id])}}">
+                <img src="{{asset($guide->image)}}" />
+                <p class="issue">{{$guide->issue}}</p>
+                <h3>{{$guide->title}}, {{$guide->country->name}}</h3>
+              </a>
+            </div>
+          </div>
+        @else
+          @break
+        @endif
+      @endforeach
+    </div>
     <div class="row content-row">
       <div class="button more col-md-12">
         <a href="{{route('articles')}}">See More</a>

@@ -14,10 +14,28 @@ class Article extends Model
     /**
      * Returns the user this thing has.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user() {
       return $this->belongsTo('App\User');
+    }
+
+    /**
+     * Returns the category this thing has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category() {
+      return $this->belongsTo('App\Category');
+    }
+
+    /**
+     * Returns the region this thing has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function region() {
+      return $this->belongsTo('App\Region');
     }
 
     /**
@@ -27,8 +45,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeFeatured($query) {
-        return $query->select('name', 'title', 'summary', 'image', 'user_id')
-                     ->where('featured', 1)
+        return $query->select('name', 'title', 'image', 'user_id', 'category_id', 'issue')
                      ->orderBy('created_at')->get();
     }
 
@@ -39,7 +56,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeList($query) {
-        return $query->select('name', 'title', 'summary', 'image', 'user_id', 'featured')
+        return $query->select('name', 'title', 'image', 'user_id', 'featured')
                      ->orderBy('created_at')->get();
     }
 

@@ -18,6 +18,7 @@
     <link href="{{ asset('js/chosen/chosen.min.css') }}" rel="stylesheet">
     @stack('styles')
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/ckfinder/ckfinder.js') }}"></script>
     <script src="{{asset('js/split.js')}}"></script>
     <script src="https://use.fontawesome.com/ed7ec46525.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -53,7 +54,7 @@
                           <a href="{{route('articles')}}">Stories</a>
                         </li>
                         <li @if(request()->is('guides')) class="current" @endif>
-                          <a href="{{route('index')}}">City Guides</a>
+                          <a href="{{route('guides')}}">City Guides</a>
                         </li>
                         <li @if(request()->is('about')) class="current" @endif>
                           <a href="{{route('about')}}">About</a>

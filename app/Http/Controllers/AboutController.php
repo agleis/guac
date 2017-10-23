@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Constant;
+use App\User;
 
 class AboutController extends Controller
 {
@@ -15,11 +15,9 @@ class AboutController extends Controller
      * @return \Illuminate\View\View
      */
     public function about() {
-        $about_title = Constant::name('about_title')->content;
-        $about = Constant::name('about')->content;
+        $users = User::all();
         return view('about', [
-          'about_title' => $about_title,
-          'about' => $about
+          'users' => $users,
         ]);
     }
 

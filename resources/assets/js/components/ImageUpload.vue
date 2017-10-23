@@ -1,8 +1,8 @@
-<<template>
+<template>
   <div class="image-input">
     <div class="image-preview">
         <i v-show="!imagecontent" class="icon fa fa-picture-o"></i>
-        <img v-show="imagecontent" class="image" :src="imagecontent" height="150" width="150" />
+        <img v-show="imagecontent" class="image" :src="imagecontent" height="150" width="200" />
     </div>
 
     <div class="image-file-div">

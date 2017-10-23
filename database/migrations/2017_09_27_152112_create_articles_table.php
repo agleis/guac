@@ -18,10 +18,12 @@ class CreateArticlesTable extends Migration
             $table->string('name')->unique();
             $table->primary('name');
             $table->string('title');
-            $table->string('summary');
             $table->string('image');
             $table->text('text');
             $table->integer('user_id');
+            $table->string('issue');
+            $table->integer('category_id');
+            $table->integer('region_id');
             $table->timestamps();
         });
     }

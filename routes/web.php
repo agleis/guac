@@ -26,6 +26,10 @@ Route::get('stories/{name}/edit', 'ArticleController@showEditText')->name('edit_
 Route::post('stories/{name}/edit', 'ArticleController@editText')
      ->name('post_edit_article');
 
+Route::get('guides', 'GuideController@guides')->name('guides');
+
+Route::get('guides/{id}', 'GuideController@guide')->name('guide');
+
 Route::get('authors', 'AuthorController@authors')->name('authors');
 
 Route::post('authors/new', 'AuthorController@register')->name('new_author');
