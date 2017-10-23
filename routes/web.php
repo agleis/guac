@@ -15,6 +15,8 @@ Route::get('/', 'ArticleController@index')->name('index');
 
 Route::get('about', 'AboutController@about')->name('about');
 
+Route::get('map', 'MapController@map')->name('map');
+
 Route::get('stories', 'ArticleController@articles')->name('articles');
 
 Route::get('stories/{name}', 'ArticleController@article')->name('article');

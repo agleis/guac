@@ -58,15 +58,15 @@
                         <li @if(request()->is('about')) class="current" @endif>
                           <a href="{{route('about')}}">About</a>
                         </li>
+                        <li @if(request()->is('map')) class="current" @endif>
+                          <a href="{{route('map')}}">Map</a>
+                        </li>
                         <li @if(request()->is('authors')) class="current" @endif>
                           <a href="{{route('authors')}}">Authors</a>
                         </li>
                         @auth
                           <li>
                             <a href="{{route('upload_article')}}">Upload</a>
-                          </li>
-                          <li>
-                            <a href="{{route('featured')}}">Edit Featured</a>
                           </li>
                           <li>
                             <a href="{{route('logout')}}">Logout</a>
