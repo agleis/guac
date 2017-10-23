@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/extras.css') }}" rel="stylesheet">
     <link href="{{ asset('css/checkbox/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/flags/css/flag-icon.css') }}" rel="stylesheet">
     <link href="{{ asset('js/chosen/chosen.min.css') }}" rel="stylesheet">
@@ -120,6 +121,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/extras.js') }}"></script>
     <script src="{{asset('js/chosen/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('js/chosen.js')}}"></script>
     @stack('scripts')
