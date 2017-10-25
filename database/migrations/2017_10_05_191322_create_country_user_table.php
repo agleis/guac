@@ -14,6 +14,7 @@ class CreateCountryUserTable extends Migration
     public function up()
     {
         Schema::create('country_user', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->integer('country_id')->unsigned();
             $table->integer('user_id')->unsigned();
         });

@@ -14,6 +14,7 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->boolean('featured');
             $table->string('name')->unique();
             $table->primary('name');

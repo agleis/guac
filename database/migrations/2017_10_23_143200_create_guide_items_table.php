@@ -14,6 +14,7 @@ class CreateGuideItemsTable extends Migration
     public function up()
     {
         Schema::create('guide_items', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('guide_id');
             $table->string('name');
