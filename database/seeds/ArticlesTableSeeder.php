@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+
 class ArticlesTableSeeder extends Seeder
 {
     /**
@@ -67,7 +69,9 @@ class ArticlesTableSeeder extends Seeder
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
-          'region_id' => 2
+          'region_id' => 2,
+          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }

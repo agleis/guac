@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+
 class CountriesTableSeeder extends Seeder
 {
     /**
@@ -267,7 +269,9 @@ class CountriesTableSeeder extends Seeder
             DB::table('countries')->insert([
                 'id' => ($i + 2) / 2,
                 'name' => $countries[$i],
-                'code' => $countries[$i + 1]
+                'code' => $countries[$i + 1],
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]);
         }
     }

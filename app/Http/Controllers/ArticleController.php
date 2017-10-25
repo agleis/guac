@@ -44,7 +44,13 @@ class ArticleController extends Controller
      */
     public function article($name) {
         $article = Article::find($name);
-        return view('article', ['article' => $article]);
+        $next = Article::next($article->created_at)->first();
+        $prev = Article::prev($article->created_at)->first();
+        return view('article', [
+            'article' => $article,
+            'next' => $next ? $next->name : "",
+            'prev' => $prev ? $prev->name : ""
+        ]);
     }
 
     /**

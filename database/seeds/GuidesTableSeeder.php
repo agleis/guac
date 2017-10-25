@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+
 class GuidesTableSeeder extends Seeder
 {
     /**
@@ -19,7 +21,9 @@ class GuidesTableSeeder extends Seeder
              'summary' => "Tokyo is a really cool city in Japan. I really like Tokyo. 
              Come visit Tokyo and see all the cool stuff that's there, shown below.",
              'region_id' => 12,
-             'image' => 'images/bariloche1.jpg'
+             'image' => '/images/bariloche1.jpg',
+             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
          ]);
     }
 }

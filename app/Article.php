@@ -50,6 +50,28 @@ class Article extends Model
     }
 
     /**
+     * Returns the next article after $created_at.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNext($query, $created_at) {
+        return $query->select('name')
+                     ->where('created_at', '>', $created_at);
+    }
+
+    /**
+     * Returns the previous article before $created_at.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePrev($query, $created_at) {
+        return $query->select('name')
+                     ->where('created_at', '<', $created_at);
+    }
+
+    /**
      * Returns the list of all articles sorted by date.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query

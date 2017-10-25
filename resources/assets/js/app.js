@@ -17,13 +17,15 @@ window.Vue = require('vue');
 
 Vue.component('articletext', require('./components/Article.vue'));
 
+Vue.component('guide', require('./components/Guide.vue'));
+
+Vue.component('guideitem', require('./components/GuideItem.vue'));
+
 Vue.component('editor', require('./components/Editor.vue'));
 
-Vue.component('articlesummary', require('./components/ArticleSummary.vue'));
+Vue.component('guideeditor', require('./components/GuideEditor.vue'));
 
-Vue.component('featured', require('./components/Featured.vue'));
-
-Vue.component('author-form', require('./components/AuthorForm.vue'));
+Vue.component('guideitemeditor', require('./components/GuideItemEditor.vue'));
 
 Vue.component('image-upload', require('./components/ImageUpload.vue'));
 
@@ -40,7 +42,9 @@ Split(["#editor-form", "#editor-article"], {
 CKEDITOR.stylesSet.add('my_styles', [
   // Block-level styles.
   { name: 'Quote Row', element: 'div', attributes: { class: 'row quote' } },
+  { name: 'Image Row', element: 'div', attributes: { class: 'row' } },
   { name: 'Column-4', element: 'div', attributes: { class: 'col-md-4' } },
+  { name: 'Column-6', element: 'div', attributes: { class: 'col-md-6' } },
   { name: 'Column-8', element: 'div', attributes: { class: 'col-md-8' } },
 
   // Inline styles.

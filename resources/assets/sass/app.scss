@@ -267,6 +267,13 @@ html {
   margin-bottom: 50px;
   width: 70%;
   background: white;
+  &.guide {
+    float: right;
+    margin-left: 0px;
+    margin-right: -50px;
+    width: 60%;
+    margin-top: -250px;
+  }
 }
 
 .quote_title {
@@ -276,4 +283,67 @@ html {
 .quote {
   background-color: #F5F4E7;
   width: 100%;
+}
+
+.vertical-text {
+  margin-top: 600px;
+  height: 400px;
+  .next {
+    transform: rotate(90deg);
+    transform-origin: right top 0;
+    z-index: 100;
+    text-align: center;
+    width: 100px;
+    a {
+      color: #000;
+      width: 400px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .prev {
+    transform: rotate(270deg);
+    transform-origin: left bottom 0;
+    z-index: 100;
+    text-align: center;
+    width: 150px;
+    a {
+      color: #000;
+      width: 400px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.city-featured {
+  &:hover {
+    background: white;
+  }
+}
+
+.plus-featured {
+  font-size: 300%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 50px;
+  padding-right: 50px;
+  .center {
+    width: 100%;
+    height: 100%;
+    color: #505050;
+    text-align: center;
+    .plus {
+      margin-top: 130px;
+      text-align: center;
+    }
+  }
+}
+
+.sidebar {
+  &:hover {
+    background-color: #B3B3B3;
+  }
 }

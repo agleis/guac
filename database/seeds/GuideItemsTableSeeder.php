@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+
 class GuideItemsTableSeeder extends Seeder
 {
     /**
@@ -21,7 +23,9 @@ class GuideItemsTableSeeder extends Seeder
              but I don't know any of them. Therefore, I am writing this summary just
              as a basic thing, even though I don't know it.",
              'category_id' => 1,
-             'image' => 'images/bariloche1.jpg'
+             'image' => 'images/bariloche1.jpg',
+             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
          ]);
     }
 }

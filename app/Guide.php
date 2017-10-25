@@ -40,4 +40,26 @@ class Guide extends Model
                      ->orderBy('created_at')->get();
     }
 
+    /**
+     * Returns the next article after $created_at.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNext($query, $created_at) {
+        return $query->select('id')
+                     ->where('created_at', '>', $created_at);
+    }
+
+    /**
+     * Returns the previous article before $created_at.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePrev($query, $created_at) {
+        return $query->select('id')
+                     ->where('created_at', '<', $created_at);
+    }
+
 }

@@ -8712,6 +8712,14 @@ html {
   background: white;
 }
 
+.title-box.guide {
+  float: right;
+  margin-left: 0px;
+  margin-right: -50px;
+  width: 60%;
+  margin-top: -250px;
+}
+
 .quote_title {
   float: left;
 }
@@ -8719,5 +8727,76 @@ html {
 .quote {
   background-color: #F5F4E7;
   width: 100%;
+}
+
+.vertical-text {
+  margin-top: 600px;
+  height: 400px;
+}
+
+.vertical-text .next {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: right top 0;
+          transform-origin: right top 0;
+  z-index: 100;
+  text-align: center;
+  width: 100px;
+}
+
+.vertical-text .next a {
+  color: #000;
+  width: 400px;
+}
+
+.vertical-text .next a:hover {
+  text-decoration: none;
+}
+
+.vertical-text .prev {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  -webkit-transform-origin: left bottom 0;
+          transform-origin: left bottom 0;
+  z-index: 100;
+  text-align: center;
+  width: 150px;
+}
+
+.vertical-text .prev a {
+  color: #000;
+  width: 400px;
+}
+
+.vertical-text .prev a:hover {
+  text-decoration: none;
+}
+
+.city-featured:hover {
+  background: white;
+}
+
+.plus-featured {
+  font-size: 300%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.plus-featured .center {
+  width: 100%;
+  height: 100%;
+  color: #505050;
+  text-align: center;
+}
+
+.plus-featured .center .plus {
+  margin-top: 130px;
+  text-align: center;
+}
+
+.sidebar:hover {
+  background-color: #B3B3B3;
 }
 
