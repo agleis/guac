@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Guac Magazine') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/extras.css') }}" rel="stylesheet">
     <link href="{{ asset('css/checkbox/css/style.css') }}" rel="stylesheet">
