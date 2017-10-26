@@ -40,15 +40,11 @@
             <input type="text" v-model="issuecontent" name="issue" id="issue" class="form-control" :value="issuecontent"/>
           </div>
           <div class="form-group">
+              <label for="image">Image</label>
               <div class="image-input">
-                <div class="image-preview">
-                    <i v-show="!imagecontent" class="icon fa fa-picture-o"></i>
-                    <img v-show="imagecontent" class="image" :src="imagecontent" height="150" width="200" />
-                </div>
-
-                <div class="image-file-div">
-                    Upload Thumbnail
-                    <input @change="previewThumbnail" class="image-file" name="image" type="file" />
+                <div>
+                    <input name="browse" id="browse" type="button" value="Choose Image" />
+                    <input v-model="imagecontent" name="image" id="image" type="text" />
                     <input type="hidden" name="original" :value="imageurl" />
                 </div>
               </div>
@@ -137,18 +133,9 @@
       },
       methods: {
         previewThumbnail: function(event) {
+            alert('hi');
             var input = event.target;
-
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                var vm = this;
-
-                reader.onload = function(e) {
-                    vm.imagecontent = e.target.result;
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
+            vm.imagecontent = input.value;
         }
       }
     }

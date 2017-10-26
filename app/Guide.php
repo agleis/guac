@@ -48,7 +48,8 @@ class Guide extends Model
      */
     public function scopeNext($query, $created_at) {
         return $query->select('id')
-                     ->where('created_at', '>', $created_at);
+                     ->where('created_at', '>', $created_at)
+                     ->oldest();
     }
 
     /**
@@ -59,7 +60,27 @@ class Guide extends Model
      */
     public function scopePrev($query, $created_at) {
         return $query->select('id')
-                     ->where('created_at', '<', $created_at);
+                     ->where('created_at', '<', $created_at)
+                     ->latest();
+    }
+
+    /**
+     * Returns the list of all articles sorted by date.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSearch($query, $search) {
+        return $query->select('id', 'title', 'image', 'country_id', 'issue')
+                     ->where('title', 'like', "%$search%")
+                     ->orWhere('summary', 'like', "%$search%")
+                     ->orWhereHas('region', function($query) use($search) {
+                         $query->where('name', 'like', "%$search%");
+                     })
+                     ->orWhereHas('country', function($query) use($search) {
+                         $query->where('name', 'like', "%$search%");
+                     })
+                     ->orderBy('created_at')->get();
     }
 
 }

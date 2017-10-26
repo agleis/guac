@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Adam Gleisner',
             'email' => 'amg295@cornell.edu',
             'bio' => 'Hi! My name is Adam.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Zeyu Hu',
             'email' => 'zh75@cornell.edu',
             'bio' => 'Hi! My name is Zeyu.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Fanny Chen',
             'email' => 'ffc24@cornell.edu',
             'bio' => 'Hi! My name is Fanny.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Pia Bocanegra',
             'email' => 'sib35@cornell.edu',
             'bio' => 'Hi! My name is Pia.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -52,7 +52,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Christine Relander',
             'email' => 'cr463@cornell.edu',
             'bio' => 'Hi! My name is Christine.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -60,7 +60,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Lauren McBrearty',
             'email' => 'lmm299@cornell.edu',
             'bio' => 'Hi! My name is Lauren.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -68,7 +68,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Akanksha Jain',
             'email' => 'aj448@cornell.edu',
             'bio' => 'Hi! My name is Akanksha.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
         User::create([
@@ -76,7 +76,23 @@ class UsersTableSeeder extends Seeder
             'name' => 'Cathy Zhang',
             'email' => 'cz223@cornell.edu',
             'bio' => 'Hi! My name is Cathy.',
-            'image' => '/images/bariloche1.jpg',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
+            'password' => bcrypt('guacmag'),
+        ]);
+        User::create([
+            'id' => 9,
+            'name' => 'Mind Apivessa',
+            'email' => 'ta273@cornell.edu',
+            'bio' => 'Hi! My name is Mind.',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
+            'password' => bcrypt('guacmag'),
+        ]);
+        User::create([
+            'id' => 10,
+            'name' => 'Maddie Holden',
+            'email' => 'mh2359@cornell.edu',
+            'bio' => 'Hi! My name is Maddie.',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
     }

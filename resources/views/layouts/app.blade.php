@@ -51,24 +51,24 @@
                         <li @if(request()->is('/')) class="current" @endif>
                           <a href="{{route('index')}}">Home</a>
                         </li>
-                        <li @if(request()->is('stories')) class="current" @endif>
+                        <li @if(request()->is('stories') || request()->is('stories/*')) class="current" @endif>
                           <a href="{{route('articles')}}">Stories</a>
                         </li>
-                        <li @if(request()->is('guides')) class="current" @endif>
+                        <li @if(request()->is('guides') || request()->is('guides/*')) class="current" @endif>
                           <a href="{{route('guides')}}">City Guides</a>
-                        </li>
-                        <li @if(request()->is('about')) class="current" @endif>
-                          <a href="{{route('about')}}">About</a>
                         </li>
                         <li @if(request()->is('map')) class="current" @endif>
                           <a href="{{route('map')}}">Map</a>
                         </li>
-                        <li @if(request()->is('authors')) class="current" @endif>
-                          <a href="{{route('authors')}}">Authors</a>
+                        <li @if(request()->is('about')) class="current" @endif>
+                          <a href="{{route('about')}}">About</a>
                         </li>
                         @auth
                           <li>
-                            <a href="{{route('upload_article')}}">Upload</a>
+                            <a href="{{route('upload_article')}}">Upload Story</a>
+                          </li>
+                          <li>
+                            <a href="{{route('upload_guide')}}">Upload Guide</a>
                           </li>
                           <li>
                             <a href="{{route('logout')}}">Logout</a>
@@ -77,15 +77,11 @@
                             <a href="{{route('author', ['id' => Auth::id()])}}">{{Auth::user()->name}}</a>
                           </li>
                         @endauth
-                        @guest
-                            <li>
-                              <a href="{{route('register')}}">New User</a>
-                            </li>
-                            <li>
-                              <a href="{{route('login')}}">Login</a>
-                            </li>
-                        @endguest
                     </ul>
+                    <form class="search-form" action="{{route('search')}}">
+                      <input type="text" name="search" id="search" value="{{old('search')}}" />
+                      <input type="submit" value="Search" class="submit" />
+                    </form>
                 </div>
             </div>
         </nav>

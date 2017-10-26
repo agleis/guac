@@ -1,23 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
-@font-face {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@font-face {
   font-family: CircularStd-Book;
-  src: url(../fonts/CircularStd-Book.otf?6365c40aa59d462f1cc52ccce9635cb4) format("opentype");
+  src: url(/fonts/CircularStd-Book.otf?6365c40aa59d462f1cc52ccce9635cb4) format("opentype");
 }
 
 @font-face {
   font-family: CircularStd-Black;
-  src: url(../fonts/CircularStd-Black.otf?7f42d8488652eb250af2f484d377dbee) format("opentype");
+  src: url(/fonts/CircularStd-Black.otf?7f42d8488652eb250af2f484d377dbee) format("opentype");
 }
 
 @font-face {
   font-family: CircularStd-Bold;
-  src: url(../fonts/CircularStd-Bold.otf?6baed2bf580964bec9559ad83caee43d) format("opentype");
+  src: url(/fonts/CircularStd-Bold.otf?6baed2bf580964bec9559ad83caee43d) format("opentype");
 }
 
 @font-face {
   font-family: MinionPro-Regular;
-  src: url(../fonts/MinionPro-Regular.ttf?b6f4cd55aa101bf9d77dc4d7d24c9c26) format("truetype");
+  src: url(/fonts/MinionPro-Regular.ttf?b6f4cd55aa101bf9d77dc4d7d24c9c26) format("truetype");
 }
 
 body {
@@ -448,5 +446,10 @@ html {
 
 .sidebar:hover {
   background-color: #B3B3B3;
+}
+
+.search-form input {
+  margin: 15px;
+  border: none;
 }
 

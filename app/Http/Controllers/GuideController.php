@@ -63,7 +63,7 @@ class GuideController extends Controller
         $guide->issue = $request->issue;
         $guide->region_id = $request->region;
         $guide->country_id = $request->country;
-        $guide->image = $this->getImage($request);
+        $guide->image = asset($request->image);
         $guide->save();
         return redirect()->route('guide', ['id' => $guide->id]);
      }
@@ -95,7 +95,7 @@ class GuideController extends Controller
         $guide->issue = $request->issue;
         $guide->region_id = $request->region;
         $guide->country_id = $request->country;
-        $guide->image = $this->getImage($request);
+        $guide->image = asset($request->image);
         $guide->save();
         return redirect()->route('guide', ['id' => $guide->id]);
      }
@@ -127,7 +127,7 @@ class GuideController extends Controller
         $guide_item->hours = $request->hours;
         $guide_item->location = $request->location;
         $guide_item->category_id = $request->category;
-        $guide_item->image = $this->getImage($request);
+        $guide_item->image = asset($request->image);
         $guide->guide_items()->save($guide_item);
         $guide_item->save();
         return redirect()->route('guide', ['id' => $guide->id]);
@@ -161,7 +161,7 @@ class GuideController extends Controller
         $guide_item->hours = $request->hours;
         $guide_item->location = $request->location;
         $guide_item->category_id = $request->category;
-        $guide_item->image = $this->getImage($request);
+        $guide_item->image = asset($request->image);
         $guide->guide_items()->save($guide_item);
         $guide_item->save();
         return redirect()->route('guide', ['id' => $guide->id]);

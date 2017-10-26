@@ -22,7 +22,7 @@
           <div class="title-box">
               <p class="issue">{{issue}} <span class="fa fa-circle blue circle"></span>{{category}}</p>
               <h1 class="section">{{title}}</h1>
-              <p>By <a :href="authorroute">{{author.name}}</a></p>
+              <p>By {{author.name}}</p>
               <div v-if="auth">
                 <a :href="editroute">Edit this article</a>
               </div>

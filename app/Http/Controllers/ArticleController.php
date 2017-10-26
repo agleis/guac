@@ -85,7 +85,7 @@ class ArticleController extends Controller
         $article->user_id = $request->author;
         $article->region_id = $request->region;
         $article->category_id = $request->category;
-        $article->image = $this->getImage($request);
+        $article->image = asset($request->image);
         $article->save();
         return redirect()->route('article', ['name' => $article->name]);
     }
@@ -127,7 +127,7 @@ class ArticleController extends Controller
       $article->region_id = $request->region;
       $article->category_id = $request->category;
       $article->featured = false;
-      $article->image = $this->getImage($request);
+      $article->image = asset($request->image);
       $article->save();
       return redirect()->route('article', ['name' => $article->name]);
     }

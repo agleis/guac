@@ -28,7 +28,7 @@ class ArticlesTableSeeder extends Seeder
 
             ",
           'user_id' => 3,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/Fanny%20(11).JPG',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
@@ -65,13 +65,13 @@ class ArticlesTableSeeder extends Seeder
 
             ",
           'user_id' => 2,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/Zeyu%20(4).JPG',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 12,
-          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+          'created_at' => Carbon::now()->addMinutes(1)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(1)->format('Y-m-d H:i:s')
         ]);
         DB::table('articles')->insert([
           'name' => 'phobjikha_valley',
@@ -88,13 +88,13 @@ class ArticlesTableSeeder extends Seeder
 
             ",
           'user_id' => 4,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/Pia%20(2).JPG',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 10,
-          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+          'created_at' => Carbon::now()->addMinutes(2)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(2)->format('Y-m-d H:i:s')
         ]);
         DB::table('articles')->insert([
           'name' => 'cesano',
@@ -112,13 +112,13 @@ class ArticlesTableSeeder extends Seeder
 <p>It is these same people that have left a lasting impression on me.  Italy, as beautiful as it is (they call it Bel Paese), is special to me because of the people there.  I’ll always remember sitting on the couch with Alessia, listening to Ed Sheeran’s new album and translating the lyrics for her.  Or playing soccer with little Stefano, who would yell “Grande… Big” after a good play and pinch my cheeks. Or shopping with Agnese, my host mom, at the local market on a Friday morning.  Or taking a day trip to Lake Como with Sandro, my host dad.  Among other things these people and our shared experiences are what I’ll remember most.  Travelling abroad is a wonderful opportunity.  Connecting with people around the world makes it even better.  I am so happy that I got to experience the sense of community and love in Binzago and that I get to extend that sense of community and love across the Atlantic.  When you have friends in different time zones the world is not as different or big as it may seem.  To my friends in Italy: ci vediamo presto. Il mondo è un posto migliore con tutti voi.  </p>
 ",
           'user_id' => 6,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/Lauren%20(11).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 4,
-          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+          'created_at' => Carbon::now()->addMinutes(3)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(3)->format('Y-m-d H:i:s')
         ]);
         DB::table('articles')->insert([
           'name' => 'drobak',
@@ -138,13 +138,13 @@ class ArticlesTableSeeder extends Seeder
 <p>With summer vacation coming to a close and the habitual lifestyle of college around the corner again, the sunsets and lake views were a perfect “reset button” for the new year.</p>
 ",
           'user_id' => 5,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/Christine%20(13).jpeg',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 4,
-          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+          'created_at' => Carbon::now()->addMinutes(4)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(4)->format('Y-m-d H:i:s')
         ]);
         DB::table('articles')->insert([
           'name' => 'morocco',
@@ -186,13 +186,13 @@ class ArticlesTableSeeder extends Seeder
 <p>I’ve already made a promise to myself to come back. There are still countless places to explore and more people I’d love to meet. For those who are still hesitating, take no more time to think. This hidden gem will likely be populated very soon, and you don’t want to miss your chance for the experience of a lifetime. </p>
 ",
           'user_id' => 8,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/Cathy%20(14).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 5,
-          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+          'created_at' => Carbon::now()->addMinutes(5)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(5)->format('Y-m-d H:i:s')
         ]);
         DB::table('articles')->insert([
           'name' => 'bali',
@@ -205,13 +205,35 @@ class ArticlesTableSeeder extends Seeder
 <p>If, like me, you come from a city like Singapore where sunsets are overshadowed by tall skyscrapers, you should make it a point to view a sunset like the ones I saw from the Rock Bar.  It was just the most beautiful experience. Watching the sunset I felt incredibly calm and was able to step back, realise the beauty of the world around us, and truly appreciate our planet.</p>
 ",
           'user_id' => 7,
-          'image' => 'images/bariloche1.jpg',
+          'image' => '/public/files/Graphics%20-%20Photos/A/drive-download-20171014T203845Z-001/Copy%20of%20IMG_1303.jpg',
           'featured' => true,
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 11,
-          'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-          'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+          'created_at' => Carbon::now()->addMinutes(6)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(6)->format('Y-m-d H:i:s')
+        ]);
+        DB::table('articles')->insert([
+          'name' => 'tanzania',
+          'title' => 'Tanzania',
+          'text' => "
+          <p>This summer I had the unforgettable opportunity to study abroad in Tanzania for wildlife conservation policy and research techniques. While I went for the prospect of learning more about the environmental field that I plan on entering in the future, the experience and knowledge I gained from the local communities and people far surpassed anything I could have hoped for. Our study abroad center was located between the towns of Karatu and Mto Wa Mbu, within the Tarangire-Manyara Ecosystem. The Tanzanian way of life largely depends on agriculture and pastoralism, so they are heavily connected to the natural resources and native animal species. I was able to directly observe this by spending a day on a home-stay with a local family and by visiting some of the 120 tribes found in Tanzania. We also conducted research in three of the national parks that the country has to offer.</p>
+ 
+        	<p>During my home-stay I was with a family of 4 children and a mother living in a small mudhouse. Traditionally the father is away for the day doing work and the mother stays at home to take care of the children and cook and clean. The home had a small shack outside where four pigs were kept, and there were some small plots of crops like corn and pumpkins. I helped to collect and chop pumpkins to feed to the pigs, and made mud with the children to throw at the house. They live directly within the environment and need a healthy Earth in order to live. Another example of this reliance on natural resources was with the Maasai tribe, a group of people who establish temporary homes made of cow manure and branches within a “boma,” an area fenced in by branches. They have a pastoralist way of life, so they rely on their cattle, sheeps and goats for their livelihood. They struggle with local wildlife, particularly lions, killing the cattle, and it’s customary for the men of the tribe to go out in search of local lion prides to kill them in retaliation. The government tries to control this, but it can be difficult because of the remoteness of the tribe and the long tradition of retaliatory killings.</p>
+ 
+        	<p>The Maasai aren’t the only people in Tanzania who struggle with wildlife conflicts. Elephants can trample crops, and because of their size they can get through fencing around crops that tries to keep the animals out. Hyenas are active at night and can pose threats to people. There was a case of a drunk man being eaten by a hyena a few weeks before my study abroad program began. Still, the country’s government prioritizes conservation as a sense of national pride and because of the revenue it provides through photographic tourism and tourist hunting. Initiatives have been taken to involve communities more heavily in conservation, allowing them to establish their land as Wildlife Management Areas that protect the animal species and give the local people some income. Conservation areas are beautiful parts of Tanzania that are protected to various degrees with the purpose of protecting animal species and benefitting the government or communities in some way. We spent a lot of time in national parks, which are a huge draw for international tourists to come for safaris. The national parks completely restrict any human activity besides this tourism and any approved research projects. One of the projects we got to conduct was an animal count, which involved counting individual animals of each mammal species that we came across for the purpose of determining animal densities. It was exhilarating when we saw African wild dogs, a species that was once locally extinct in the area, for the count.</p>
+ 
+        	<p>My time in Tanzania is unlikely to be outdone by many other experiences in my future. It was beneficial for me as I learned tools for a career, but I also learned about myself from the people and ways of life I was exposed to. I created beautiful memories of watching lion prides walk across a savannah, helping my home-stay family make ugali and cabbage over a stove made of mud, and collecting firewood with the Maasai tribe. It solidified for me that this planet we live on deserves love, protection, and prioritization. </p>
+
+",
+          'user_id' => 10,
+          'image' => '/public/files/Graphics%20-%20Photos/Maddie%20(18).jpg',
+          'featured' => true,
+          'issue' => 'Issue 1',
+          'category_id' => 1,
+          'region_id' => 6,
+          'created_at' => Carbon::now()->addMinutes(7)->format('Y-m-d H:i:s'),
+          'updated_at' => Carbon::now()->addMinutes(7)->format('Y-m-d H:i:s')
         ]);
     }
 }

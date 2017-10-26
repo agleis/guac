@@ -32,15 +32,11 @@
             <input type="text" v-model="summarycontent" name="summary" id="summary" class="form-control" :value="summarycontent"/>
           </div>
           <div class="form-group">
+              <label for="image">Image</label>
               <div class="image-input">
-                <div class="image-preview">
-                    <i v-show="!imagecontent" class="icon fa fa-picture-o"></i>
-                    <img v-show="imagecontent" class="image" :src="imagecontent" height="150" width="200" />
-                </div>
-
-                <div class="image-file-div">
-                    Upload Thumbnail
-                    <input @change="previewThumbnail" class="image-file" name="image" type="file" />
+                <div>
+                    <input name="image" id="browse" type="button" value="Choose Image" />
+                    <input v-model="imagecontent" name="image" id="image" type="text" />
                     <input type="hidden" name="original" :value="imageurl" />
                 </div>
               </div>

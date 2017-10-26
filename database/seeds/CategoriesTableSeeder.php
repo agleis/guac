@@ -21,7 +21,25 @@ class CategoriesTableSeeder extends Seeder
          ]);
          DB::table('categories')->insert([
             'id' => 2, 
-            'name' => 'Science and Technology',
+            'name' => 'Dining',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+         ]);
+         DB::table('categories')->insert([
+            'id' => 3, 
+            'name' => 'Cafe',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+         ]);
+         DB::table('categories')->insert([
+            'id' => 4, 
+            'name' => 'Nightlife',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+         ]);
+         DB::table('categories')->insert([
+            'id' => 5, 
+            'name' => 'Landmark',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
          ]);

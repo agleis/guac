@@ -1299,6 +1299,23 @@ CKEDITOR.stylesSet.add('my_styles', [
 CKEDITOR.config.stylesSet = 'my_styles';
 CKEDITOR.config.extraPlugins = 'div';
 
+function BrowseServer() {
+  var finder = CKFinder.modal({
+    chooseFiles: true,
+    onInit: function onInit(finder) {
+      finder.on('files:choose', function (evt) {
+        var file = evt.data.files.first();
+        $("#image").val(file.getUrl());
+      });
+      finder.on('file:choose:resizedImage', function (evt) {
+        document.getElementById('url').value = evt.data.resizedUrl;
+      });
+    } });
+}
+$(function () {
+  $("#browse").on("click", BrowseServer); //FileBrowse is the Id of the button
+});
+
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42539,12 +42556,7 @@ var render = function() {
             _vm._v(" "),
             _c("h1", { staticClass: "section" }, [_vm._v(_vm._s(_vm.title))]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v("By "),
-              _c("a", { attrs: { href: _vm.authorroute } }, [
-                _vm._v(_vm._s(_vm.author.name))
-              ])
-            ]),
+            _c("p", [_vm._v("By " + _vm._s(_vm.author.name))]),
             _vm._v(" "),
             _vm.auth
               ? _c("div", [
@@ -43114,10 +43126,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43172,18 +43180,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     previewThumbnail: function previewThumbnail(event) {
+      alert('hi');
       var input = event.target;
-
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        var vm = this;
-
-        reader.onload = function (e) {
-          vm.imagecontent = e.target.result;
-        };
-
-        reader.readAsDataURL(input.files[0]);
-      }
+      vm.imagecontent = input.value;
     }
   }
 });
@@ -43598,46 +43597,38 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "image" } }, [_vm._v("Image")]),
+                _vm._v(" "),
                 _c("div", { staticClass: "image-input" }, [
-                  _c("div", { staticClass: "image-preview" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.imagecontent,
-                          expression: "!imagecontent"
-                        }
-                      ],
-                      staticClass: "icon fa fa-picture-o"
+                  _c("div", [
+                    _c("input", {
+                      attrs: {
+                        name: "browse",
+                        id: "browse",
+                        type: "button",
+                        value: "Choose Image"
+                      }
                     }),
                     _vm._v(" "),
-                    _c("img", {
+                    _c("input", {
                       directives: [
                         {
-                          name: "show",
-                          rawName: "v-show",
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.imagecontent,
                           expression: "imagecontent"
                         }
                       ],
-                      staticClass: "image",
-                      attrs: {
-                        src: _vm.imagecontent,
-                        height: "150",
-                        width: "200"
+                      attrs: { name: "image", id: "image", type: "text" },
+                      domProps: { value: _vm.imagecontent },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.imagecontent = $event.target.value
+                        }
                       }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "image-file-div" }, [
-                    _vm._v(
-                      "\n                  Upload Thumbnail\n                  "
-                    ),
-                    _c("input", {
-                      staticClass: "image-file",
-                      attrs: { name: "image", type: "file" },
-                      on: { change: _vm.previewThumbnail }
                     }),
                     _vm._v(" "),
                     _c("input", {
@@ -43819,10 +43810,6 @@ exports.push([module.i, "\n.image-input[data-v-bb754056] {\r\n    display: -webk
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2__);
-//
-//
-//
-//
 //
 //
 //
@@ -44158,46 +44145,38 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "image" } }, [_vm._v("Image")]),
+                _vm._v(" "),
                 _c("div", { staticClass: "image-input" }, [
-                  _c("div", { staticClass: "image-preview" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.imagecontent,
-                          expression: "!imagecontent"
-                        }
-                      ],
-                      staticClass: "icon fa fa-picture-o"
+                  _c("div", [
+                    _c("input", {
+                      attrs: {
+                        name: "image",
+                        id: "browse",
+                        type: "button",
+                        value: "Choose Image"
+                      }
                     }),
                     _vm._v(" "),
-                    _c("img", {
+                    _c("input", {
                       directives: [
                         {
-                          name: "show",
-                          rawName: "v-show",
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.imagecontent,
                           expression: "imagecontent"
                         }
                       ],
-                      staticClass: "image",
-                      attrs: {
-                        src: _vm.imagecontent,
-                        height: "150",
-                        width: "200"
+                      attrs: { name: "image", id: "image", type: "text" },
+                      domProps: { value: _vm.imagecontent },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.imagecontent = $event.target.value
+                        }
                       }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "image-file-div" }, [
-                    _vm._v(
-                      "\n                  Upload Thumbnail\n                  "
-                    ),
-                    _c("input", {
-                      staticClass: "image-file",
-                      attrs: { name: "image", type: "file" },
-                      on: { change: _vm.previewThumbnail }
                     }),
                     _vm._v(" "),
                     _c("input", {
@@ -44348,10 +44327,6 @@ exports.push([module.i, "\n.image-input[data-v-6a92d970] {\r\n    display: -webk
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2__);
-//
-//
-//
-//
 //
 //
 //
@@ -44660,46 +44635,38 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "image" } }, [_vm._v("Image")]),
+                _vm._v(" "),
                 _c("div", { staticClass: "image-input" }, [
-                  _c("div", { staticClass: "image-preview" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.imagecontent,
-                          expression: "!imagecontent"
-                        }
-                      ],
-                      staticClass: "icon fa fa-picture-o"
+                  _c("div", [
+                    _c("input", {
+                      attrs: {
+                        name: "image",
+                        id: "browse",
+                        type: "button",
+                        value: "Choose Image"
+                      }
                     }),
                     _vm._v(" "),
-                    _c("img", {
+                    _c("input", {
                       directives: [
                         {
-                          name: "show",
-                          rawName: "v-show",
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.imagecontent,
                           expression: "imagecontent"
                         }
                       ],
-                      staticClass: "image",
-                      attrs: {
-                        src: _vm.imagecontent,
-                        height: "150",
-                        width: "200"
+                      attrs: { name: "image", id: "image", type: "text" },
+                      domProps: { value: _vm.imagecontent },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.imagecontent = $event.target.value
+                        }
                       }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "image-file-div" }, [
-                    _vm._v(
-                      "\n                  Upload Thumbnail\n                  "
-                    ),
-                    _c("input", {
-                      staticClass: "image-file",
-                      attrs: { name: "image", type: "file" },
-                      on: { change: _vm.previewThumbnail }
                     }),
                     _vm._v(" "),
                     _c("input", {

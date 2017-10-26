@@ -57,3 +57,20 @@ CKEDITOR.stylesSet.add('my_styles', [
 
 CKEDITOR.config.stylesSet = 'my_styles';
 CKEDITOR.config.extraPlugins = 'div';
+
+function BrowseServer() {
+  var finder = CKFinder.modal({
+    chooseFiles: true,
+    onInit: function (finder) {
+      finder.on('files:choose', function (evt) {
+        var file = evt.data.files.first();
+        $("#image").val(file.getUrl());
+      });
+      finder.on('file:choose:resizedImage', function (evt) {
+        document.getElementById('url').value = evt.data.resizedUrl;
+      })
+    }});
+}
+$(function () {
+    $("#browse").on("click", BrowseServer); //FileBrowse is the Id of the button
+});
