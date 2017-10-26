@@ -9,7 +9,8 @@
         <div class="col-md-4">
         <div class="featured-article featured-3">
             <a href="{{route('guide', ['id' => $guide->id])}}">
-            <img src="{{asset($guide->image)}}" />
+            {{--  <img src="{{asset($guide->image)}}" />  --}}
+            <div class="image" style="background-image: url('{{asset($guide->image)}}')"></div>
             <p class="issue">{{$guide->issue}}</p>
             <h3>{{$guide->title}}, {{$guide->country->name}}</h3>
             </a>

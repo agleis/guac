@@ -15,7 +15,7 @@ class ArticlesTableSeeder extends Seeder
     {
         DB::table('articles')->insert([
           'name' => 'bariloche',
-          'title' => 'Bariloche',
+          'title' => 'Bariloche - Mountains, Lakes, and Cool Snowflakes',
           'text' => "<p>Located in the foothills of the Andes and overlooking Nahuel Huapei Lake, San Carlos de Bariloche is a quiet resort city modeled after alpine ski resorts. We arrived in late July, one of the coldest months in Argentina and one of the most popular times for skiing trips to Bariloche.</p>
  
 <p>The entire highway, which snakes along the Nahuel Huapei Lake, is lined with resorts semi-hidden by the towering pine trees. We stayed at one of these resorts: it was a group of bungalows completely owned and operated by an elderly native couple. Our bungalow was tastefully decorated and warm, and it provided welcome comfort as we had just flown from the warm and humid Iguazu Falls. The best part of our bungalow, however, were the sweeping panoramic windows facing the lake. We would wake up as the sun slowly made its way out behind some trees in the lake’s far corner. As it brightened up the surroundings we were finally able to grasp the beauty of this place. The tall spiky mountains, donning a snowy cap, rose up and around the glistening water.</p>
@@ -38,7 +38,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'longmen_grottoes',
-          'title' => 'Longmen Grottoes',
+          'title' => 'Longmen Grottoes - A Forgotten Ancient Wonder',
           'text' => "<p>As one of the Four Great Ancient Capitals of China, the city of Luoyang (洛阳) is definitely the least known to visitors outside China. Luoyang served as an important city and stronghold to 13 dynasties for over 3 millenniums and the birthplace of Buddhism in China.</p>
  
 <p>Some 10 kilometers away from the Luoyang’s city center, carved into the valley of limestone cliffs formed by the the Yi River (伊河) and the Xiang (香山) and Longmen (龙门山) Mountains, stand some of the finest examples of Chinese Buddhist art. Over 100,000 statues of the Buddha and his disciples are carved into approximately 2,500 manmade caves. Some carvings are merely 2 centimeters (2 inches) tall, while others stand 18 meters (60 feet) in height. This is the grand and fascinating site of the Longmen Grottoes (龙门石窟).</p>
@@ -75,7 +75,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'phobjikha_valley',
-          'title' => 'Phobjikha Valley',
+          'title' => 'Phobjikha Valley: A Nature Trail at the Last Shangri-La',
           'text' => "<p>In the land-locked Bhutan, known to be the last Shangri-La in the world, lies Phobjikha Valley. Phobjikha Valley, a 4-hour drive away from Punakha, is an expansive glacial valley. After several days of visiting countless untouched monasteries at Thimphu and Punakha, I didn’t know what to expect from an unassuming place in the middle of the Black Mountain region.</p>
  
 <p>Though a detour for most Bhutan tours, Phobjikha Valley is worth the long journey off the main highway. Upon arrival at Phobjikha Valley my family and I had a full-course meal at a local homestay. We conversed with the Bhutanese hosts and ate on pillows on the straw floor. Visiting homestay accommodations truly made it an immersive experience. Our lunch was a typical Bhutanese meal complete with butter tea, red rice, chili with cheese, and dried beef. Unlike any other cuisines I had tried, Bhutanese food is unique; it draws influences from its neighboring countries - India, China, and Nepal. In Bhutan, the last Buddhist kingdom in the world, people heavily rely on dairy products (such as butter, milk, and cheese) because they don’t kill animals. Interestingly enough, Bhutan imports all its meat from India. Initially, it was strange to find butter in my tea and cheese in my vegetables. Nonetheless, as a self-proclaimed foodie, I enjoyed the gastronomic experience.</p>
@@ -98,7 +98,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'cesano',
-          'title' => 'Cesano',
+          'title' => 'Oratorio e Orecchiette: What it’s Like to Volunteer in a Small Italian Town',
           'text' => "<p>When I arrived at Malpensa Airport back in June I felt as if I were in another world.   The signs in the terminal were in Italian and the casual chatter of people around me was unfamiliar to my ear.  Excited, I got my passport stamped for the first time. I went on to baggage claim and  waited while the woman next to me asked what language I spoke.  I had been in Italy for half an hour and already I could feel that this journey was going to be a cultural awakening unlike that which I had ever experienced.  It was even more than I had ever imagined.  Arriving in Italy like any tourist or sightseer would was only the tip of the iceberg.  I was lucky enough to be able to spend three weeks living and working with an Italian community in the town of Cesano Maderno.  This opportunity allowed me to immerse myself in Italian culture in a way beyond that which a regular tourist could have.  Cesano Maderno is a town of about 37,000 inhabitants in the northern Italian region of Lombardy.  Although it’s only twenty minutes by train from the heart of Milan, Cesano is a peaceful place, seemingly far removed from the hustle and bustle of one of the greatest cities in the world.  The city of Cesano, although technically united, is composed of multiple districts echoing historical divisions.  In fact my host sister Martina informed me before I had even stepped foot in the town that the sector I would be staying in is called Binzago and that its residents would appreciate it if I would call it that. </p>
 
 <p>Binzago, and the rest of Cesano, is a place with strong ties to its history.  As soon as I had set down my bags Martina took me on a bike tour of the town.  We went through small streets paved with cobblestone and rode past old men sitting in the town square, reading the newspaper, and speaking in dialect.  Martina took me to the old city gate, which, now that the town has been expanded, serves as a monument rather than a marker to the entrance of the city.  Its face was decorated with frescoes and she informed me that Napoleon had once ridden through here.  We walked our bikes back across the piazza to the Palazzo Borromeo, a palace from the mid-1600s that was home to the noble Borromeo family but which now serves as a museum and boasts a beautiful public garden.  I would visit this garden many times during my stay in Binzago.  Sometimes just to take walks, or sit by the fountain, and once for a scavenger hunt.  As Martina and I rode home she would lazily stick out her arm and point at a tower here, a church there, and explain that it was old and important.  These monuments, in many cases, were older than the United States, but they seemed to be so prevalent that Martina, a seventeen-year-old girl who had lived next to them all her life, considered them to be ordinary.</p>
@@ -122,7 +122,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'drobak',
-          'title' => 'Drøbak',
+          'title' => 'The Village in the Valley',
           'text' => "<p>Early August winds sway the grain field as the air cools and the day winds down. On the right is a slow-setting sun that shines toward the brightly lit moon on my left. The clouds have drifted to the horizons as if to open the sky. My heart wants to stay in the field but my legs force me forward to finish my run and get back for dinner.</p>
  
 <p>Norway is known for its mountains, fjords, and cottages, all of which I experienced during the week I spent at a friend’s summer house. It was a short drive from the town of Drøbak, a seaside establishment with seemingly more boats at port than streets on land. With just over 13 thousand inhabitants, Drøbak used to be the winter harbor of Norway’s capital, Oslo, when harsh winters froze the narrow sea inlet between the two cities.</p>
@@ -148,7 +148,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'morocco',
-          'title' => 'Morocco',
+          'title' => 'Colors of Morocco, the Western Kingdom',
           'text' => "
 <p>“So you’ve been to Morocco?” I asked my Airbnb host, Max, while visiting in Vienna.</p>
 
@@ -196,7 +196,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'bali',
-          'title' => 'Bali',
+          'title' => 'Sunset Lover’s Paradise',
           'text' => "
 <p>Hidden between the unique rock formations of Jimbaran Bay’s magnificent coastline, and perched 14 metres above the rough waves of the Indian Ocean, Rock Bar Bali is any sunset lover’s dream come true. People travel here from all over the world in hopes of viewing one of nature’s greatest sights.</p>
 <p>AYANA resort is a world in itself that dives deeper into true Indonesian culture and luxury. Owned by a local family, not only do they make it a point to maintain local culture and authentic Indonesian cuisine, but they also embark on creating an unforgettable experience for all guests. While Bali is well-known for Kuta Beach and the Seminyak area in general (as those are the most popular tourist destinations), Jimbaran Bay, one of its most precious gems, often gets overlooked due to its distant location from these other areas.</p>
@@ -215,7 +215,7 @@ class ArticlesTableSeeder extends Seeder
         ]);
         DB::table('articles')->insert([
           'name' => 'tanzania',
-          'title' => 'Tanzania',
+          'title' => 'Ninapenda, Tanzania: A Summer in the Savannah',
           'text' => "
           <p>This summer I had the unforgettable opportunity to study abroad in Tanzania for wildlife conservation policy and research techniques. While I went for the prospect of learning more about the environmental field that I plan on entering in the future, the experience and knowledge I gained from the local communities and people far surpassed anything I could have hoped for. Our study abroad center was located between the towns of Karatu and Mto Wa Mbu, within the Tarangire-Manyara Ecosystem. The Tanzanian way of life largely depends on agriculture and pastoralism, so they are heavily connected to the natural resources and native animal species. I was able to directly observe this by spending a day on a home-stay with a local family and by visiting some of the 120 tribes found in Tanzania. We also conducted research in three of the national parks that the country has to offer.</p>
  

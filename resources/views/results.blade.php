@@ -12,10 +12,10 @@
             <div class="col-md-6">
                 <div class="featured-article featured-2">
                     <a href="{{route('article', ['name' => $article->name])}}">
-                    <img src="{{asset($article->image)}}" />
-                    <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
-                    <h3>{{$article->title}}</h3>
-                    <h5>By {{$article->user->name}}</h5>
+                        <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
+                        <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                        <h3>{{$article->title}}</h3>
+                        <h5>By {{$article->user->name}}</h5>
                     </a>
                 </div>
                 </div>
@@ -23,12 +23,12 @@
             @else
             <div class="col-md-4">
                 <div class="featured-article featured-3">
-                <a href="{{route('article', ['name' => $article->name])}}">
-                    <img src="{{asset($article->image)}}" />
-                    <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
-                    <h3>{{$article->title}}</h3>
-                    <h5>By {{$article->user->name}}</h5>
-                </a>
+                    <a href="{{route('article', ['name' => $article->name])}}">
+                        <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
+                        <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                        <h3>{{$article->title}}</h3>
+                        <h5>By {{$article->user->name}}</h5>
+                    </a>
                 </div>
             </div>
             @endif
@@ -48,7 +48,7 @@
             <div class="col-md-4">
             <div class="featured-article featured-3">
                 <a href="{{route('guide', ['id' => $guide->id])}}">
-                <img src="{{asset($guide->image)}}" />
+                <div class="image" style="background-image: url('{{asset($guide->image)}}')"></div>
                 <p class="issue">{{$guide->issue}}</p>
                 <h3>{{$guide->title}}, {{$guide->country->name}}</h3>
                 </a>

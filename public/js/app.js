@@ -42501,9 +42501,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute']
+  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute'],
+  data: function data() {
+    return {
+      background: "background-image: url('" + this.image + "')"
+    };
+  }
 });
 
 /***/ }),
@@ -42515,25 +42523,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "carousel slide",
-        attrs: { id: "main-carousel", "data-ride": "carousel" }
-      },
-      [
-        _c("div", { staticClass: "carousel-inner featured-carousel" }, [
-          _c("div", { staticClass: "item carousel-item active" }, [
-            _c("img", { attrs: { src: _vm.image, alt: "Article" } })
-          ])
-        ])
-      ]
-    ),
+    _c("div", { staticClass: "image-article", style: _vm.background }),
     _vm._v(" "),
     _c("div", { staticClass: "editable container" }, [
       _c("div", { staticClass: "content-row row" }, [
         _c("a", { staticClass: "sidebar", attrs: { href: _vm.prevroute } }, [
-          _c("div", { staticClass: "col-sm-1" }, [
+          _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
             _vm.prevroute != ""
               ? _c("div", { staticClass: "vertical-text" }, [
                   _c("div", { staticClass: "prev" }, [
@@ -42546,7 +42541,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-sm-10" }, [
+        _c("div", { staticClass: "col-md-10 col-sm-12 col-xs-12" }, [
           _c("div", { staticClass: "title-box" }, [
             _c("p", { staticClass: "issue" }, [
               _vm._v(_vm._s(_vm.issue) + " "),
@@ -42574,7 +42569,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("a", { staticClass: "sidebar", attrs: { href: _vm.nextroute } }, [
-          _c("div", { staticClass: "col-sm-1" }, [
+          _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
             _vm.nextroute != ""
               ? _c("div", { staticClass: "vertical-text" }, [
                   _c("div", { staticClass: "next" }, [
@@ -42862,9 +42857,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute']
+    props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute'],
+    data: function data() {
+        return {
+            background: "background-image: url('" + this.image + "')"
+        };
+    }
 });
 
 /***/ }),
@@ -42877,7 +42878,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-md-6" }, [
     _c("div", { staticClass: "featured-article featured-2 city-featured" }, [
-      _c("img", { attrs: { src: _vm.image } }),
+      _c("div", { staticClass: "image", style: _vm.background }),
       _vm._v(" "),
       _c("p", { staticClass: "issue" }, [
         _vm._v(_vm._s(_vm.issue) + "  "),

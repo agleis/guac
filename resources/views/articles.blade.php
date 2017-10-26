@@ -11,7 +11,7 @@
           <div class="col-md-6">
               <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
-                  <img src="{{asset($article->image)}}" />
+                  <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
                   <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
                   <h3>{{$article->title}}</h3>
                   <h5>By {{$article->user->name}}</h5>
@@ -23,7 +23,7 @@
           <div class="col-md-4">
             <div class="featured-article featured-3">
               <a href="{{route('article', ['name' => $article->name])}}">
-                <img src="{{asset($article->image)}}" />
+                <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
                 <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
                 <h3>{{$article->title}}</h3>
                 <h5>By {{$article->user->name}}</h5>
@@ -31,12 +31,6 @@
             </div>
           </div>
         @endif
-        {{--  <articlesummary route="{{route('article', ['name' => $article->name])}}"
-                 image="{{asset($article->image)}}"
-                 title="{{$article->title}}"
-                 summary="{{$article->summary}}"
-                 name="{{$article->user->name}}"
-                 authorroute="{{route('author', ['id' => $article->user->id])}}"></articlesummary>  --}}
       @endforeach
     </div>
   </div>

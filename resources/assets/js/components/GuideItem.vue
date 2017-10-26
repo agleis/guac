@@ -1,7 +1,8 @@
 <template>
     <div class="col-md-6">
         <div class="featured-article featured-2 city-featured">
-            <img :src="image" />
+            <!-- <img :src="image" /> -->
+            <div class="image" :style="background"></div>
             <p class="issue">{{issue}}  <span class="blue">{{category}}</span></p>
             <h3>{{name}}</h3>
             <h5>{{hours}}</h5>
@@ -16,6 +17,11 @@
 
 <script>
     export default {
-      props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute']
+      props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute'],
+      data() {
+          return {
+              background: "background-image: url('"+this.image+"')"
+          }
+      }
     }
 </script>

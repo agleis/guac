@@ -12,8 +12,10 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner featured-carousel">
       @foreach($featured as $article)
-          <a class="item carousel-item @if($loop->first) active @endif" href="{{route('article', ['name' => $article->name])}}">
-            <img src="{{$article->image}}" alt="Article">
+          <a class="item carousel-item @if($loop->first) active @endif image-article" 
+             style="background-image: url('{{asset($article->image)}}')"
+             href="{{route('article', ['name' => $article->name])}}">
+            {{--  <img src="{{$article->image}}" alt="Article">  --}}
             <div class="carousel-caption">
               <h1>{{$article->title}}</h1>
               <h4>By {{$article->user->name}}</h4>
@@ -31,7 +33,7 @@
             <div class="col-md-6">
               <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
-                  <img src="{{asset($article->image)}}" />
+                <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
                   <p class="issue">{{$article->issue}} <span class="fa fa-circle blue circle"></span> {{$article->category->name}}</p>
                   <h3>{{$article->title}}</h3>
                   <h5>By {{$article->user->name}}</h5>
@@ -52,7 +54,7 @@
           <div class="col-md-4">
             <div class="featured-article featured-3">
               <a href="{{route('article', ['name' => $article->name])}}">
-                <img src="{{asset($article->image)}}" />
+                <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
                 <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
                 <h3>{{$article->title}}</h3>
                 <h5>By {{$article->user->name}}</h5>
@@ -79,7 +81,7 @@
           <div class="col-md-4">
             <div class="featured-article featured-3">
               <a href="{{route('guide', ['id' => $guide->id])}}">
-                <img src="{{asset($guide->image)}}" />
+                <div class="image" style="background-image: url('{{asset($guide->image)}}')"></div>
                 <p class="issue">{{$guide->issue}}</p>
                 <h3>{{$guide->title}}, {{$guide->country->name}}</h3>
               </a>
@@ -96,11 +98,4 @@
       </div>
     </div>
   </div>
-
-    {{--  <articlesummary route="{{route('article', ['name' => $article->name])}}"
-             image="{{asset($article->image)}}"
-             title="{{$article->title}}"
-             summary="{{$article->summary}}"
-             name="{{$article->user->name}}"
-             authorroute="{{route('author', $article->user->id)}}"></articlesummary>  --}}
 @endsection

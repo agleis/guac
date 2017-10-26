@@ -226,12 +226,29 @@ html {
   }
   &.featured-2 img {
     width: 100%;
-    height: 300px;
+    // height: 300px;
   }
   &.featured-3 img {
     width: 100%;
-    height: 240px;
+    // height: 240px;
   }
+}
+
+.image {
+  width: 100%;
+  padding-top: 75%;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-article {
+  width: 100%;
+  padding-top: 35%;
+  @media (max-width: 768px) {
+    padding-top: 75%;
+  }
+  background-position: center;
+  background-size: cover;
 }
 
 .current {
@@ -264,6 +281,12 @@ html {
   margin-bottom: 50px;
   width: 70%;
   background: white;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
   &.guide {
     float: right;
     margin-left: 0px;
@@ -349,8 +372,18 @@ html {
   input {
     margin: 15px;
     border: none;
+    padding: 2px;
+    background: #e7e7e7;
+    &:focus, &:active {
+      background: #fff;
+      border: none;
+    }
   }
-  .submit {
-    // background: #000;
+  button {
+    background: #f8f8f8;
+    border: none;
+    &:hover {
+      background: #e7e7e7;
+    }
   }
 }

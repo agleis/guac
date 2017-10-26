@@ -80,7 +80,7 @@
                     </ul>
                     <form class="search-form" action="{{route('search')}}">
                       <input type="text" name="search" id="search" value="{{old('search')}}" />
-                      <input type="submit" value="Search" class="submit" />
+                      <button type="submit" class="submit"><i class="fa fa-lg fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
             </div>

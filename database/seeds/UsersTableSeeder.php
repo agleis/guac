@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             'id' => 1,
             'name' => 'Adam Gleisner',
             'email' => 'amg295@cornell.edu',
-            'bio' => 'Hi! My name is Adam.',
+            'bio' => 'Adam Gleisner is from Chicago, Illinois. His favorite city is Seattle, USA because of its natural beauty and vibrant culture.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
             'id' => 2,
             'name' => 'Zeyu Hu',
             'email' => 'zh75@cornell.edu',
-            'bio' => 'Hi! My name is Zeyu.',
+            'bio' => 'Zeyu Hu is from Beijing, China and Bangkok, Thailand. His favorite city is Montreal, Canada because it perfectly integrates two different cultures into one, producing a vibrant city which creates a unique lifestyle.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
             'id' => 3,
             'name' => 'Fanny Chen',
             'email' => 'ffc24@cornell.edu',
-            'bio' => 'Hi! My name is Fanny.',
+            'bio' => "Fanny Chen is from Toronto, Canada. Her favorite city is Toronto because it's very diverse and welcoming, having a great blend of urban attractions and suburban living.",
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
             'id' => 4,
             'name' => 'Pia Bocanegra',
             'email' => 'sib35@cornell.edu',
-            'bio' => 'Hi! My name is Pia.',
+            'bio' => 'Pia Bocanegra is from Manila, Phillipines. Her favorite city is Koror, Palau because of the people and the untouched natural beauty.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
             'id' => 5,
             'name' => 'Christine Relander',
             'email' => 'cr463@cornell.edu',
-            'bio' => 'Hi! My name is Christine.',
+            'bio' => 'Christine Relander is from Espoo, Finland. Her favorite city is Zurich, Switzerland because of its freedom and nature.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -59,7 +59,7 @@ class UsersTableSeeder extends Seeder
             'id' => 6,
             'name' => 'Lauren McBrearty',
             'email' => 'lmm299@cornell.edu',
-            'bio' => 'Hi! My name is Lauren.',
+            'bio' => 'Lauren McBrearty is from Rocky Point, New York. Her favorite city is Florence, Italy because it combines a rich history with the vitality of a modern city in a way that makes simply wandering the streets feel timeless and romantic.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -67,7 +67,7 @@ class UsersTableSeeder extends Seeder
             'id' => 7,
             'name' => 'Akanksha Jain',
             'email' => 'aj448@cornell.edu',
-            'bio' => 'Hi! My name is Akanksha.',
+            'bio' => 'Akanksha Jain is from Singapore, Singapore. Her favorite city is Amalfi Coast, Italy  as it has a perfect blend of natural and architectural beauty whilst still preserving the historical value of the area.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -75,7 +75,7 @@ class UsersTableSeeder extends Seeder
             'id' => 8,
             'name' => 'Cathy Zhang',
             'email' => 'cz223@cornell.edu',
-            'bio' => 'Hi! My name is Cathy.',
+            'bio' => 'Cathy Zhang is from Nanjing, China and Vancouver, Canada. Her favorite city is Barcelona, Spain because its vibrant culture is represented across categories, from its food, wine, architecture, music, and people.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
@@ -89,9 +89,9 @@ class UsersTableSeeder extends Seeder
         ]);
         User::create([
             'id' => 10,
-            'name' => 'Maddie Holden',
+            'name' => 'Madison Holden',
             'email' => 'mh2359@cornell.edu',
-            'bio' => 'Hi! My name is Maddie.',
+            'bio' => 'Madison Holden is from St Augustine, Florida. Her favorite city is Chicago, USA because of the unique architecture and layout along the river and lake.',
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
