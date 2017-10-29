@@ -25,6 +25,7 @@ class CreateArticlesTable extends Migration
             $table->string('issue');
             $table->integer('category_id');
             $table->integer('region_id');
+            $table->integer('country_id');
             $table->timestamps();
         });
     }

@@ -25,4 +25,13 @@ class Country extends Model
       return $this->hasMany('App\Guide');
     }
 
+    /**
+     * Returns the articles this thing has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function articles() {
+      return $this->hasMany('App\Article');
+    }
+
 }

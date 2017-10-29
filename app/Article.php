@@ -39,6 +39,15 @@ class Article extends Model
     }
 
     /**
+     * Returns the country this thing has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function country() {
+      return $this->belongsTo('App\Country');
+    }
+
+    /**
      * Returns the current featured articles.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query

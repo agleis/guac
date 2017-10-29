@@ -33,6 +33,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 2,
+          'country_id' => 10,
           'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -70,6 +71,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 12,
+          'country_id' => 46,
           'created_at' => Carbon::now()->addMinutes(1)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(1)->format('Y-m-d H:i:s')
         ]);
@@ -93,6 +95,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 10,
+          'country_id' => 25,
           'created_at' => Carbon::now()->addMinutes(2)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(2)->format('Y-m-d H:i:s')
         ]);
@@ -117,6 +120,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 4,
+          'country_id' => 109,
           'created_at' => Carbon::now()->addMinutes(3)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(3)->format('Y-m-d H:i:s')
         ]);
@@ -143,6 +147,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 4,
+          'country_id' => 164,
           'created_at' => Carbon::now()->addMinutes(4)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(4)->format('Y-m-d H:i:s')
         ]);
@@ -191,6 +196,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 5,
+          'country_id' => 148,
           'created_at' => Carbon::now()->addMinutes(5)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(5)->format('Y-m-d H:i:s')
         ]);
@@ -210,6 +216,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 11,
+          'country_id' => 103,
           'created_at' => Carbon::now()->addMinutes(6)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(6)->format('Y-m-d H:i:s')
         ]);
@@ -232,6 +239,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'category_id' => 1,
           'region_id' => 6,
+          'country_id' => 219,
           'created_at' => Carbon::now()->addMinutes(7)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(7)->format('Y-m-d H:i:s')
         ]);
