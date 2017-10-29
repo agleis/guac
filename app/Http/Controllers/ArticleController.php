@@ -8,7 +8,11 @@ use App\Article;
 use App\User;
 use App\Guide;
 use App\Category;
+use App\Country;
 use App\Region;
+
+use App\Http\Resources\Article as ArticleResource;
+use App\Http\Resources\Guide as GuideResource;
 
 use Auth;
 
@@ -33,7 +37,13 @@ class ArticleController extends Controller
      */
     public function articles() {
         $articles = Article::list();
-        return view('articles', ['articles' => $articles]);
+        $categories = Category::all();
+        $regions = Region::all();
+        return view('articles', [
+            'articles' => $articles,
+            'categories' => $categories,
+            'regions' => $regions
+        ]);
     }
 
     /**
@@ -63,11 +73,13 @@ class ArticleController extends Controller
         $authors = User::all();
         $regions = Region::all();
         $categories = Category::all();
+        $countries = Country::all();
         return view('article_edit', [
           'article' => $article,
           'authors' => $authors,
           'regions' => $regions,
-          'categories' => $categories
+          'categories' => $categories,
+          'countries' => $countries
         ]);
     }
 
@@ -85,6 +97,7 @@ class ArticleController extends Controller
         $article->user_id = $request->author;
         $article->region_id = $request->region;
         $article->category_id = $request->category;
+        $article->country_id = $request->country;
         $article->image = asset($request->image);
         $article->save();
         return redirect()->route('article', ['name' => $article->name]);
@@ -99,6 +112,7 @@ class ArticleController extends Controller
       $authors = User::all();
       $regions = Region::all();
       $categories = Category::all();
+      $countries = Country::all();
       $article = new Article();
       $author = Auth::user();
       session()->flash('upload');
@@ -107,7 +121,8 @@ class ArticleController extends Controller
         'authors' => $authors,
         'author' => $author,
         'regions' => $regions,
-        'categories' => $categories
+        'categories' => $categories,
+        'countries' => $countries
       ]);
     }
 
@@ -126,6 +141,7 @@ class ArticleController extends Controller
       $article->user_id = $request->author;
       $article->region_id = $request->region;
       $article->category_id = $request->category;
+      $article->country_id = $request->country;
       $article->featured = false;
       $article->image = asset($request->image);
       $article->save();
@@ -165,6 +181,17 @@ class ArticleController extends Controller
         $old_featured->save();
       }
       return redirect()->route('index');
+    }
+
+    /**
+     * Returns a JSON list of articles filtered by country.
+     */
+    public function json(Request $request) {
+        $country = $request->country;
+        $stories = ArticleResource::collection(Article::map($country));
+        $guides = GuideResource::collection(Guide::map($country));
+        $merged = $stories->merge($guides);
+        return response()->json($merged);
     }
 
     /**

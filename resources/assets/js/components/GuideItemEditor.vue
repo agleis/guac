@@ -13,7 +13,7 @@
           </div>
           <div class="form-group">
             <label for="category">Category</label>
-            <select name="category" id="category" class="chosen-select" v-model="categoryid">
+            <select name="category" id="category" v-model="categoryid">
               <option v-for="area in categories" v-bind:value="area.id">
                 {{ area.name }}
               </option>

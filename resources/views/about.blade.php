@@ -57,29 +57,7 @@
               <p>To SPREAD love, appreciation, and meaningful exchanges across people of all cultures & backgrounds.</p>
             </div>
           </div>
-          <h2 class="section">Our Team</h2>
-          {{--  <script type="text/javascript">
-            var width = 900;
-            var height = 600;
-
-            var projection = d3.geo.mercator();
-            
-            var svg = d3.select("body").append("svg")
-                .attr("width", width)
-                .attr("height", height);
-            var path = d3.geo.path()
-                .projection(projection);
-            var g = svg.append("g");
-            
-            d3.json("{{asset('js/world110.json')}}", function(error, topology) {
-                g.selectAll("path")
-                  .data(topojson.object(topology, topology.objects.countries)
-                      .geometries)
-                .enter()
-                  .append("path")
-                  .attr("d", path)
-            });
-          </script>  --}}
+          {{--  <h2 class="section">Our Team</h2>
           <div class="row content-row">
             <div class="col-md-12">
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -88,7 +66,7 @@
               specimen book. It has survived not only five centuries, but also the leap 
               into electronic typesetting, remaining essentially unchanged.</p>
             </div>
-          </div>
+          </div>  --}}
           <div class="row content-row">
             <div class="col-md-4">
               <h3 class="section">Editorial Board</h3>

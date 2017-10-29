@@ -13,7 +13,7 @@
           </div>
           <div class="form-group">
             <label for="author">Author</label>
-            <select name="author" id="author" class="chosen-select" v-model="authorid">
+            <select name="author" id="author" v-model="authorid">
               <option v-for="writer in authors" v-bind:value="writer.id">
                 {{ writer.name }}
               </option>
@@ -21,7 +21,7 @@
           </div>
           <div class="form-group">
             <label for="region">Region</label>
-            <select name="region" id="region" class="chosen-select" v-model="regionid">
+            <select name="region" id="region" v-model="regionid">
               <option v-for="area in regions" v-bind:value="area.id">
                 {{ area.name }}
               </option>
@@ -29,8 +29,16 @@
           </div>
           <div class="form-group">
             <label for="category">Category</label>
-            <select name="category" id="category" class="chosen-select" v-model="categoryid">
+            <select name="category" id="category" v-model="categoryid">
               <option v-for="item in categories" v-bind:value="item.id">
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select name="country" id="country" v-model="countryid">
+              <option v-for="item in countries" v-bind:value="item.id">
                 {{ item.name }}
               </option>
             </select>
@@ -84,7 +92,7 @@
     export default {
       components: { Ckeditor },
       props: ['route', 'text', 'title', 'author', 'authors', 'upload', 
-              'aissue', 'image', 'category', 'categories', 'region', 'regions'],
+              'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
       functional: false,
       data() {
         return {
@@ -94,6 +102,7 @@
           authorid: this.author.id ? this.author.id : this.authors[0].id,
           regionid: this.region.id ? this.region.id : this.regions[0].id,
           categoryid: this.category.id ? this.category.id : this.categories[0].id,
+          countryid: this.country.id ? this.country.id : this.countries[0].id,
           issuecontent: this.aissue,
           imagecontent: this.image,
           imageurl: this.image

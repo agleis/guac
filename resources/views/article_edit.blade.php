@@ -7,6 +7,8 @@
           :regions="JSON.parse('{{$regions->toJson()}}')"
           :category="JSON.parse('{{$article->category ? $article->category->toJson() : (isset($category) ? $category : '{}')}}')"
           :categories="JSON.parse('{{$categories->toJson()}}')"
+          :country="JSON.parse('{{$article->country ? $article->country->toJson() : (isset($country) ? $country : '{}')}}')"
+          :countries="JSON.parse('{{$countries->toJson()}}')"
           title="{{$article->title}}"
           text="{{$article->text}}"
           aissue="{{$article->issue}}"

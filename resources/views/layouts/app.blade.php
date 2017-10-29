@@ -22,8 +22,10 @@
     <script src="{{ asset('js/ckfinder/ckfinder.js') }}"></script>
     <script src="{{asset('js/split.js')}}"></script>
     <script src="https://use.fontawesome.com/ed7ec46525.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://d3js.org/topojson.v0.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/topojson.v2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -62,6 +64,12 @@
                         </li>
                         <li @if(request()->is('about')) class="current" @endif>
                           <a href="{{route('about')}}">About</a>
+                        </li>
+                        <li @if(request()->is('contribute')) class="current" @endif>
+                          <a class="gray" href="{{route('contribute')}}">Contribute</a>
+                        </li>
+                        <li @if(request()->is('contact')) class="current" @endif>
+                          <a class="gray" href="{{route('contact')}}">Contact</a>
                         </li>
                         @auth
                           <li>
@@ -119,7 +127,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/extras.js') }}"></script>
     <script src="{{asset('js/chosen/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('js/chosen.js')}}"></script>
     @stack('scripts')

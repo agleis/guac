@@ -369,6 +369,22 @@ html {
   background-color: #3A8B3A;
 }
 
+.button button {
+  background-color: #48AD48;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.button button:hover {
+  background-color: #3A8B3A;
+}
+
 .navbar,
 .nav-placeholder {
   margin-bottom: 0;

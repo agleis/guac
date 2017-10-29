@@ -7,6 +7,8 @@ var svg = d3.select("#map-holder");
 var projection = d3.geoMercator().scale(100);
 var pathGenerator = d3.geoPath().projection(projection);
 
+console.log("hello");
+
 var rawData;
 var countries;
 

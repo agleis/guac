@@ -83,4 +83,18 @@ class Guide extends Model
                      ->orderBy('created_at')->get();
     }
 
+    /**
+     * Returns the list of all guides filtered by country.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeMap($query, $country) {
+        return $query->select('id', 'title', 'image', 'country_id', 'issue')
+                     ->whereHas('country', function($query) use($country) {
+                         $query->where('code', "$country");
+                     })
+                     ->orderBy('created_at')->get();
+    }
+
 }

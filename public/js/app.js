@@ -1277,6 +1277,36 @@ Vue.component('guideitemeditor', __webpack_require__(64));
 
 Vue.component('image-upload', __webpack_require__(69));
 
+Vue.directive('chosen', {
+  twoWay: true,
+  bind: function bind() {
+    return this.vm.$nextTick(function (_this) {
+      return function () {
+        return $(_this.el).chosen({
+          inherit_select_classes: false,
+          width: '100%'
+        }).change(function (ev) {
+          var i, len, option, ref, values;
+          if (_this.el.hasAttribute('multiple')) {
+            values = [];
+            ref = _this.el.selectedOptions;
+            for (i = 0, len = ref.length; i < len; i++) {
+              option = ref[i];
+              values.push(option.value);
+            }
+            return _this.set(values);
+          } else {
+            return _this.set(_this.el.value);
+          }
+        });
+      };
+    }(this));
+  },
+  update: function update(nv, ov) {
+    return $(this.el).trigger('chosen:updated');
+  }
+});
+
 var app = new Vue({
   el: '#app'
 });
@@ -43127,11 +43157,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: { Ckeditor: __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2___default.a },
-  props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'aissue', 'image', 'category', 'categories', 'region', 'regions'],
+  props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
   functional: false,
   data: function data() {
     return {
@@ -43141,6 +43179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       authorid: this.author.id ? this.author.id : this.authors[0].id,
       regionid: this.region.id ? this.region.id : this.regions[0].id,
       categoryid: this.category.id ? this.category.id : this.categories[0].id,
+      countryid: this.country.id ? this.country.id : this.countries[0].id,
       issuecontent: this.aissue,
       imagecontent: this.image,
       imageurl: this.image
@@ -43448,7 +43487,6 @@ var render = function() {
                         expression: "authorid"
                       }
                     ],
-                    staticClass: "chosen-select",
                     attrs: { name: "author", id: "author" },
                     on: {
                       change: function($event) {
@@ -43492,7 +43530,6 @@ var render = function() {
                         expression: "regionid"
                       }
                     ],
-                    staticClass: "chosen-select",
                     attrs: { name: "region", id: "region" },
                     on: {
                       change: function($event) {
@@ -43538,7 +43575,6 @@ var render = function() {
                         expression: "categoryid"
                       }
                     ],
-                    staticClass: "chosen-select",
                     attrs: { name: "category", id: "category" },
                     on: {
                       change: function($event) {
@@ -43557,6 +43593,49 @@ var render = function() {
                     }
                   },
                   _vm._l(_vm.categories, function(item) {
+                    return _c("option", { domProps: { value: item.id } }, [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(item.name) +
+                          "\n            "
+                      )
+                    ])
+                  })
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "country" } }, [_vm._v("Country")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.countryid,
+                        expression: "countryid"
+                      }
+                    ],
+                    attrs: { name: "country", id: "country" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.countryid = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  _vm._l(_vm.countries, function(item) {
                     return _c("option", { domProps: { value: item.id } }, [
                       _vm._v(
                         "\n              " +
@@ -44013,7 +44092,6 @@ var render = function() {
                         expression: "countryid"
                       }
                     ],
-                    staticClass: "chosen-select",
                     attrs: { name: "country", id: "country" },
                     on: {
                       change: function($event) {
@@ -44057,7 +44135,6 @@ var render = function() {
                         expression: "regionid"
                       }
                     ],
-                    staticClass: "chosen-select",
                     attrs: { name: "region", id: "region" },
                     on: {
                       change: function($event) {
@@ -44516,7 +44593,6 @@ var render = function() {
                         expression: "categoryid"
                       }
                     ],
-                    staticClass: "chosen-select",
                     attrs: { name: "category", id: "category" },
                     on: {
                       change: function($event) {

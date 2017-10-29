@@ -13,7 +13,7 @@
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <select name="country" id="country" class="chosen-select" v-model="countryid">
+            <select name="country" id="country" v-model="countryid">
                 <option v-for="item in countries" v-bind:value="item.id">
                     {{item.name}}
                 </option>
@@ -21,7 +21,7 @@
           </div>
           <div class="form-group">
             <label for="region">Region</label>
-            <select name="region" id="region" class="chosen-select" v-model="regionid">
+            <select name="region" id="region" v-model="regionid">
               <option v-for="area in regions" v-bind:value="area.id">
                 {{ area.name }}
               </option>

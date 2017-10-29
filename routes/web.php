@@ -15,11 +15,18 @@ Route::get('/', 'ArticleController@index')->name('index');
 
 Route::get('about', 'AboutController@about')->name('about');
 
+Route::get('contribute', 'ContributeController@contribute')->name('contribute');
+
+Route::get('contact', 'ContactController@contact')->name('contact');
+Route::post('contact', 'ContactController@contactUs')->name('contact_us');
+
 Route::get('map', 'MapController@map')->name('map');
 
 Route::get('search', 'SearchController@search')->name('search');
 
 Route::get('stories', 'ArticleController@articles')->name('articles');
+
+Route::get('stories/json', 'ArticleController@json')->name('article_json');
 
 Route::get('stories/{name}', 'ArticleController@article')->name('article');
 
