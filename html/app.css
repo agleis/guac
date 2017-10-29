@@ -448,3 +448,7 @@ html {
 .sidebar:hover {
     background-color: #B3B3B3;
 }
+
+#map { 
+    background-color: #fafafa; 
+}
