@@ -26,8 +26,13 @@ class ArticleController extends Controller
      */
     public function index() {
         $featured = Article::featured();
+        $articles = Article::list();
         $guides = Guide::featured();
-        return view('index', ['featured' => $featured, 'guides' => $guides]);
+        return view('index', [
+            'featured' => $featured,
+            'articles' => $articles,
+            'guides' => $guides
+        ]);
     }
 
     /**

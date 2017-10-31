@@ -51,6 +51,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                      @guest
                         <li @if(request()->is('/')) class="current" @endif>
                           <a href="{{route('index')}}">Home</a>
                         </li>
@@ -60,6 +61,7 @@
                         <li @if(request()->is('guides') || request()->is('guides/*')) class="current" @endif>
                           <a href="{{route('guides')}}">City Guides</a>
                         </li>
+                      @endguest
                         <li @if(request()->is('map')) class="current" @endif>
                           <a href="{{route('map')}}">Map</a>
                         </li>
@@ -74,17 +76,17 @@
                         </li>
                         @auth
                           <li>
-                            <a href="{{route('upload_article')}}">Upload Story</a>
+                            <a href="{{route('upload_article')}}">New Story</a>
                           </li>
                           <li>
-                            <a href="{{route('upload_guide')}}">Upload Guide</a>
+                            <a href="{{route('upload_guide')}}">New Guide</a>
                           </li>
                           <li>
                             <a href="{{route('logout')}}">Logout</a>
                           </li>
-                          <li>
-                            <a href="{{route('author', ['id' => Auth::id()])}}">{{Auth::user()->name}}</a>
-                          </li>
+                          {{--  <li>
+                            <a href="{{route('author', ['id' => Auth::id()])}}">Edit User</a>
+                          </li>  --}}
                         @endauth
                     </ul>
                     <form class="search-form" action="{{route('search')}}">

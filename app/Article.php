@@ -55,6 +55,7 @@ class Article extends Model
      */
     public function scopeFeatured($query) {
         return $query->select('name', 'title', 'image', 'user_id', 'category_id', 'issue')
+                     ->where('featured', true)
                      ->orderBy('created_at')->get();
     }
 

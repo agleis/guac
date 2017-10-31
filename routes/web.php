@@ -44,6 +44,8 @@ Route::post('authors/{id}/edit', 'AuthorController@editAuthor')->name('edit_auth
 
 Route::prefix('admin')->group(function() {
   Route::middleware('auth')->group(function() {
+    Route::get('stories/featured', 'ArticleController@showFeatured')->name('edit_featured');
+    Route::post('stories/featured', 'ArticleController@editFeatured')->name('post_edit_featured');
     Route::get('stories/upload', 'ArticleController@showUpload')->name('upload_article');
     Route::post('stories/upload', 'ArticleController@upload')->name('post_upload_article');
     Route::get('guides/upload', 'GuideController@showUpload')->name('upload_guide');

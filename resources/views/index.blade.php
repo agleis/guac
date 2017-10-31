@@ -28,7 +28,7 @@
     <h2 class="content-section">Stories</h2>
     {{--  First row  --}}
     <div class="row content-row">
-      @foreach($featured as $article)
+      @foreach($articles as $article)
         @if($loop->index < 2)
             <div class="col-md-6">
               <div class="featured-article featured-2">
@@ -47,7 +47,7 @@
     </div>
     {{--  Second row  --}}
     <div class="row content-row">
-      @foreach($featured as $article)
+      @foreach($articles as $article)
         @if($loop->index < 2)
           @continue
         @elseif($loop->index < 5)
@@ -68,7 +68,7 @@
     </div>
     <div class="row content-row">
       <div class="button more col-md-12">
-        <a href="{{route('articles')}}">See More</a>
+        <a href="{{route('articles')}}">Read More</a>
       </div>
     </div>
   </div>
@@ -94,7 +94,7 @@
     </div>
     <div class="row content-row">
       <div class="button more col-md-12">
-        <a href="{{route('articles')}}">See More</a>
+        <a href="{{route('articles')}}">Read More</a>
       </div>
     </div>
   </div>
