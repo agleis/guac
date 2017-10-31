@@ -90,7 +90,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeList($query) {
-        return $query->select('name', 'title', 'image', 'user_id', 'featured', 'category_id', 'region_id')
+        return $query->select('name', 'title', 'image', 'issue', 'user_id', 'featured', 'category_id', 'region_id')
                      ->orderBy('created_at')->get();
     }
 

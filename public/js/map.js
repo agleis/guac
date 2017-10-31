@@ -8,7 +8,7 @@ function showStory(country) {
                 issue = field.issue,
                 image = field.image,
                 title = field.title,
-                href = "/stories/"+field.id
+                href = "/stories/"+field.name
 
             $("#content-holder").html("&nbsp;");
             $("#content-holder").append("<div class='col-md-4'><div class='featured-article featured-3'><a href=" + href + "><img src=" + image + "> <p class='issue'>"+issue+"<span class='fa fa-circle blue circle'></span> "+category+"</p><h3>" + title + "</h3></a></div></div>")

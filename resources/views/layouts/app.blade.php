@@ -29,6 +29,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 </head>
 <body>
+    @if(Auth::check() or request()->is('login'))
     <div id="app">
         <nav class="navbar navbar-fixed-top navbar-default navbar-static-top">
             <div class="container">
@@ -127,6 +128,16 @@
           </div>
         </div>
     </div>
+    @else
+      <style>
+        body {
+            text-align: center;
+            font-size: 200%;
+        }
+      </style>
+      <img src="Logo.png" />
+      <p>Coming soon.</p>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

@@ -22,8 +22,8 @@
       @foreach($articles as $article)
         {{--  2-row  --}}
         @if($loop->index % 5 < 2)
-          <div class="col-md-6">
-              <div class="featured-article featured-2 {{$article->region->id}} {{$article->category->id}}">
+          <div class="col-md-6 featured-col r-{{$article->region->id}} c-{{$article->category->id}}">
+              <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
                   <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
                   <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
@@ -34,8 +34,8 @@
             </div>
         {{--  3-row  --}}
         @else
-          <div class="col-md-4">
-            <div class="featured-article featured-3 {{$article->region->id}} {{$article->category->id}}">
+          <div class="col-md-4 featured-col r-{{$article->region->id}} c-{{$article->category->id}}">
+            <div class="featured-article featured-3">
               <a href="{{route('article', ['name' => $article->name])}}">
                 <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
                 <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
@@ -52,8 +52,25 @@
 
 @push('scripts')
     <script>
-      $("#category-select").change(function($val) {
-        
+      $("#category-select").change(function() {
+        var cat_id = this.value;
+        if(cat_id == 0) {
+          $(".featured-col").show();
+        }
+        else {
+          $(".featured-col").hide();
+          $(".c-"+cat_id).show();
+        }
+      });
+      $("#region-select").change(function() {
+        var region_id = this.value;
+        if(region_id == 0) {
+          $(".featured-col").show();
+        }
+        else {
+          $(".featured-col").hide();
+          $(".r-"+region_id).show();
+        }
       })
     </script>
 @endpush

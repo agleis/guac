@@ -95,5 +95,13 @@ class UsersTableSeeder extends Seeder
             'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
             'password' => bcrypt('guacmag'),
         ]);
+        User::create([
+            'id' => 11,
+            'name' => 'Chelsea Chan',
+            'email' => 'cc987@cornell.edu',
+            'bio' => 'Hi! My name is Chelsea',
+            'image' => '/images/0rh0hh7OE1KYtroU09nnlsyfMJA6sVNDxAxMe3F3.jpeg',
+            'password' => bcrypt('guacmag'),
+        ]);
     }
 }
