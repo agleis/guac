@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <guide 
+        {{--  <guide 
                nextroute="{{$next != '' ? route('guide', ['id' => $next]) : ''}}"
                prevroute="{{$prev != '' ? route('guide', ['id' => $prev]) : ''}}"
                summary="{{$guide->summary}}"
@@ -11,11 +11,12 @@
                issue="{{$guide->issue}}"
                auth="{{Auth::check()}}"
                @auth editroute="{{route('edit_guide', ['id' => $guide->id])}}" @endauth>
-        </guide>
+        </guide>  --}}
+        @include('includes.guide')
         <div class="editable container">
             <div class="content-row row">
                 @foreach($guide->guide_items as $item)
-                    <guideitem image="{{asset($item->image)}}"
+                    {{--  <guideitem image="{{asset($item->image)}}"
                             issue="{{$guide->issue}}"
                             category="{{$item->category->name}}"
                             name="{{$item->name}}"
@@ -25,7 +26,8 @@
                             auth="{{Auth::check()}}"
                             @auth editroute="{{route('edit_guide_item', ['id' => $guide->id, 'idd' => $item->id])}}" @endauth>
 
-                    </guideitem>
+                    </guideitem>  --}}
+                    @include('includes.guide_item')
                 @endforeach
                 @auth
                     <div class="col-md-6">

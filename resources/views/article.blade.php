@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <articletext
+  {{--  <articletext
     nextroute="{{$next != '' ? route('article', ['name' => $next]) : ''}}"
     prevroute="{{$prev != '' ? route('article', ['name' => $prev]) : ''}}"
     article-text="{{$article->text}}"
@@ -16,6 +16,6 @@
     auth="{{Auth::check()}}"
     @auth editroute="{{route('edit_article', ['name' => $article->name])}}" @endauth>
 
-  </articletext>
-  {{--  @include('includes.article')  --}}
+  </articletext>  --}}
+  @include('includes.article')
 @endsection
