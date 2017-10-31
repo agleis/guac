@@ -1,0 +1,154 @@
+.search-form {
+	float: right;
+}
+
+.navbar-nav > li {
+    padding-left: 2.5em;
+}
+
+.carousel-caption {
+	top: 270px;
+}
+
+h1 {
+	letter-spacing: 0.05em;
+}
+h3 {
+	letter-spacing: 0.03em;
+}
+h5 {
+	font-family: MinionPro-Regular;
+	font-size: 1.1em;
+    margin: 1em 0;
+}
+
+.carousel-indicators li {
+	margin: 0 8px;
+	background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+}
+
+.carousel-indicators .active {
+	margin: 0 8px;
+	background-color: rgba(255, 255, 255, 1);
+    border: none;
+}
+
+.content .content-section {
+	margin-left: 2.5vw;
+}
+
+.featured-article:hover {
+    background-color: #fff;
+}
+
+.issue {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+.button.more a {
+    background-color: #34b765;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+}
+
+.button button {
+    background-color: #34b765;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: .8em;
+}
+.button.apply{
+	float: left;
+    font-size: .8em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+   
+.footer {
+    margin-top: 50px;
+}
+
+.footer .copyright {
+    margin-left: 5vw;
+}
+
+#category-select, #region-select {
+	height: 3em;
+	width: 300px;
+	padding: 1em;
+	margin-right: 40px;
+	border: 0;
+    background-color: #f0f0f0;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+    margin-bottom: 2.5em;
+}
+
+.title-box.guide {
+    padding-top: 1em;
+}
+.issue {
+    margin-bottom: 0;
+    margin-top: 1em;
+    font-size: .8em;
+}
+.issue .blue {
+    color: #6291BD;
+    margin-left: 1em;
+}
+.title-box {
+    padding-top: 1em;
+}
+.section {
+    color: black;
+    margin-top: 10px;
+}
+
+textarea.form-control {
+    height: 250px;
+}
+
+form .row {
+	margin-top: 0.4em;
+	margin-bottom: 0;
+}
+
+form .col-md-6 {
+	margin-bottom: 0;
+}
+
+input#name.form-control,
+input#email.form-control {
+	height: 50px;
+	padding-left: 20px;
+}
+textarea#msg.form-control {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.about-image {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.row-5 {
+  margin: 1em 0 2em;
+}
+
+.content-row {
+    line-height: 200%;
+    font-size: 130%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
