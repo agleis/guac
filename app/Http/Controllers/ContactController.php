@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Mail;
+use Newsletter;
+use App\Mail\Contact;
+
 class ContactController extends Controller
 {
     
@@ -18,7 +22,21 @@ class ContactController extends Controller
      * Contacts us.
      */
     public function contactUs(Request $request) {
-        return view('contact');
+        $email = $request->email;
+        $name = $request->name;
+        $text = $request->msg;
+        Mail::to('guacmag@gmail.com')->send(new Contact($email, $name, $text));
+        session()->flash('success');
+        return redirect()->route('contact');
     }
 
+    /**
+     * Subscribe to the list.
+     */
+    public function subscribe(Request $request) {
+        $email = $request->email;
+        Newsletter::subscribe($email);
+        session()->flash('subscribe');
+        return redirect()->route('index');
+    }
 }

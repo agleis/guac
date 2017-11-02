@@ -19,6 +19,7 @@ Route::get('contribute', 'ContributeController@contribute')->name('contribute');
 
 Route::get('contact', 'ContactController@contact')->name('contact');
 Route::post('contact', 'ContactController@contactUs')->name('contact_us');
+Route::get('subscribe', 'ContactController@subscribe')->name('subscribe');
 
 Route::get('map', 'MapController@map')->name('map');
 
