@@ -1,4 +1,22 @@
 <div>
+
+  <div class="share-article">
+    Share
+    <ul class="share-social">
+      <li>
+        <a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u=<URL>" target="_blank"></a>
+      </li>
+      
+      <li>
+        <a class="fa fa-twitter fa-lg" href="http://twitter.com/share?text=<TITLE>&url=<URL>" target="_blank"></a>
+      </li>
+      <li>
+        <a class="fa fa-envelope fa-lg mail" href="mailto:?subject=Read%20This&body=<URL>"></a>
+      </li>
+      <!-- Edit the links ^^^ -->
+    </ul>
+  </div>
+
   <div class="image-article" style="background-image: url('{{asset($article->image)}}')">
 
   </div>

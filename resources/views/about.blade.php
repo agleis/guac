@@ -73,7 +73,7 @@
           </div>  --}}
           <div class="row content-row">
             <div class="col-md-4">
-              <h3 class="section">Editorial Board</h3>
+              <h3 class="section">Editorial</h3>
               <br />
               
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
@@ -89,7 +89,7 @@
                 <div class="hoverbox">
                   <img class="member-photo" src="#">
                   <p class="member-name">Fanny Chen</p>
-                  <p>Position</p>
+                  <p>Managing Editor</p>
                   <p>Canada</p>
                 </div>
                 <p>Fanny Chen</p>
@@ -97,41 +97,195 @@
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <img class="member-photo" src="#">
-                  <p class="member-name">Member Name</p>
-                  <p>Position</p>
-                  <p>Home</p>
+                  <p class="member-name">Mind Apivessa</p>
+                  <p>Creative Director</p>
+                  <p>Thailand</p>
                 </div>
-                <p>Member Name</p>
+                <p>Mind Apivessa</p>
               </div>
-
-              
-              <p>Tony Li</p>
-              <p>Mind Apivessa</p>
-              <p>Adam Gleisner</p>
-              <p>Ami Kurosaki</p>
-              <p>Cathy Zhang</p>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Ami Kurosaki</p>
+                  <p>Creative Director</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Ami Kurosaki</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Cathy Zhang</p>
+                  <p>Marketing Director</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Cathy Zhang</p>
+              </div>
             </div>
+
             <div class="col-md-4">
               <h3 class="section">Content</h3>
               <br />
-              <p>Zeyu Hu</p>
-              <p>Fanny Chen</p>
-              <p>Tony Li</p>
-              <p>Mind Apivessa</p>
-              <p>Adam Gleisner</p>
-              <p>Ami Kurosaki</p>
-              <p>Cathy Zhang</p>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Chiara Benitez</p>
+                  <p>Editor</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Chiara Benitez</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Lauren McBrearty</p>
+                  <p>Editor</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Lauren McBrearty</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Brandon Smith</p>
+                  <p>Editor</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Brandon Smith</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Ching Pang</p>
+                  <p>Writer</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Ching Pang</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Katie Lee</p>
+                  <p>Writer</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Katie Lee</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Christine Relander</p>
+                  <p>Writer</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Christine Relander</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Madison Holden</p>
+                  <p>Writer</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Madison Holden</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Pia Bocanegra</p>
+                  <p>Writer</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Pia Bocanegra</p>
+              </div>
+
+              
             </div>
             <div class="col-md-4">
               <h3 class="section">Creative</h3>
               <br />
-              <p>Eric Lee</p>
-              <p>Ami Kurosaki</p>
-              <p>Tony Li</p>
-              <p>Yanis Park</p>
-              <p>Audrey Tirtohadiguno</p>
-              <p>Mind Apivessa</p>
-              <p>Cathy Zhang</p>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Adam Gleisner</p>
+                  <p>Web Director</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Adam Gleisner</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Chelsea Chan</p>
+                  <p>Web Developer</p>
+                  <p>Malaysia</p>
+                </div>
+                <p>Chelsea Chan</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Eric Lee</p>
+                  <p>Head Illustrator</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Eric Lee</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Audrey Tirtohadiguno</p>
+                  <p>Print Designer</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Audrey Tirtohadiguno</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Ilayda Samilgil</p>
+                  <p>Marketing Analyst</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Ilayda Samilgil</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Ilayda Samilgil</p>
+                  <p>Marketing Analyst</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Ilayda Samilgil</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Duoer Jia</p>
+                  <p>Marketing Analyst</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Duoer Jia</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Akanksha Jain</p>
+                  <p>Marketing Analyst</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Akanksha Jain</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Xiaoxiang Ma</p>
+                  <p>Marketing Analyst</p>
+                  <p>Hometown</p>
+                </div>
+                <p>Xiaoxiang Ma</p>
+              </div>
+
             </div>
           </div>
         </div>
