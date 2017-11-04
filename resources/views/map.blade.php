@@ -2,8 +2,8 @@
 
 @section('content')
     <div id="map-wrapper">
-            <svg id="map" height="700" width="100%">
-                <svg id="map-holder" height="700" width="100%"></svg>
+        <svg id="map" height="700" width="100%">
+            <svg id="map-holder" height="700" width="100%"></svg>
                 <defs>
                     <svg id="pin" width="52px" height="64px" viewBox="0 0 52 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
@@ -29,20 +29,22 @@
                     </svg>
                 </defs>
 
-                <g id="usePins">
-                    <!-- Use pin objects here. -->
-                </g>
-                <g id="useRects">
-                    <!-- Use rect objects here. -->
-                </g>
+            <g id="usePins">
+                <!-- Use pin objects here. -->
+            </g>
+            <g id="useRects">
+                <!-- Use rect objects here. -->
+            </g>
                 
-            </svg>
-        </div>
-        <div class="content featured container-fluid">
-            <div class="row content-row" id="content-holder">
+        </svg>
+        <div id="scroll-test"></div>
+    </div>
+    
+    <div class="content featured container-fluid">
+        <div class="row content-row" id="content-holder">
 
-            </div>
         </div>
+    </div>
 @endsection
 
 @push('scripts')
