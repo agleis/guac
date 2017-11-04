@@ -51,9 +51,9 @@
     export default {
       props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image',
               'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute'],
-      data() {
-        return {
-          background: "background-image: url('"+this.image+"')"
+      computed: {
+        background: function() {
+          return "background-image: url('"+this.image+"')"
         }
       }
     }

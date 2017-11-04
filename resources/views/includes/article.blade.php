@@ -26,6 +26,19 @@
           </div>
 
           <div class="article-text">{!!$article->text!!}</div>
+          <div class="gray author">
+            <h2 class="author-about">About {{$article->user->name}}</h2>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="image" style="background-image: url('{{asset($article->user->image)}}')"></div>
+              </div>
+              <div class="col-md-9">
+                <div>
+                  <p>{{$article->user->bio}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <a class="sidebar" href="{{route('article', ['name' => $next])}}">
           <div class="col-md-1 hidden-xs hidden-sm">
