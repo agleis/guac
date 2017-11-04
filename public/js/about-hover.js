@@ -3,7 +3,7 @@
 
 function showBio(element) {
 
-	var x = $(element).position().left + 100;
+	var x = $(element).position().left + 130;
     var y = $(element).position().top - 335;
 
 	var box = element.childNodes[0];
