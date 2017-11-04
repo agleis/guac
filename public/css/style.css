@@ -1,11 +1,23 @@
 .search-form {
 	float: right;
 }
+#map-wrapper{
+    background: #fafafa;
+}
+
+.navbar, .nav-placeholder {
+    margin-bottom: 0;
+    min-height: 60px;
+    background-color: #fff;
+}
 
 .navbar-nav > li {
     padding-left: 2.5em;
 }
-
+.search-form button {
+    background: #fff;
+    border: none;
+}
 .carousel-caption {
 	top: 270px;
 }
