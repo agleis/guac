@@ -161,8 +161,39 @@ textarea#msg.form-control {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-
-
 #map-wrapper{
     background: #fafafa;
 }
+
+
+/*   HOVER OVER TO SHOW MEMBER PHOTOS   */
+.hoverbox {
+    visibility: hidden;
+    background-color: #fff;
+    text-align: center;
+    border: solid #e0e0e0;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 28px;
+    padding-bottom: 30px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 1px 2px 4px #777;
+}
+.hoverbox p {
+    height: .9em;
+    font-size: .9em;
+    color: #555;
+}
+.member-photo {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 18px;
+}
+.hoverbox p.member-name {
+    height: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
+/*   end HOVER section   */
+

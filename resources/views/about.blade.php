@@ -4,6 +4,10 @@
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
 @endpush
 
+@push('scripts')
+    <script src="{{asset('js/about-hover.js')}}"></script>
+@endpush
+
 @section('content')
   <div class="container-fluid">
     <div class="row">
@@ -54,7 +58,7 @@
           <h2 class="section">Our Vision</h2>
           <div class="row content-row">
             <div class="col-md-12">
-              <p>To SPREAD love, appreciation, and meaningful exchanges across people of all cultures & backgrounds.</p>
+              <p>To SPREAD love, appreciation, and meaningful exchanges across people of all cultures &amp; backgrounds.</p>
             </div>
           </div>
           {{--  <h2 class="section">Our Team</h2>
@@ -71,8 +75,36 @@
             <div class="col-md-4">
               <h3 class="section">Editorial Board</h3>
               <br />
-              <p>Zeyu Hu</p>
-              <p>Fanny Chen</p>
+              
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Zeyu Hu</p>
+                  <p>Editor-In-Chief</p>
+                  <p>China, Thailand</p>
+                </div>
+                <p>Zeyu Hu</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Fanny Chen</p>
+                  <p>Position</p>
+                  <p>Canada</p>
+                </div>
+                <p>Fanny Chen</p>
+              </div>
+              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+                <div class="hoverbox">
+                  <img class="member-photo" src="#">
+                  <p class="member-name">Member Name</p>
+                  <p>Position</p>
+                  <p>Home</p>
+                </div>
+                <p>Member Name</p>
+              </div>
+
+              
               <p>Tony Li</p>
               <p>Mind Apivessa</p>
               <p>Adam Gleisner</p>
