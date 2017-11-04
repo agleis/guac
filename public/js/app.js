@@ -42537,10 +42537,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute'],
-  data: function data() {
-    return {
-      background: "background-image: url('" + this.image + "')"
-    };
+  computed: {
+    background: function background() {
+      return "background-image: url('" + this.image + "')";
+    }
   }
 });
 
@@ -43713,7 +43713,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("input", {
                       attrs: { type: "hidden", name: "original" },
-                      domProps: { value: _vm.imageurl }
+                      domProps: { value: _vm.imagecontent }
                     })
                   ])
                 ])

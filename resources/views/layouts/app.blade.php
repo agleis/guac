@@ -82,9 +82,6 @@
                           <li>
                             <a href="{{route('upload_guide')}}">New Guide</a>
                           </li>
-                          <li>
-                            <a href="{{route('logout')}}">Logout</a>
-                          </li>
                           {{--  <li>
                             <a href="{{route('author', ['id' => Auth::id()])}}">Edit User</a>
                           </li>  --}}
@@ -135,7 +132,7 @@
             font-size: 200%;
         }
       </style>
-      <img src="Logo.png" />
+      <img src="{{asset('../Logo.png')}}" />
       <p>Coming soon.</p>
     @endif
 

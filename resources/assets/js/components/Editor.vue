@@ -53,7 +53,7 @@
                 <div>
                     <input name="browse" id="browse" type="button" value="Choose Image" />
                     <input v-model="imagecontent" name="image" id="image" type="text" />
-                    <input type="hidden" name="original" :value="imageurl" />
+                    <input type="hidden" name="original" :value="imagecontent" />
                 </div>
               </div>
           </div>
