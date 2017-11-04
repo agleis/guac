@@ -1,9 +1,6 @@
 .search-form {
 	float: right;
 }
-#map-wrapper{
-    background: #fafafa;
-}
 
 .navbar, .nav-placeholder {
     margin-bottom: 0;
@@ -163,4 +160,9 @@ textarea#msg.form-control {
     font-size: 130%;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+
+#map-wrapper{
+    background: #fafafa;
 }
