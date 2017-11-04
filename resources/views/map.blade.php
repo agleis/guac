@@ -19,13 +19,16 @@
                     </svg>
                     <svg id="textbox" width="250" height="150">
                         <defs>
-                            <filter id = "f1" width = "150%" height = "150%">
-                                <feOffset result = "offOut" in = "SourceAlpha" dx = "5" dy = "5"/>
-                                <feGaussianBlur result = "blurOut" in = "offOut" stdDeviation = "3"/>
-                                <feBlend in = "SourceGraphic" in2 = "blurOut" mode = "normal"/>
+                            <filter id="dropShadow">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                                <feOffset dx="2" dy="2" />
+                                <feMerge>
+                                    <feMergeNode />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
                             </filter>
                         </defs>
-                        <rect x="0" y="0" rx="5" ry="5" width="200" height="110" style="fill:#fff;stroke:#efefef;stroke-width:1;opacity:0.9" filter="url(#f1)"/>
+                        <rect x="0" y="0" rx="5" ry="5" width="200" height="110" style="fill:#fff;stroke:#efefef;stroke-width:1;opacity:0.9" filter="url(#dropShadow)"/>
                     </svg>
                 </defs>
 
