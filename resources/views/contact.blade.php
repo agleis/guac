@@ -2,9 +2,8 @@
 
 @section('content')
     <div class="content featured container-fluid">
-        <h2 class="content-section">Say Hello</h2>
+        <h2 class="content-section" id="contribute">Say Hello</h2>
         <div class="row content-section">
-            
 
                 @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissable">
@@ -12,7 +11,7 @@
                         <strong>Success!</strong> The Guac team has been contacted with your message.
                     </div>
                 @endif
-                <p>We'd love to hear from you! submit the form below with anything you want to let us know,
+                <p id="join">We'd love to hear from you! submit the form below with anything you want to let us know,
                 and our team will get back to you.</p>
                 <form action="{{route('contact_us')}}" method="post">
                     {!! csrf_field() !!}
@@ -37,7 +36,7 @@
                                 </div>
 
                             </div>
-                            <div class="row content-row">
+                            <div class="row content-row" id="submit-button">
                                 <div class="col-md-12">
                                     <div class="button">
                                         <button type="submit">Submit</button>

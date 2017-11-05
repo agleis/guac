@@ -81,7 +81,7 @@
                   <img class="member-photo" src="#">
                   <p class="member-name">Zeyu Hu</p>
                   <p>Editor-In-Chief</p>
-                  <p id="small-text">Beijing, China and Bangkok, Thailand</p>
+                  <p class="small-text">Beijing, China / Bangkok, Thailand</p>
                 </div>
                 <p>Zeyu Hu</p>
               </div>
@@ -117,7 +117,7 @@
                   <img class="member-photo" src="#">
                   <p class="member-name">Cathy Zhang</p>
                   <p>Marketing Director</p>
-                  <p>Nanjing, China and Vancouver, Canada</p>
+                  <p class="small-text">Nanjing, China / Vancouver, Canada</p>
                 </div>
                 <p>Cathy Zhang</p>
               </div>
@@ -264,7 +264,7 @@
                   <img class="member-photo" src="#">
                   <p class="member-name">Katie Lee</p>
                   <p>Writer</p>
-                  <p>Singapore and Taiwan</p>
+                  <p>Singapore / Taiwan</p>
                 </div>
                 <p>Katie Lee</p>
               </div>
@@ -300,10 +300,11 @@
           </div>
         </div>
       </div>
+
       <div class="col-md-1">
         &nbsp;
       </div>
     </div>
   </div>
-  
+  <div id="about-space"></div>
 @endsection

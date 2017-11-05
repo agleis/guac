@@ -27,6 +27,21 @@ h5 {
     margin: 1em 0;
 }
 
+.arts-culture {
+    color: #097ABF;
+}
+.cuisines {
+    color: #F27230;
+}
+.personal {
+    color: #34B765;
+}
+
+.no-gutter {
+    padding: 0;
+    margin: 0;
+}
+
 /*   NAV BAR   */
 .navbar, .nav-placeholder {
     margin-bottom: 0;
@@ -126,29 +141,6 @@ h2.content-section {
 .featured-article:hover {
     background-color: #fff;
 }
-.button.more a {
-    background-color: #A2D074;
-    letter-spacing: 0.03em;
-    border-radius: 2px;
-}
-.button button {
-    background-color: #A2D074;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 2px;
-    font-size: .8em;
-}
-.button.apply{
-    float: left;
-    font-size: .8em;
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
 .issue {
     margin-bottom: 0;
     margin-top: 1em;
@@ -174,11 +166,11 @@ select#region-select h2 {
 }
 /*  end FILTER STYLES  */
 
-
-
-
-
 /*   HOVER OVER TO SHOW MEMBER PHOTOS   */
+.hoverthis {
+    width: 190px;
+    margin-bottom: .6em;
+}
 .hoverbox {
     visibility: hidden;
     background-color: #fff;
@@ -191,11 +183,13 @@ select#region-select h2 {
     position: absolute;
     z-index: 1;
     box-shadow: 1px 2px 4px #777;
+    /*height: 0;*/
 }
 .hoverbox p {
     height: .9em;
     font-size: .9em;
     color: #555;
+    display: inline;
 }
 .member-photo {
     height: 200px;
@@ -207,8 +201,11 @@ select#region-select h2 {
     font-size: 1em;
     font-weight: bold;
 }
-.hoverbox p#small-text{
-    font-size: .7em;
+.hoverbox p.small-text{
+    font-size: .68em;
+}
+#about-space {
+    padding-bottom: 120px;
 }
 /*   end HOVER section   */
 
@@ -257,7 +254,6 @@ select#region-select h2 {
     padding: 3.5em 170px;
     margin-bottom: -50px;
 }
-
 .gray-author p {
     color: #555;
     letter-spacing: .5px;
@@ -279,7 +275,69 @@ select#region-select h2 {
 }
 /*  end AUTHOR BIO   */
 
+/*  CONTRIBUTE PAGE   */
+img#join{
+    padding-top: 1em;
+}
+h2#contribute{
+    font-size: 2.5em;
+    letter-spacing: 1px;    
+}
+.contribute h3 {
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    margin-top: 2.2em;
+}
+.contribute p {
+    margin-top: 1.5em;
+    font-size: 1.4em;
+    letter-spacing: .5px;
+    color: #6f6f6f;
+    line-height: 32px;
+}
+.contribute .col-md-4 {
+    margin-left: 5em;
+}
+.contribute .col-md-6 {
+    padding-right: 2em;
+}
+.button.apply {
+    float: left;
+    padding-top: 4em;
+    padding-bottom: 1.5em;
+}
+.button.apply a {
+    color: white;
+    text-decoration: none;
+    background-color: #A2D074;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 12px 45px;
+}
+/*  end CONTRIBUTE PAGE   */
+
+.button.more a {
+    background-color: #A2D074;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+}
+.button button {
+    background-color: #A2D074;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 12px 45px;
+}
+
+
 /*   SUBMIT FORM  */
+p#join{
+    font-size: 1.4em;
+    padding-bottom: 1em;
+}
 textarea.form-control {
     height: 250px;
 }
@@ -294,11 +352,15 @@ form .col-md-6 {
 input#name.form-control,
 input#email.form-control {
     height: 50px;
-    padding-left: 20px;
+    padding-left: 23px;
 }
 textarea#msg.form-control {
     padding-top: 20px;
     padding-left: 20px;
+    margin-bottom: 50px;
+}
+#submit-button {
+    padding-bottom: 4em;
 }
 /*   end SUBMIT FORM  */
 
