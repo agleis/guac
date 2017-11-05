@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+  <div id="green-banner">
+    <h1>2017 Fall Edition is Here!</h1>
+  </div>
   <div id="main-carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -99,3 +102,6 @@
     </div>
   </div>
 @endsection
+@push('scripts')
+    <script src="{{asset('js/new.js')}}"></script>
+@endpush

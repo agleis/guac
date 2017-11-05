@@ -4,14 +4,14 @@
   <div class="content featured container-fluid">
     <h2 class="content-section">Stories</h2>
     <div class="content-section">
-      <select id="category-select">
+<!--       <select id="category-select">
         <option value="0" selected>All</option>
         @foreach($categories as $category)
           <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
-      </select>
+      </select> -->
       <select id="region-select">
-        <option value="0" selected>Filter By Region</option>
+        <option value="0" selected><h2>FILTER BY REGION</h2></option>
         @foreach($regions as $region)
           <option value="{{$region->id}}">{{$region->name}}</option>
         @endforeach

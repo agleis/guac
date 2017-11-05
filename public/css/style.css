@@ -1,5 +1,24 @@
-.search-form {
-	float: right;
+h1 {
+    letter-spacing: 0.05em;
+    font-size: 36px;
+}
+h2 {
+    letter-spacing: 0.03em;
+    font-size: 30px;
+}
+h3 {
+    letter-spacing: 0.03em;
+    font-size: 24px;
+}
+h5 {
+    font-family: MinionPro-Regular;
+    font-size: 1.1em;
+    margin: 1em 0;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+    margin-bottom: 2.5em;
 }
 
 .navbar, .nav-placeholder {
@@ -7,41 +26,46 @@
     min-height: 60px;
     background-color: #fff;
 }
-
 .navbar-nav > li {
-    padding-left: 2.5em;
+    padding-left: 2.7em;
+    padding-top: 2px;
+    font-size: 1.1em;
+}
+.search-form {
+    float: right;
 }
 .search-form button {
     background: #fff;
     border: none;
 }
+
+/*   HOME PAGE   */
+#green-banner{
+    text-align: center;
+    background-color: #A2D074;
+    height: 50px;
+    width: 100%;
+    color: #fff;
+    padding-top: 15px;
+}
+#green-banner h1 {
+    font-size: 20px;
+    margin: 0;
+}
 .carousel-caption {
 	top: 270px;
 }
-
-h1 {
-	letter-spacing: 0.05em;
-}
-h3 {
-	letter-spacing: 0.03em;
-}
-h5 {
-	font-family: MinionPro-Regular;
-	font-size: 1.1em;
-    margin: 1em 0;
-}
-
 .carousel-indicators li {
 	margin: 0 8px;
 	background-color: rgba(255, 255, 255, 0.6);
     border: none;
 }
-
 .carousel-indicators .active {
 	margin: 0 8px;
 	background-color: rgba(255, 255, 255, 1);
     border: none;
 }
+/*   end HOME PAGE   */
 
 .content .content-section {
 	margin-left: 2.5vw;
@@ -57,13 +81,12 @@ h5 {
 }
 
 .button.more a {
-    background-color: #34b765;
+    background-color: #A2D074;
     letter-spacing: 0.03em;
     border-radius: 2px;
 }
-
 .button button {
-    background-color: #34b765;
+    background-color: #A2D074;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 30px;
@@ -80,32 +103,24 @@ h5 {
     padding-top: 2px;
     padding-bottom: 2px;
 }
-   
-.footer {
-    margin-top: 50px;
-}
 
-.footer .copyright {
-    margin-left: 5vw;
-}
-
-#category-select, #region-select {
-	height: 3em;
-	width: 300px;
-	padding: 1em;
-	margin-right: 40px;
-	border: 0;
+/*   FILTER STYLES  */
+select#region-select {
+    height: 50px;
+    width: 300px;
+    padding: 1em;
+    border-radius: 0;
+    border: 0;
     background-color: #f0f0f0;
 }
-
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-    float: left;
-    margin-bottom: 2.5em;
+select#region-select h2 {
+    padding: 1em;
 }
 
 .title-box.guide {
     padding-top: 1em;
 }
+
 .issue {
     margin-bottom: 0;
     margin-top: 1em;
@@ -123,29 +138,6 @@ h5 {
     margin-top: 10px;
 }
 
-textarea.form-control {
-    height: 250px;
-}
-
-form .row {
-	margin-top: 0.4em;
-	margin-bottom: 0;
-}
-
-form .col-md-6 {
-	margin-bottom: 0;
-}
-
-input#name.form-control,
-input#email.form-control {
-	height: 50px;
-	padding-left: 20px;
-}
-textarea#msg.form-control {
-	padding-top: 20px;
-	padding-left: 20px;
-}
-
 .about-image {
   width: 100%;
   margin-bottom: 2em;
@@ -161,10 +153,34 @@ textarea#msg.form-control {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
 #map-wrapper{
     background: #fafafa;
 }
 
+
+/*   SUBMIT FORM  */
+textarea.form-control {
+    height: 250px;
+}
+form .row {
+	margin-top: 0.4em;
+	margin-bottom: 0;
+}
+
+form .col-md-6 {
+	margin-bottom: 0;
+}
+input#name.form-control,
+input#email.form-control {
+	height: 50px;
+	padding-left: 20px;
+}
+textarea#msg.form-control {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+/*   end SUBMIT FORM  */
 
 /*   HOVER OVER TO SHOW MEMBER PHOTOS   */
 .hoverbox {
@@ -195,10 +211,12 @@ textarea#msg.form-control {
     font-size: 1em;
     font-weight: bold;
 }
+.hoverbox p#small-text{
+    font-size: .7em;
+}
 /*   end HOVER section   */
 
 /*   SHARE ARTICLE   */
-
 .share-article {
     background-color: #efefef;
     height: 50px;
@@ -209,6 +227,8 @@ textarea#msg.form-control {
     padding: 13px 0px;
     padding-left: 20px;
     font-size: 1.2em;
+    z-index: 2;
+    opacity: .9;
 }
 .share-article ul {
   display: inline;
@@ -237,13 +257,21 @@ textarea#msg.form-control {
 
 
 
+.author {
+    background-color: #efefef;
+}
 
 
 
 
 
 
+.footer {
+    margin-top: 50px;
+}
 
-
+.footer .copyright {
+    margin-left: 5vw;
+}
 
 

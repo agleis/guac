@@ -1,14 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-11 col-md-offset-1">
-                <h1>Say Hello</h1>
-            </div>
-        </div>
-        <div class="row content-row">
-            <div class="col-md-10 col-md-offset-1">
+    <div class="content featured container-fluid">
+        <h2 class="content-section">Say Hello</h2>
+        <div class="row content-section">
+            
+
                 @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissable">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -20,7 +17,7 @@
                 <form action="{{route('contact_us')}}" method="post">
                     {!! csrf_field() !!}
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -38,10 +35,13 @@
                                     <textarea name="msg" id="msg" class="form-control" placeholder="What's good?">
                                     </textarea>
                                 </div>
+
                             </div>
                             <div class="row content-row">
-                                <div class="button">
-                                    <button type="submit">Submit</button>
+                                <div class="col-md-12">
+                                    <div class="button">
+                                        <button type="submit">Submit</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
