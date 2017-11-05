@@ -1,3 +1,8 @@
+p {
+    letter-spacing: .2px;
+    color: #6b6b6b;
+    font-size: 1.1em;
+}
 h1 {
     letter-spacing: 0.05em;
     font-size: 36px;
@@ -8,7 +13,13 @@ h2 {
 }
 h3 {
     letter-spacing: 0.03em;
-    font-size: 24px;
+    font-size: 25px;
+}
+h4 {
+    font-family: CircularStd-Book;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    color: #6d6d6d;
 }
 h5 {
     font-family: MinionPro-Regular;
@@ -121,21 +132,20 @@ select#region-select h2 {
     padding-top: 1em;
 }
 
-.issue {
-    margin-bottom: 0;
+h4.issue {
     margin-top: 1em;
-    font-size: .8em;
+    font-size: 1em;
+    color: #616161;
+    font-family: CircularStd-Bold;
 }
-.issue .blue {
-    color: #6291BD;
-    margin-left: 1em;
-}
+
 .title-box {
     padding-top: 1em;
 }
 .section {
     color: black;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .about-image {
@@ -256,15 +266,31 @@ textarea#msg.form-control {
 /*   end SHARE ARTICLE section   */
 
 
-
-.author {
-    background-color: #efefef;
+.gray-author {
+    background-color: #f5f5f5;
+    padding: 3.5em 170px;
+    margin-bottom: -50px;
 }
 
-
-
-
-
+.gray-author p {
+    color: #555;
+    letter-spacing: .5px;
+    line-height: 30px;
+    font-size: 1.4em;
+}
+.image-author {
+    width: 90%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    padding-top: 90%;
+    margin-top: 2em;
+    margin-left: 2em;
+}
+.author-bio {
+    margin-top: 4em;
+    margin-left: 3em;
+}
 
 .footer {
     margin-top: 50px;

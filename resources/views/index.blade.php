@@ -21,7 +21,7 @@
             {{--  <img src="{{$article->image}}" alt="Article">  --}}
             <div class="carousel-caption">
               <h1>{{$article->title}}</h1>
-              <h4>By {{$article->user->name}}</h4>
+              <h3>By {{$article->user->name}}</h3>
             </div>
           </a>
       @endforeach
