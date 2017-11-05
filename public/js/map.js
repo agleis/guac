@@ -17,7 +17,7 @@ function showStory(country) {
                 href = "/stories/"+field.name
 
             $("#content-holder").html("&nbsp;");
-            $("#content-holder").append("<div class='col-md-4'><div class='featured-article featured-3'><a href=" + href + "><img src=" + image + "> <p class='issue'>"+issue+"<span class='fa fa-circle blue circle'></span> "+category+"</p><h3>" + title + "</h3></a></div></div>")
+            $("#content-holder").append("<div class='col-md-4'><div class='featured-article featured-3'><a href=" + href + "><img src=" + image + "> <h4 class='issue'>"+issue+"<span class='fa fa-circle gray circle'></span> "+category+"</h4><h3>" + title + "</h3></a></div></div>")
         });
     });
 }

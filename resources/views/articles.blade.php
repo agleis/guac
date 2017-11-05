@@ -26,9 +26,9 @@
               <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
                   <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                  <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                  <h4 class="issue">Issue 1 <span class="fa fa-circle gray circle"></span> Arts and Culture</h4>
                   <h3>{{$article->title}}</h3>
-                  <h5>By {{$article->user->name}}</h5>
+                  <h4>By {{$article->user->name}}</h4>
                 </a>
               </div>
             </div>
@@ -38,9 +38,9 @@
             <div class="featured-article featured-3">
               <a href="{{route('article', ['name' => $article->name])}}">
                 <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                <h4 class="issue">Issue 1 <span class="fa fa-circle gray circle"></span> Arts and Culture</h4>
                 <h3>{{$article->title}}</h3>
-                <h5>By {{$article->user->name}}</h5>
+                <h4>By {{$article->user->name}}</h4>
               </a>
             </div>
           </div>

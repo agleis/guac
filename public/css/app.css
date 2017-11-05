@@ -220,9 +220,9 @@ html {
 
 .content .content-section {
   margin-left: 2vw;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
   margin-top: 50px;
-  color: black;
+  color: #352E2E;
 }
 
 .content .content-row {
@@ -230,7 +230,7 @@ html {
 }
 
 .section {
-  color: black;
+  color: #352E2E;
 }
 
 .white {
@@ -299,14 +299,20 @@ html {
 }
 
 .featured-article a h3 {
-  color: black;
-  margin-top: 5px;
+  color: #352E2E;
+  margin-top: 13px;
 }
 
-.featured-article a h5 {
+.featured-article a h4.issue {
   color: #666565;
+  font-size: .8em;
+  margin-top: 28px;
 }
-
+.featured-article h4 {
+  color: #666565;
+  font-size: .8em;
+  margin-top: 0px;
+}
 .featured-article a p {
   color: #636b6f;
   font-size: 80%;

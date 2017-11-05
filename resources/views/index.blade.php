@@ -37,9 +37,9 @@
               <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
                 <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                  <p class="issue">{{$article->issue}} <span class="fa fa-circle blue circle"></span> {{$article->category->name}}</p>
+                  <h4 class="issue">{{$article->issue}} <span class="fa fa-circle gray circle"></span> {{$article->category->name}}</h4>
                   <h3>{{$article->title}}</h3>
-                  <h5>By {{$article->user->name}}</h5>
+                  <h4>By {{$article->user->name}}</h4>
                 </a>
               </div>
             </div>
@@ -58,9 +58,9 @@
             <div class="featured-article featured-3">
               <a href="{{route('article', ['name' => $article->name])}}">
                 <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                <h4 class="issue">Issue 1 <span class="fa fa-circle gray circle"></span> Arts and Culture</h4>
                 <h3>{{$article->title}}</h3>
-                <h5>By {{$article->user->name}}</h5>
+                <h4>By {{$article->user->name}}</h4>
               </a>
             </div>
           </div>
@@ -76,7 +76,8 @@
     </div>
   </div>
   <hr />
-  <div class="content featured container-fluid">
+
+<!--   <div class="content featured container-fluid">
     <h2 class="content-section">City Guides</h2>
     <div class="row content-row">
       @foreach($guides as $guide)
@@ -100,7 +101,8 @@
         <a href="{{route('articles')}}">Read More</a>
       </div>
     </div>
-  </div>
+  </div> -->
+
 @endsection
 @push('scripts')
     <script src="{{asset('js/new.js')}}"></script>
