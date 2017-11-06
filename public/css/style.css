@@ -1,154 +1,373 @@
-.search-form {
-	float: right;
+p {
+    letter-spacing: .2px;
+    color: #6b6b6b;
+    font-size: 1.1em;
 }
-
-.navbar-nav > li {
-    padding-left: 2.5em;
-}
-
-.carousel-caption {
-	top: 270px;
-}
-
 h1 {
-	letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
+    font-size: 36px;
+}
+h2 {
+    letter-spacing: 0.03em;
+    font-size: 30px;
 }
 h3 {
-	letter-spacing: 0.03em;
+    letter-spacing: 0.03em;
+    font-size: 25px;
+}
+h4 {
+    font-family: CircularStd-Book;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    color: #6d6d6d;
 }
 h5 {
-	font-family: MinionPro-Regular;
-	font-size: 1.1em;
+    font-family: MinionPro-Regular;
+    font-size: 1.1em;
     margin: 1em 0;
 }
 
+.arts-culture {
+    color: #097ABF;
+}
+.cuisines {
+    color: #F27230;
+}
+.personal {
+    color: #34B765;
+}
+
+.no-gutter {
+    padding: 0;
+    margin: 0;
+}
+
+/*   NAV BAR   */
+.navbar, .nav-placeholder {
+    margin-bottom: 0;
+    min-height: 60px;
+    background-color: #fff;
+}
+.navbar-nav > li {
+    padding-left: 2.7em;
+    padding-top: 2px;
+    font-size: 1.1em;
+    color: #352E2E;
+}
+.search-form {
+    float: right;
+}
+.search-form button {
+    background: #fff;
+    border: none;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #352E2E;
+}
+.navbar-default .navbar-nav > li > a.gray {
+    color: #a7a7a7;
+}
+/*   end NAV BAR   */
+
+/*   HOME PAGE   */
+#green-banner{
+    text-align: center;
+    background-color: #A2D074;
+    height: 50px;
+    width: 100%;
+    color: #fff;
+    padding-top: 15px;
+}
+#green-banner h1 {
+    font-size: 20px;
+    margin: 0;
+}
+.carousel-caption {
+	top: 270px;
+}
 .carousel-indicators li {
 	margin: 0 8px;
 	background-color: rgba(255, 255, 255, 0.6);
     border: none;
 }
-
 .carousel-indicators .active {
 	margin: 0 8px;
 	background-color: rgba(255, 255, 255, 1);
     border: none;
 }
+/*   end HOME PAGE   */
+
+.content-row .col-md-6 {
+    float: left;
+    height: 540px;
+}
+.content-row .col-md-4 {
+    float: left;
+    height: 460px;
+}
 
 .content .content-section {
 	margin-left: 2.5vw;
 }
-
-.featured-article:hover {
-    background-color: #fff;
+h2.content-section {
+    margin-bottom: 30px;
 }
-
-.issue {
-    margin-bottom: 0;
-    margin-top: 1em;
-}
-
-.button.more a {
-    background-color: #34b765;
-    letter-spacing: 0.03em;
-    border-radius: 2px;
-}
-
-.button button {
-    background-color: #34b765;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 2px;
-    font-size: .8em;
-}
-.button.apply{
-	float: left;
-    font-size: .8em;
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-   
-.footer {
-    margin-top: 50px;
-}
-
-.footer .copyright {
-    margin-left: 5vw;
-}
-
-#category-select, #region-select {
-	height: 3em;
-	width: 300px;
-	padding: 1em;
-	margin-right: 40px;
-	border: 0;
-    background-color: #f0f0f0;
-}
-
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-    float: left;
-    margin-bottom: 2.5em;
-}
-
 .title-box.guide {
     padding-top: 1em;
-}
-.issue {
-    margin-bottom: 0;
-    margin-top: 1em;
-    font-size: .8em;
-}
-.issue .blue {
-    color: #6291BD;
-    margin-left: 1em;
 }
 .title-box {
     padding-top: 1em;
 }
 .section {
-    color: black;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
-textarea.form-control {
-    height: 250px;
-}
-
-form .row {
-	margin-top: 0.4em;
-	margin-bottom: 0;
-}
-
-form .col-md-6 {
-	margin-bottom: 0;
-}
-
-input#name.form-control,
-input#email.form-control {
-	height: 50px;
-	padding-left: 20px;
-}
-textarea#msg.form-control {
-	padding-top: 20px;
-	padding-left: 20px;
-}
-
 .about-image {
   width: 100%;
   margin-bottom: 2em;
 }
-
 .row-5 {
   margin: 1em 0 2em;
 }
-
 .content-row {
     line-height: 200%;
     font-size: 130%;
     margin-top: 1em;
     margin-bottom: 1em;
 }
+#map-wrapper{
+    background: #fafafa;
+}
+.featured-article:hover {
+    background-color: #fff;
+}
+.issue {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+h4.issue {
+    margin-top: 1em;
+    font-size: 1em;
+    color: #616161;
+    font-family: CircularStd-Bold;
+}
+
+/*   FILTER STYLES  */
+select#region-select {
+    height: 50px;
+    width: 300px;
+    padding: 1em;
+    border-radius: 0;
+    border: 0;
+    background-color: #f0f0f0;
+}
+select#region-select h2 {
+    padding: 1em;
+}
+/*  end FILTER STYLES  */
+
+/*   HOVER OVER TO SHOW MEMBER PHOTOS   */
+.hoverthis {
+    width: 190px;
+    margin-bottom: .6em;
+}
+.hoverbox {
+    visibility: hidden;
+    background-color: #fff;
+    text-align: center;
+    border: solid #e0e0e0;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 28px;
+    padding-bottom: 30px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 1px 2px 4px #777;
+    /*height: 0;*/
+}
+.hoverbox p {
+    height: .9em;
+    font-size: .9em;
+    color: #555;
+}
+.member-photo {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 18px;
+}
+.hoverbox p.member-name {
+    height: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
+.hoverbox p.small-text{
+    font-size: .68em;
+}
+#about-space {
+    padding-bottom: 120px;
+}
+/*   end HOVER section   */
+
+/*   SHARE ARTICLE   */
+.share-article {
+    background-color: #efefef;
+    height: 50px;
+    width: 230px;
+    position: fixed;
+    top: 60px;
+    right: 80px;
+    padding: 13px 0px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    z-index: 2;
+    opacity: .9;
+}
+.share-article ul {
+  display: inline;
+  padding-top: 10px;
+  padding-left: 10px;
+  list-style: none;
+}
+.share-article ul li {
+  display: inline;
+  margin-left: 20px;
+}
+.share-article ul li a {
+  color: #222;
+  text-decoration: none;
+}
+.share-article ul li a:hover {
+  color: #999;
+  text-decoration: none;
+}
+.share-article ul li a.mail {
+    font-size: 1.3em;
+    top: -1px;
+    position: relative;
+}
+/*  end SHARE ARTICLE section   */
+
+/*  AUTHOR BIO   */
+.gray-author {
+    background-color: #f5f5f5;
+    padding: 3.5em 170px;
+    margin-bottom: -50px;
+}
+.gray-author p {
+    color: #555;
+    letter-spacing: .5px;
+    line-height: 30px;
+    font-size: 1.4em;
+}
+.image-author {
+    width: 90%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    padding-top: 90%;
+    margin-top: 2em;
+    margin-left: 2em;
+}
+.author-bio {
+    margin-top: 4em;
+    margin-left: 3em;
+}
+/*  end AUTHOR BIO   */
+
+/*  CONTRIBUTE PAGE   */
+img#join{
+    padding-top: 1em;
+}
+h2#contribute{
+    font-size: 2.5em;
+    letter-spacing: 1px;    
+}
+.contribute h3 {
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    margin-top: 2.2em;
+}
+.contribute p {
+    margin-top: 1.5em;
+    font-size: 1.4em;
+    letter-spacing: .5px;
+    color: #6f6f6f;
+    line-height: 32px;
+}
+.contribute .col-md-4 {
+    margin-left: 5em;
+}
+.contribute .col-md-6 {
+    padding-right: 2em;
+}
+.button.apply {
+    float: left;
+    padding-top: 4em;
+    padding-bottom: 1.5em;
+}
+.button.apply a {
+    color: white;
+    text-decoration: none;
+    background-color: #A2D074;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 12px 45px;
+}
+/*  end CONTRIBUTE PAGE   */
+
+.button.more a {
+    background-color: #A2D074;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+}
+.button button {
+    background-color: #A2D074;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 12px 45px;
+}
+
+
+/*   SUBMIT FORM  */
+p#join{
+    font-size: 1.4em;
+    padding-bottom: 1em;
+}
+textarea.form-control {
+    height: 250px;
+}
+form .row {
+    margin-top: 0.4em;
+    margin-bottom: 0;
+}
+
+form .col-md-6 {
+    margin-bottom: 0;
+}
+input#name.form-control,
+input#email.form-control {
+    height: 50px;
+    padding-left: 23px;
+}
+textarea#msg.form-control {
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+#submit-button {
+    padding-bottom: 4em;
+}
+/*   end SUBMIT FORM  */
+
+.footer {
+    margin-top: 50px;
+}
+.footer .copyright {
+    margin-left: 5vw;
+}
+
+

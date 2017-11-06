@@ -4,14 +4,14 @@
   <div class="content featured container-fluid">
     <h2 class="content-section">Stories</h2>
     <div class="content-section">
-      <select id="category-select">
+<!--       <select id="category-select">
         <option value="0" selected>All</option>
         @foreach($categories as $category)
           <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
-      </select>
+      </select> -->
       <select id="region-select">
-        <option value="0" selected>Filter By Region</option>
+        <option value="0" selected><h2>FILTER BY REGION</h2></option>
         @foreach($regions as $region)
           <option value="{{$region->id}}">{{$region->name}}</option>
         @endforeach
@@ -26,9 +26,9 @@
               <div class="featured-article featured-2">
                 <a href="{{route('article', ['name' => $article->name])}}">
                   <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                  <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                  <h4 class="issue">Issue 1 <span class="fa fa-circle gray circle"></span> Arts and Culture</h4>
                   <h3>{{$article->title}}</h3>
-                  <h5>By {{$article->user->name}}</h5>
+                  <h4>By {{$article->user->name}}</h4>
                 </a>
               </div>
             </div>
@@ -38,9 +38,9 @@
             <div class="featured-article featured-3">
               <a href="{{route('article', ['name' => $article->name])}}">
                 <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
+                <h4 class="issue">Issue 1 <span class="fa fa-circle gray circle"></span> Arts and Culture</h4>
                 <h3>{{$article->title}}</h3>
-                <h5>By {{$article->user->name}}</h5>
+                <h4>By {{$article->user->name}}</h4>
               </a>
             </div>
           </div>
