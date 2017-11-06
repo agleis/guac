@@ -18,10 +18,10 @@
 <script>
     export default {
       props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute'],
-      data() {
-          return {
-              background: "background-image: url('"+this.image+"')"
-          }
+      computed: {
+        background: function() {
+          return "background-image: url('"+this.image+"')"
+        }
       }
     }
 </script>

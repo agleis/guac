@@ -28,6 +28,17 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getFirstNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    /**
      * Returns the articles this thing has.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

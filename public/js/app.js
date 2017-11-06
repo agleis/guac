@@ -42890,12 +42890,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute'],
-    data: function data() {
-        return {
-            background: "background-image: url('" + this.image + "')"
-        };
+  props: ['image', 'issue', 'category', 'name', 'hours', 'location', 'summary', 'auth', 'editroute'],
+  computed: {
+    background: function background() {
+      return "background-image: url('" + this.image + "')";
     }
+  }
 });
 
 /***/ }),
