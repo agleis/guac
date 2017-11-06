@@ -189,7 +189,6 @@ select#region-select h2 {
     height: .9em;
     font-size: .9em;
     color: #555;
-    display: inline;
 }
 .member-photo {
     height: 200px;
