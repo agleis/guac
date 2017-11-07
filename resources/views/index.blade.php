@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <div id="green-banner">
+  <!-- <div id="green-banner">
     <h1>2017 Fall Edition is Here!</h1>
-  </div>
+  </div> -->
   <div id="main-carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
