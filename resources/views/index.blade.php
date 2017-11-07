@@ -75,7 +75,7 @@
       </div>
     </div>
   </div>
-  <hr />
+  <!-- <hr /> -->
 
 <!--   <div class="content featured container-fluid">
     <h2 class="content-section">City Guides</h2>

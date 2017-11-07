@@ -2,24 +2,31 @@
   text-align: center;
 }
 
+.ingredients h3 {
+	font-size: 25px;
+}
+.ingredients h4 {
+	font-size: 20px;
+}
+
 .ingredients .cilantro {
-  color: #77B466;
+  color: #A2D074;
 }
 
 .ingredients .jalapeno {
-  color: #062C80;
+  color: #4B7DA0;
 }
 
 .ingredients .tomato {
-  color: red;
+  color: #E76B5B;
 }
 
 .ingredients .onion {
-  color: #D6D682;
+  color: #EECFA3;
 }
 
 .ingredients .avocado {
-  color: #004400;
+  color: #6D8F4C;
 }
 
 .about-image {
