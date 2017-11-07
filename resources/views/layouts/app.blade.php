@@ -31,6 +31,9 @@
 <body>
     @if(Auth::check() or request()->is('login'))
     <div id="app">
+<!--       @if(request()->is('/'))
+      <div id="header-svg"><img src="{{asset('images/header.svg')}}"></div>
+      @endif -->
         <nav class="navbar navbar-fixed-top navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">

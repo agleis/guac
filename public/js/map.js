@@ -59,7 +59,7 @@ function countryObject(code, x, y, name, lang, capital) {
     this.language = lang;
     this.capital = capital;
 }
-var chosenCountries = ["TZ", "IT", "ID", "MA", "AR", "NO", "CN", "BT", "US"];
+var chosenCountries = ["TZ", "IT", "ID", "MA", "AR", "NO", "CN", "BT"];
 var countryArray = []; // array of chosen country objects
 
 d3.csv("countries.csv", parseLine, function (error, data) {
