@@ -386,4 +386,6 @@ textarea#msg.form-control {
     margin-left: 5vw;
 }
 
-
+.article-container {
+    padding: 3.5em 170px;
+}

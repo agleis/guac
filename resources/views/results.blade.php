@@ -10,26 +10,12 @@
             {{--  2-row  --}}
             @if($loop->index % 5 < 2)
             <div class="col-md-6">
-                <div class="featured-article featured-2">
-                    <a href="{{route('article', ['name' => $article->name])}}">
-                        <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                        <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
-                        <h3>{{$article->title}}</h3>
-                        <h5>By {{$article->user->name}}</h5>
-                    </a>
-                </div>
-                </div>
+                @include("includes/summary2")
+            </div>
             {{--  3-row  --}}
             @else
             <div class="col-md-4">
-                <div class="featured-article featured-3">
-                    <a href="{{route('article', ['name' => $article->name])}}">
-                        <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
-                        <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
-                        <h3>{{$article->title}}</h3>
-                        <h5>By {{$article->user->name}}</h5>
-                    </a>
-                </div>
+                @include("includes/summary3")
             </div>
             @endif
         @endforeach
@@ -46,14 +32,14 @@
         <div class="row content-row">
         @foreach($guides as $guide)
             <div class="col-md-4">
-            <div class="featured-article featured-3">
+                <div class="featured-article featured-3">
                 <a href="{{route('guide', ['id' => $guide->id])}}">
                 <div class="image" style="background-image: url('{{asset($guide->image)}}')"></div>
                 <p class="issue">{{$guide->issue}}</p>
                 <h3>{{$guide->title}}, {{$guide->country->name}}</h3>
                 </a>
             </div>
-            </div>
+        </div>
         @endforeach
         </div>
     </div>
