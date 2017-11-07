@@ -48,6 +48,10 @@
             <input type="text" v-model="issuecontent" name="issue" id="issue" class="form-control" :value="issuecontent"/>
           </div>
           <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" v-model="citycontent" name="city" id="city" class="form-control" :value="citycontent"/>
+          </div>
+          <div class="form-group">
               <label for="image">Image</label>
               <div class="image-input">
                 <div>
@@ -91,7 +95,7 @@
     import Ckeditor from 'vue-ckeditor2'
     export default {
       components: { Ckeditor },
-      props: ['route', 'text', 'title', 'author', 'authors', 'upload', 
+      props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city',
               'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
       functional: false,
       data() {
@@ -104,6 +108,7 @@
           categoryid: this.category.id ? this.category.id : this.categories[0].id,
           countryid: this.country.id ? this.country.id : this.countries[0].id,
           issuecontent: this.aissue,
+          citycontent: this.city,
           imagecontent: this.image,
           imageurl: this.image
         }

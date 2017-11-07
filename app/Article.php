@@ -54,7 +54,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeFeatured($query) {
-        return $query->select('name', 'title', 'image', 'user_id', 'category_id', 'issue')
+        return $query->select('name', 'title', 'city', 'country_id', 'image', 'user_id', 'category_id', 'issue')
                      ->where('featured', true)
                      ->orderBy('created_at')->get();
     }
@@ -90,7 +90,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeList($query) {
-        return $query->select('name', 'title', 'image', 'issue', 'user_id', 'featured', 'category_id', 'region_id')
+        return $query->select('name', 'title', 'city', 'image', 'issue', 'user_id', 'featured', 'category_id', 'region_id')
                      ->orderBy('created_at')->get();
     }
 
@@ -120,7 +120,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeMap($query, $country) {
-        return $query->select('name', 'title', 'image', 'user_id', 'category_id', 'country_id', 'issue')
+        return $query->select('name', 'title', 'city', 'image', 'user_id', 'category_id', 'country_id', 'issue')
                      ->whereHas('country', function($query) use($country) {
                          $query->where('code', "$country");
                      })

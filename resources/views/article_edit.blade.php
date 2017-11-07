@@ -12,6 +12,7 @@
           title="{{$article->title}}"
           text="{{$article->text}}"
           aissue="{{$article->issue}}"
+          city="{{$article->city}}"
           image="{{asset($article->image)}}"
           route="{{session()->has('upload') ?
             route('post_upload_article') :

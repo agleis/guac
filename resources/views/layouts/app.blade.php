@@ -96,32 +96,44 @@
         </nav>
         <div class='nav-placeholder'>&nbsp;</div>
         @yield('content')
-        <div class="footer">
-          <ul class="footer-nav">
-            <li>
-              <a href="{{route('about')}}">About Us</a>
-            </li>
-            <li>
-              <a href="{{route('index')}}">Contribute</a>
-            </li>
-            <li>
-              <a href="{{route('index')}}">Say Hello</a>
-            </li>
-            <li>
-              <a href="{{route('index')}}">Join Us</a>
-            </li>
-          </ul>
-          <ul class="footer-social">
-            <li>
-              <a class="fa fa-facebook-official white fa-lg" href="http://facebook.com"></a>
-            </li>
-            <li>
-              <a class="fa fa-instagram white fa-lg" href="http://instagram.com"></a>
-            </li>
-          </ul>
-          <br />
-          <div class="copyright">
-            <small>&copy; 2017 Guac Magazine</small>
+        <div class="footer row">
+          <div class="col-md-9">
+            <div>
+              <ul class="footer-nav">
+                <li>
+                  <a href="{{route('about')}}">About Us</a>
+                </li>
+                <li>
+                  <a href="{{route('index')}}">Contribute</a>
+                </li>
+                <li>
+                  <a href="{{route('index')}}">Say Hello</a>
+                </li>
+                <li>
+                  <a href="{{route('index')}}">Join Us</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="footer-social">
+                <li>
+                  <a class="fa fa-facebook-official white fa-lg" href="http://facebook.com"></a>
+                </li>
+                <li>
+                  <a class="fa fa-instagram white fa-lg" href="http://instagram.com"></a>
+                </li>
+              </ul>
+            </div>
+            <div class="copyright">
+              <small>&copy; 2017 Guac Magazine</small>
+            </div>
+          </div>
+          <div>
+            <h3>Subscribe</h3>
+            <form method="get" action="{{route('subscribe')}}">
+              <input type="text" class="footer-form" name="email" placeholder="Enter Email" />
+              <button type="submit"></button>
+            </form>
           </div>
         </div>
     </div>

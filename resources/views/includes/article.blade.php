@@ -2,9 +2,9 @@
   <div class="share-article">
     Share
     <ul class="share-social">
-      <li><a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u=<URL>" target="_blank"></a></li>
-      <li><a class="fa fa-twitter fa-lg" href="http://twitter.com/share?text=<TITLE>&url=<URL>" target="_blank"></a></li>
-      <li><a class="fa fa-envelope fa-lg mail" href="mailto:?subject=Read%20This&body=<URL>"></a></li>
+      <li><a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u={{request()->url()}}" target="_blank"></a></li>
+      <li><a class="fa fa-twitter fa-lg" href="http://twitter.com/share?text={{$article->title}}&url={{request()->url()}}" target="_blank"></a></li>
+      <li><a class="fa fa-envelope fa-lg mail" href="mailto:?subject=Read%20This&body={{request()->url()}}"></a></li>
       <!-- Edit the links ^^^ -->
     </ul>
   </div>
@@ -28,7 +28,9 @@
         </a>
         <div class="col-md-10 col-sm-12 col-xs-12">
           <div class="title-box">
-              <h4 class="issue">{{$article->issue}} <span class="fa fa-circle gray circle"></span>{{$article->category->name}}</h4>
+              <h4 class="issue">{{$article->issue}} &nbsp; &nbsp;
+                <span @if($article->category_id == 1) class="arts-culture" @endif>{{$article->category->name}}</span>
+              </h4>
               <h1 class="section">{{$article->title}}</h1>
               <h4>By {{$article->user->name}}</h4>
               @auth
