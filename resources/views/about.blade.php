@@ -40,15 +40,7 @@
               <h4 class="meaning">The Base</h4>
             </li>
           </ul>
-          <div class="row content-row">
-            <div class="col-md-12">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type 
-              specimen book. It has survived not only five centuries, but also the leap 
-              into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-          </div>
+    
           <h2 class="section">Our Mission</h2>
           <div class="row content-row">
             <div class="col-md-12">
@@ -61,20 +53,11 @@
               <p>To SPREAD love, appreciation, and meaningful exchanges across people of all cultures &amp; backgrounds.</p>
             </div>
           </div>
-          {{--  <h2 class="section">Our Team</h2>
-          <div class="row content-row">
-            <div class="col-md-12">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type 
-              specimen book. It has survived not only five centuries, but also the leap 
-              into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-          </div>  --}}
+          <h2 class="section">Our Team</h2>
           <div class="row content-row">
             <div class="col-md-4">
               <h3 class="section">Editorial</h3>
-              <br />
+              
           
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
@@ -143,7 +126,7 @@
 
             <div class="col-md-4">
               <h3 class="section">Creative</h3>
-              <br />
+              
 
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
@@ -217,12 +200,11 @@
                 </div>
                 <p>Tony Li</p>
               </div>
-
             </div>
 
             <div class="col-md-4">
               <h3 class="section">Content</h3>
-              <br />
+              
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Chiara.jpg')}}')"></div>
