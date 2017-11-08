@@ -37,7 +37,7 @@ class ContactController extends Controller
         $email = $request->email;
         Newsletter::subscribeOrUpdate($email);
         if(Newsletter::lastActionSucceeded())
-            session()->flash('subscribe');
-        return redirect()->route('index');
+            return json_encode(true);
+        return json_encode(false);
     }
 }

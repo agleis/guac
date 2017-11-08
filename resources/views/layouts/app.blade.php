@@ -131,12 +131,13 @@
               <small>&copy; 2017 Guac Magazine</small>
             </div>
           </div>
-          <div>
+          <div class="subscribe">
             <h3>Subscribe</h3>
-            <form method="get" action="{{route('subscribe')}}">
-              <input type="text" class="footer-form" name="email" placeholder="Enter Email" />
-              <button type="submit"></button>
-            </form>
+            <input type="text" id="subscribe-form" class="subscribe-form" name="email" placeholder="Enter Email" />
+            <button id="subscribe-button" class="subscribe-button" type="submit">-></button>
+            <div id="subscribe-message" style="display:none;">
+              <p>Thank you!</p>
+            </div>
           </div>
         </div>
     </div>
@@ -155,6 +156,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{asset('js/chosen/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('js/chosen.js')}}"></script>
+    <script src="{{asset('js/submission.js')}}"></script>
     @stack('scripts')
 </body>
 </html>
