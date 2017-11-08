@@ -156,7 +156,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{asset('js/chosen/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('js/chosen.js')}}"></script>
-    <script src="{{asset('js/submission.js')}}"></script>
+    <script src="{{asset('js/subscription.js')}}"></script>
     @stack('scripts')
 </body>
 </html>
