@@ -99,7 +99,8 @@ a {
     margin: 0;
 }
 .carousel-caption {
-	top: 270px;
+    bottom: 0;
+    top: 38vh;
 }
 .carousel-indicators li {
 	margin: 0 8px;

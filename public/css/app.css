@@ -469,8 +469,10 @@ html {
 }
 
 .vertical-text {
-  margin-top: 600px;
   height: 400px;
+  position: fixed;
+  top: 55vh;
+  visibility: hidden;
 }
 
 .vertical-text .next {

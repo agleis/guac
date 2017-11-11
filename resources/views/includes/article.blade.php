@@ -45,7 +45,7 @@
         <a class="sidebar" href="{{route('article', ['name' => $next])}}">
           <div class="col-md-1 hidden-xs hidden-sm">
             @if($next != '')
-              <div class="vertical-text">
+              <div class="vertical-text fixme">
                 <div class="next">
                   <a href="{{route('article', ['name' => $next])}}">Next Story</a>
                 </div>
@@ -71,3 +71,6 @@
     </div>
 
   </div>
+@push('scripts')
+  <script src="{{asset('js/article.js')}}"></script>
+@endpush
