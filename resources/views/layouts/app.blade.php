@@ -99,8 +99,9 @@
         </nav>
         <div class='nav-placeholder'>&nbsp;</div>
         @yield('content')
+
         <div class="footer row">
-          <div class="col-md-9">
+          <div class="col-md-8">
             <div>
               <ul class="footer-nav">
                 <li>
@@ -131,12 +132,18 @@
               <small>&copy; 2017 Guac Magazine</small>
             </div>
           </div>
-          <div class="subscribe">
-            <h3>Subscribe</h3>
-            <input type="text" id="subscribe-form" class="subscribe-form" name="email" placeholder="Enter Email" />
-            <button id="subscribe-button" class="subscribe-button" type="submit">-></button>
-            <div id="subscribe-message" style="display:none;">
-              <p>Thank you!</p>
+          <div class="subscribe col-md-4">
+            <div class="row">
+               <h4>Subscribe</h4>
+            </div>
+        
+            <div class="subscribe-form-wrap row">
+              <button id="subscribe-button" class="subscribe-button" type="submit">-></button>
+              <input type="text" id="subscribe-form" class="subscribe-form" name="email" placeholder="Enter Email" />
+            </div>
+            
+            <div id="subscribe-message" class="row" style="display:none;">
+              <h4>Thank you!</h4>
             </div>
           </div>
         </div>
