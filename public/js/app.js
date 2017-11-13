@@ -1319,7 +1319,7 @@ Split(["#editor-form", "#editor-article"], {
 
 CKEDITOR.stylesSet.add('my_styles', [
 // Block-level styles.
-{ name: 'Quote Row', element: 'div', attributes: { class: 'row quote' } }, { name: 'Image Row', element: 'div', attributes: { class: 'row' } }, { name: 'Column-4', element: 'div', attributes: { class: 'col-md-4' } }, { name: 'Column-6', element: 'div', attributes: { class: 'col-md-6' } }, { name: 'Column-8', element: 'div', attributes: { class: 'col-md-8' } },
+{ name: 'Row', element: 'div', attributes: { class: 'row' } }, { name: 'Image Row', element: 'div', attributes: { class: 'row' } }, { name: 'Column-4', element: 'div', attributes: { class: 'col-md-4' } }, { name: 'Column-6', element: 'div', attributes: { class: 'col-md-6' } }, { name: 'Column-8', element: 'div', attributes: { class: 'col-md-8' } }, { name: 'Column-10 centered', element: 'div', attributes: { class: 'col-md-10 col-md-offset-1' } }, { name: 'Gray full page', element: 'div', attributes: { class: 'gray-section' } },
 
 // Inline styles.
 { name: 'Quote', element: 'blockquote', attributes: { class: 'quote_div quote' } }, { name: 'CSS Style', element: 'span', attributes: { 'class': 'my_style' } }, { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }]);
@@ -42534,12 +42534,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute'],
+  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url'],
   computed: {
     background: function background() {
       return "background-image: url('" + this.image + "')";
+    },
+    twitter: function twitter() {
+      return "http://twitter.com/share?text=" + this.title + "&url=" + this.url;
+    },
+    facebook: function facebook() {
+      return "https://www.facebook.com/sharer/sharer.php?u=" + this.url;
+    },
+    mail: function mail() {
+      return "mailto:?subject=Read%20This&body=" + this.url;
+    },
+    authorBackground: function authorBackground() {
+      return "background-image: url('" + this.author.image + "')";
     }
   }
 });
@@ -42553,62 +42590,106 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "image-article", style: _vm.background }),
-    _vm._v(" "),
-    _c("div", { staticClass: "editable container" }, [
-      _c("div", { staticClass: "content-row row" }, [
-        _c("a", { staticClass: "sidebar", attrs: { href: _vm.prevroute } }, [
-          _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
-            _vm.prevroute != ""
-              ? _c("div", { staticClass: "vertical-text" }, [
-                  _c("div", { staticClass: "prev" }, [
-                    _c("a", { attrs: { href: _vm.prevroute } }, [
-                      _vm._v("Previous Story")
-                    ])
-                  ])
-                ])
-              : _vm._e()
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-10 col-sm-12 col-xs-12" }, [
-          _c("div", { staticClass: "title-box" }, [
-            _c("p", { staticClass: "issue" }, [
-              _vm._v(_vm._s(_vm.issue) + " "),
-              _c("span", { staticClass: "fa fa-circle blue circle" }),
-              _vm._v(_vm._s(_vm.category))
-            ]),
-            _vm._v(" "),
-            _c("h1", { staticClass: "section" }, [_vm._v(_vm._s(_vm.title))]),
-            _vm._v(" "),
-            _c("p", [_vm._v("By " + _vm._s(_vm.author.name))]),
-            _vm._v(" "),
-            _vm.auth
-              ? _c("div", [
-                  _c("a", { attrs: { href: _vm.editroute } }, [
-                    _vm._v("Edit this article")
-                  ])
-                ])
-              : _vm._e()
-          ]),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "article-text",
-            domProps: { innerHTML: _vm._s(_vm.articleText) }
+    _c("div", { staticClass: "share-article" }, [
+      _vm._v("\r\n    Share\r\n    "),
+      _c("ul", { staticClass: "share-social" }, [
+        _c("li", [
+          _c("a", {
+            staticClass: "fa fa-facebook-official fa-lg",
+            attrs: { href: _vm.facebook, target: "_blank" }
           })
         ]),
         _vm._v(" "),
-        _c("a", { staticClass: "sidebar", attrs: { href: _vm.nextroute } }, [
-          _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
-            _vm.nextroute != ""
-              ? _c("div", { staticClass: "vertical-text" }, [
-                  _c("div", { staticClass: "next" }, [
-                    _c("a", { attrs: { href: _vm.nextroute } }, [
-                      _vm._v("Next Story")
-                    ])
+        _c("li", [
+          _c("a", {
+            staticClass: "fa fa-twitter fa-lg",
+            attrs: { href: _vm.twitter, target: "_blank" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", {
+            staticClass: "fa fa-envelope fa-lg mail",
+            attrs: { href: _vm.mail }
+          })
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "image-article", style: _vm.background }),
+    _vm._v(" "),
+    _c("div", { staticClass: "editable container" }, [
+      _c("div", { staticClass: "col-md-10 col-sm-12 col-xs-12" }, [
+        _c("div", { staticClass: "title-box" }, [
+          _c("h4", { staticClass: "issue" }, [
+            _vm._v(_vm._s(_vm.issue) + "    \r\n            "),
+            _c("span", { staticClass: "arts-culture" }, [
+              _vm._v(_vm._s(_vm.category))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h1", { staticClass: "section" }, [_vm._v(_vm._s(_vm.title))]),
+          _vm._v(" "),
+          _c("h4", [_vm._v("By " + _vm._s(_vm.author.name))]),
+          _vm._v(" "),
+          _vm.auth
+            ? _c("a", { attrs: { href: _vm.editroute } }, [
+                _vm._v("Edit this article")
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "col-sm-12 col-xs-12 article-text",
+        domProps: { innerHTML: _vm._s(_vm.articleText) }
+      }),
+      _vm._v(" "),
+      _c("a", { staticClass: "sidebar", attrs: { href: _vm.prevroute } }, [
+        _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
+          _vm.prevroute != ""
+            ? _c("div", { staticClass: "vertical-text" }, [
+                _c("div", { staticClass: "prev" }, [
+                  _c("a", { attrs: { href: _vm.prevroute } }, [
+                    _vm._v("Previous Story")
                   ])
                 ])
-              : _vm._e()
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "sidebar", attrs: { href: _vm.nextroute } }, [
+        _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
+          _vm.nextroute != ""
+            ? _c("div", { staticClass: "vertical-text fixme" }, [
+                _c("div", { staticClass: "next" }, [
+                  _c("a", { attrs: { href: _vm.nextroute } }, [
+                    _vm._v("Next Story")
+                  ])
+                ])
+              ])
+            : _vm._e()
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "gray-author container-fluid" }, [
+      _c("h3", { staticClass: "author-about" }, [
+        _vm._v("About " + _vm._s(_vm.author.name))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-3" }, [
+          _c("div", {
+            staticClass: "image-author",
+            style: _vm.authorBackground
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-9" }, [
+          _c("div", { staticClass: "author-bio" }, [
+            _c("p", [_vm._v(_vm._s(_vm.author.bio))])
           ])
         ])
       ])
@@ -43169,11 +43250,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: { Ckeditor: __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2___default.a },
-  props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city', 'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
+  props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city', 'url', 'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
   functional: false,
   data: function data() {
     return {
@@ -43803,7 +43885,8 @@ var render = function() {
             title: _vm.titlecontent,
             image: _vm.imagecontent,
             issue: _vm.issuecontent,
-            category: _vm.currentCategory.name
+            category: _vm.currentCategory.name,
+            url: _vm.url
           }
         })
       ],

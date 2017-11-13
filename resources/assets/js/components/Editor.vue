@@ -84,7 +84,8 @@
           :title="titlecontent"
           :image="imagecontent"
           :issue="issuecontent"
-          :category="currentCategory.name">
+          :category="currentCategory.name"
+          :url="url">
 
         </articletext>
     </div>
@@ -95,7 +96,7 @@
     import Ckeditor from 'vue-ckeditor2'
     export default {
       components: { Ckeditor },
-      props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city',
+      props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city', 'url',
               'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
       functional: false,
       data() {

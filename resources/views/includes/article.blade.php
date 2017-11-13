@@ -1,3 +1,9 @@
+@push('share')
+  <meta property="og:image" content="{{asset($article->image)}}" />
+  <meta property="og:description" content="Hello there." />
+  <meta property="og:url"content="{{request()->url()}}" />
+  <meta property="og:title" content="{{$article->title}}" />
+@endpush
 <div>
 
   <div class="share-article">

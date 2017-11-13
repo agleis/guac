@@ -71,11 +71,13 @@ Split(["#editor-form", "#editor-article"], {
 
 CKEDITOR.stylesSet.add('my_styles', [
   // Block-level styles.
-  { name: 'Quote Row', element: 'div', attributes: { class: 'row quote' } },
+  { name: 'Row', element: 'div', attributes: { class: 'row' } },
   { name: 'Image Row', element: 'div', attributes: { class: 'row' } },
   { name: 'Column-4', element: 'div', attributes: { class: 'col-md-4' } },
   { name: 'Column-6', element: 'div', attributes: { class: 'col-md-6' } },
   { name: 'Column-8', element: 'div', attributes: { class: 'col-md-8' } },
+  { name: 'Column-10 centered', element: 'div', attributes: { class: 'col-md-10 col-md-offset-1' } },
+  { name: 'Gray full page', element: 'div', attributes: { class: 'gray-section' } },
 
   // Inline styles.
   { name: 'Quote', element: 'blockquote', attributes: { class: 'quote_div quote' } },
