@@ -7,9 +7,11 @@
 <div>
 
   <div class="share-article">
-    Share
+    <div id="share-text">Share</div>
+    
     <ul class="share-social">
-      <li><a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u={{request()->url()}}" target="_blank"></a></li>
+      <!-- <li><a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u={{request()->url()}}" target="_blank"></a></li> -->
+      <li><a class="fa fa-facebook-official fa-lg" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=58567469885&amp;redirect_uri={{request()->url()}}&amp;display=popup', '_blank', 'toolbar=no,scrollbars=yes,resizable=no,fullscreen=no,top=50,left=50,width=555,height=615')" href="#" tabindex="-1"></a></li>
       <li><a class="fa fa-twitter fa-lg" href="http://twitter.com/share?text={{$article->title}}&url={{request()->url()}}" target="_blank"></a></li>
       <li><a class="fa fa-envelope fa-lg mail" href="mailto:?subject=Read%20This&body={{request()->url()}}"></a></li>
       <!-- Edit the links ^^^ -->
@@ -19,7 +21,6 @@
   <div class="image-article" style="background-image: url('{{asset($article->image)}}')">
 
   </div>
-
 
   <div class="editable container">
 
@@ -71,10 +72,10 @@
   <div class="gray-author container-fluid">
     <h3 class="author-about">About {{$article->user->name}}</h3>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-6 col-xs-6 col-md-push-0 col-sm-push-3 col-xs-push-3 ">
         <div class="image-author" style="background-image: url('{{asset($article->user->image)}}')"></div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-9 col-sm-12 col-xs-12">
         <div class="author-bio">
           <p>{{$article->user->bio}}</p>
         </div>

@@ -4,10 +4,10 @@
     <div class="content featured container-fluid">
         <h2 class="content-section" id="contribute">Contribute</h2>
         <div class="row content-section contribute">
-            <div class="col-md-6 no-gutter">
+            <div class="col-md-6 col-sm-12 col-xs-12 no-gutter">
                 <h2>Join Us?</h2>
                 <div class="inline-image">
-                    <img id="join" src="{{asset('images/bariloche1.jpg')}}" width='550' height='320' />
+                    <img id="join" src="{{asset('images/contribute.png')}}" width='550' height='320' />
                 </div>
                 <p>Want to deliver stories of people from around the world? Join us.</p>
                 
@@ -32,9 +32,9 @@
                     We not only maintain Guac’s financials, but also make sure operations are running soomthly. We search for funding opportunities from various sources and make sure that each department is staying within budget. We are the backbone of Guac’s Magazine! 
                 </p>
             </div>
-            <div class="col-md-4 no-gutter">
+            <div class="col-md-4 col-sm-12 col-xs-12 no-gutter">
                 <h3>Content Contributions</h3>
-                <h3>City Gudies Submission</h3>
+                <h3>City Guides Submission</h3>
                 <p>
                     Have local gems to recommend? Submit your recommendations to <a href="mailto:guacmag@gmail.com">guacmag@gmail.com</a> and our team will get back to you.
                 </p>

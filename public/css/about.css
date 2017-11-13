@@ -33,3 +33,34 @@
   width: 100%;
 }
 
+@media (max-width: 768px) {
+.about-image-wrap {
+    height: 180px;
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-size: 600px;
+    background-position-x: -120px;
+}
+.about-small {
+    margin: 0;
+    padding: 0;
+}
+.content-row {
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+.row-5 .col {
+    padding-left: 10px;
+}
+.ingredients {
+    width: 20%;
+}
+.ingredients h3 {
+    font-size: 12px;
+    margin-top: 1em;
+}
+.ingredients h4 {
+    font-size: 9px;
+}
+}
