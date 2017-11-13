@@ -20,28 +20,38 @@
           <!-- <img src="{{asset('images/guac_walk.png')}}" class="about-image" /> -->
           <h2 class="section">About Guac</h2>
           <div class="col-xs-12 about-small">
-            <ul class="row content-row row-5">
+            <ul class="row content-row row-5 ingredients-wrap">
               <li class="col ingredients">
                 <h3 class="cilantro">Cilantro</h3>
                 <h4 class="meaning">The Connector</h4>
+                <p class="description">The quick connector that will help you travel the world more efficiently</p>
               </li>
               <li class="col ingredients">
                 <h3 class="jalapeno">Jalapeno</h3>
                 <h4 class="meaning">The Kick</h4>
+                <p class="description">The spicy kick that adds an extra flavor of originality and cultural immersion to each story</p>
               </li>
               <li class="col ingredients">
                 <h3 class="tomato">Tomato</h3>
                 <h4 class="meaning">The Facts</h4>
+                <p class="description">The detailed information that will guide you on your journey</p>
               </li>
               <li class="col ingredients">
                 <h3 class="onion">Onion</h3>
                 <h4 class="meaning">The Layers</h4>
+                <p class="description">The various layers of stories written by individuals of all cultures and backgrounds</p>
               </li>
               <li class="col ingredients">
                 <h3 class="avocado">Avocado</h3>
                 <h4 class="meaning">The Base</h4>
+                <p class="description">A travel magazine written for Cornellians by Cornellians</p>
               </li>
             </ul>
+          </div>
+          <div class="row content-row">
+            <div class="col-md-12">
+              <p class="zeyu-quote">"Travel, of course, is not just for international students. We live in a globalized age. Every individual is strongly connected to their fellow inhabitants of this planet, as space and time seem to converge at an alarming rate. But oftentimes, this notion of interconnectedness is lost due to political, social or economic externalities, that instead generate a disconnect between cultures." - Zeyu Hu, Editor-In-Chief</p>
+            </div>
           </div>
     
           <h2 class="section">Our Mission</h2>
@@ -203,7 +213,7 @@
               </div>
             </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="col-md-4 col-sm-12 col-xs-12">
               <h3 class="section">Content</h3>
               
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
