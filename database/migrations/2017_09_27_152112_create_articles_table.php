@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->string('city');
+            $table->text('summary');
             $table->text('text');
             $table->integer('user_id');
             $table->string('issue');

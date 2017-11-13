@@ -99,6 +99,7 @@ class ArticleController extends Controller
         $article->text = $request->text;
         $article->title = $request->title;
         $article->issue = $request->issue;
+        $article->summary = $request->summary;
         $article->city = $request->city;
         $article->user_id = $request->author;
         $article->region_id = $request->region;
@@ -143,6 +144,7 @@ class ArticleController extends Controller
       $article->text = $request->text;
       $article->title = $request->title;
       $article->issue = $request->issue;
+      $article->summary = $request->summary;
       $article->city = $request->city;
       $article->name = $this->makeName($request->title);
       $article->user_id = $request->author;

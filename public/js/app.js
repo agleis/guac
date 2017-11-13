@@ -1237,9 +1237,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-__webpack_require__(75);
-__webpack_require__(76);
-module.exports = __webpack_require__(77);
+module.exports = __webpack_require__(75);
 
 
 /***/ }),
@@ -43251,11 +43249,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: { Ckeditor: __WEBPACK_IMPORTED_MODULE_0_vue_ckeditor2___default.a },
-  props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city', 'url', 'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
+  props: ['route', 'text', 'title', 'author', 'authors', 'upload', 'city', 'url', 'summary', 'aissue', 'image', 'category', 'categories', 'region', 'regions', 'country', 'countries'],
   functional: false,
   data: function data() {
     return {
@@ -43267,6 +43269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       categoryid: this.category.id ? this.category.id : this.categories[0].id,
       countryid: this.country.id ? this.country.id : this.countries[0].id,
       issuecontent: this.aissue,
+      summarycontent: this.summary,
       citycontent: this.city,
       imagecontent: this.image,
       imageurl: this.image
@@ -43758,6 +43761,35 @@ var render = function() {
                         return
                       }
                       _vm.issuecontent = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "summary" } }, [_vm._v("Summary")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.summarycontent,
+                      expression: "summarycontent"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "summary", id: "summary" },
+                  domProps: {
+                    value: _vm.summarycontent,
+                    value: _vm.summarycontent
+                  },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.summarycontent = $event.target.value
                     }
                   }
                 })
@@ -45656,18 +45688,6 @@ return Split;
 
 /***/ }),
 /* 75 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 77 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

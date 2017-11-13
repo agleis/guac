@@ -1,6 +1,6 @@
 @push('share')
   <meta property="og:image" content="{{asset($article->image)}}" />
-  <meta property="og:description" content="Hello there." />
+  <meta property="og:description" content="{{$article->summary}}" />
   <meta property="og:url"content="{{request()->url()}}" />
   <meta property="og:title" content="{{$article->title}}" />
 @endpush
@@ -25,9 +25,9 @@
 
     <div class="col-md-10 col-sm-12 col-xs-12">
       <div class="title-box">
-          <h4 class="issue">{{$article->issue}} &nbsp; &nbsp;
-            <span @if($article->category_id == 1) class="arts-culture" @endif>{{$article->category->name}}</span>
-          </h4>
+          <h4 class="issue">{{$article->issue}} 
+          <span class="fa fa-circle gray circle"></span>
+          <span @if($article->category_id == 1) class="arts-culture" @endif>{{$article->category->name}}</span>
           <h1 class="section">{{$article->title}}</h1>
           <h4>By {{$article->user->name}}</h4>
           @auth

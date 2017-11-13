@@ -22,6 +22,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Baliroche/Fanny%20(12).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'Located in the foothills of the Andes and overlooking Nahuel Huapei Lake, San Carlos de Bariloche is a quiet resort city
+    modeled after alpine ski resorts.',
           'category_id' => 1,
           'region_id' => 2,
           'country_id' => 10,
@@ -37,6 +39,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Longmen%20Grottoes/Zeyu%20(11).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'As one of the Four Great Ancient Capitals of China, the city of Luoyang (洛阳) is definitely the least known to visitors outside
+        China.',
           'category_id' => 1,
           'region_id' => 12,
           'country_id' => 46,
@@ -52,6 +56,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Phobjikha%20Valley/Pia%20(7)-%20header.jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'In the land-locked Bhutan, known to be the last Shangri-La in the world, lies Phobjikha Valley. Phobjikha Valley, a 4-hour
+        drive away from Punakha, is an expansive glacial valley',
           'category_id' => 1,
           'region_id' => 10,
           'country_id' => 25,
@@ -67,6 +73,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Cesano/Lauren%20(11).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'When I arrived at Malpensa Airport back in June I felt as if I were in another world. The signs in the terminal were in Italian
+        and the casual chatter of people around me was unfamiliar to my ear.',
           'category_id' => 1,
           'region_id' => 4,
           'country_id' => 109,
@@ -82,6 +90,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Christine%20(13).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'Early August winds sway the grain field as the air cools and the day winds down. On the right is a slow-setting sun that
+        shines toward the brightly lit moon on my left.',
           'category_id' => 1,
           'region_id' => 4,
           'country_id' => 164,
@@ -97,6 +107,7 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Morocco/Cathy%20(5)(1).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'Morocco, the gem of northwestern Africa and just a 45 min boat ride from Gibraltar, has been an intriguing country for many.',
           'category_id' => 1,
           'region_id' => 5,
           'country_id' => 148,
@@ -112,6 +123,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Bali/Akanksha%20(14).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'Hidden between the unique rock formations of Jimbaran Bay’s magnificent coastline, and perched 14 metres above the rough
+        waves of the Indian Ocean, Rock Bar Bali is any sunset lover’s dream come true.',
           'category_id' => 1,
           'region_id' => 11,
           'country_id' => 103,
@@ -127,6 +140,8 @@ class ArticlesTableSeeder extends Seeder
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Tanzania/Maddie%20(2).jpg',
           'featured' => true,
           'issue' => 'Issue 1',
+          'summary' => 'This summer I had the unforgettable opportunity to study abroad in Tanzania for wildlife conservation policy and research
+        techniques.',
           'category_id' => 1,
           'region_id' => 6,
           'country_id' => 219,
