@@ -16,6 +16,7 @@
           image="{{asset($article->image)}}"
           route="{{session()->has('upload') ?
             route('post_upload_article') :
-            route('post_edit_article', ['name' => $article->name])}}">
+            route('post_edit_article', ['name' => $article->name])}}"
+          url="{{request()->url()}}">
   </editor>
 @endsection
