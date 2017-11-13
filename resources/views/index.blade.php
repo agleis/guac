@@ -33,7 +33,7 @@
     <div class="row content-row">
       @foreach($articles as $article)
         @if($loop->index < 2)
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12 col-xs-12">
               @include("includes/summary2")
             </div>
         @else
@@ -47,7 +47,7 @@
         @if($loop->index < 2)
           @continue
         @elseif($loop->index < 5)
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12 col-xs-12">
             @include("includes/summary3")
           </div>
         @else

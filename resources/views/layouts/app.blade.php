@@ -31,9 +31,12 @@
 <body>
     @if(Auth::check() or request()->is('login'))
     <div id="app">
+
 <!--       @if(request()->is('/'))
       <div id="header-svg"><img src="{{asset('images/header.svg')}}"></div>
       @endif -->
+
+        <!-- <nav class="navbar navbar-default navbar-static-top"> -->
         <nav class="navbar navbar-fixed-top navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -50,6 +53,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="{{asset('images/Logo.png')}}" height="30" />
                     </a>
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -66,7 +70,7 @@
                           <a href="{{route('guides')}}">City Guides</a>
                         </li> -->
                       @endguest
-                        <li @if(request()->is('map')) class="current" @endif>
+                        <li id="map-link" @if(request()->is('map')) class="current" @endif>
                           <a href="{{route('map')}}">Map</a>
                         </li>
                         <li @if(request()->is('about')) class="current" @endif>
@@ -101,7 +105,7 @@
         @yield('content')
 
         <div class="footer row">
-          <div class="col-md-8">
+          <div class="col-md-8 col-sm-12 col-xs-12">
             <div>
               <ul class="footer-nav">
                 <li>
@@ -121,24 +125,22 @@
             <div>
               <ul class="footer-social">
                 <li>
-                  <a class="fa fa-facebook-official white fa-lg" href="http://facebook.com"></a>
+                  <a class="fa fa-facebook-official white fa-lg" href="https://www.facebook.com/guacmag/" target="_blank"></a>
                 </li>
                 <li>
-                  <a class="fa fa-instagram white fa-lg" href="http://instagram.com"></a>
+                  <a class="fa fa-instagram white fa-lg" href="https://www.instagram.com/guacmag/" target="_blank"></a>
                 </li>
               </ul>
             </div>
-            <div class="copyright">
-              <small>&copy; 2017 Guac Magazine</small>
-            </div>
+            
           </div>
-          <div class="subscribe col-md-4">
+          <div class="subscribe col-md-4 col-sm-12 col-xs-12">
             <div class="row">
                <h4>Subscribe</h4>
             </div>
         
             <div class="subscribe-form-wrap row">
-              <button id="subscribe-button" class="subscribe-button" type="submit">-></button>
+              <button id="subscribe-button" class="subscribe-button" type="submit"><img id="arrow" src="{{asset('images/arrow.svg')}}"></button>
               <input type="text" id="subscribe-form" class="subscribe-form" name="email" placeholder="Enter Email" />
             </div>
             
@@ -146,6 +148,9 @@
               <h4>Thank you!</h4>
             </div>
           </div>
+          <div class="copyright col-md-12 col-sm-12 col-xs-12">
+              <small>&copy; 2017 Guac Magazine</small>
+            </div>
         </div>
     </div>
     @else

@@ -134,9 +134,20 @@ h2.content-section {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.about-image-wrap {
+    background-image: url(/images/guac_walk.png);
+    height: 500px;
+    width: 100%;
+    margin-bottom: 2em;
+    background-position: center;
+    background-size: 1830px;
+    background-position-x: -370px;
+    margin-top: 60px;
+}
 .about-image {
   width: 100%;
   margin-bottom: 2em;
+  height: 500px;
 }
 .row-5 {
   margin: 1em 0 2em;
@@ -145,7 +156,7 @@ h2.content-section {
     line-height: 200%;
     font-size: 130%;
     margin-top: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 #map-wrapper{
     background: #fafafa;
@@ -257,6 +268,10 @@ select#region-select h2 {
     top: -1px;
     position: relative;
 }
+#share-text {
+    width: fit-content;
+    float: left;
+}
 /*  end SHARE ARTICLE section   */
 
 /*  CONTRIBUTE PAGE   */
@@ -315,7 +330,9 @@ h2#contribute{
     font-size: 1em;
     padding: 12px 45px;
 }
-
+#arrow {
+    width: 20px;
+}
 
 /*   SUBMIT FORM  */
 p#join{
@@ -348,10 +365,10 @@ textarea#msg.form-control {
 }
 /*   end SUBMIT FORM  */
 
+/*   ARTICLE STYLE  */
 .article-container {
     padding: 3.5em 170px;
 }
-
 .gray-section {
     background-color: #f5f5f5;
     padding: 3em 11% 1em;
@@ -386,7 +403,6 @@ textarea#msg.form-control {
     list-style: none;
     color: #3c3c3c;
 }
-
 .white-section {
     background-color: #fff;
     padding: 3em 11% 1em;
@@ -398,30 +414,28 @@ textarea#msg.form-control {
     font-size: 1.3em;
     margin-bottom: 35px;
 }
-
 .article-text {
     padding: 0;
 }
-
 .title-box.guide {
     padding-top: 1em;
 }
 .title-box {
     padding-top: 30px;
 }
-
+/*  end ARTICLE STYLE  */
 
 /*  AUTHOR BIO   */
 .gray-author {
     background-color: #f5f5f5;
-    padding: 3.5em 170px 5em;
+    padding: 3em 170px 5em;
     margin-bottom: -50px;
 }
 .gray-author p {
-    color: #555;
-    letter-spacing: .5px;
-    line-height: 30px;
-    font-size: 1.4em;
+    color: #848484;
+    letter-spacing: .6px;
+    line-height: 35px;
+    font-size: 1.3em;
 }
 .image-author {
     width: 90%;
@@ -437,3 +451,224 @@ textarea#msg.form-control {
     margin-left: 3em;
 }
 /*  end AUTHOR BIO   */
+
+
+/* --------------------------------------------------------- */
+/*                       MOBILE STYLES                       */
+
+@media (max-width: 768px) {
+.footer {
+    height: 37vh;
+    padding: 30px 0 0;
+    width: 100vw;
+    margin: 0;
+}
+.footer-nav {
+    display: none;
+}
+.footer .footer-social {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+ul.footer-social li {
+    display: inline;
+    margin: 0;
+    margin-left: 25px;
+}
+ul.footer-social li:first-child {
+    display: inline;
+    margin-left: 0;
+}
+.copyright {
+    text-align: center;
+}
+.subscribe h4 {
+    float: none;
+    text-align: center;
+}
+.subscribe-form-wrap {
+    padding: 20px 0;
+    padding-right: 13vw;
+}
+#map-link {
+    display: none;
+}
+.navbar-nav > li {
+    padding-left: 0;
+    text-align: center;
+}
+.search-form {
+    float: none;
+    padding-left: 23vw;
+    margin-top: -10px;
+}
+.content-row .col-md-6 {
+    height: auto;
+    padding: 0;
+}
+.content-row .col-md-4 {
+    height: auto;
+    padding: 0;
+}
+.content .content-section {
+    margin-left: 0;
+    margin-top: 20px;
+    margin-right: 0;
+}
+.carousel-caption {
+    bottom: 47vh;
+    top: 10vh;
+    padding: 0;
+    left: 10px;
+    right: 10px;
+}
+.carousel {
+    position: relative;
+    height: 250px;
+    /* margin-bottom: -0vh; */
+    overflow: hidden;
+}
+/*for carousel picture resizing*/
+.carousel-inner a {
+    background-size: 600px;
+    background-position-y: 0;
+}
+.carousel-caption h1 {
+    font-size: 20px;
+}
+.carousel-caption h3 {
+    font-size: 15px;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 70%;
+    margin-left: -35%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+#share-text {
+    display: none;
+}
+.share-article {
+    background-color: #dcdcdc;
+    height: auto;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    right: 0;
+    top: 45vh;
+    opacity: .5;
+}
+.share-article ul {
+    list-style: none;
+    padding: 0;
+    display: block;
+    margin: 0;
+}
+.share-article ul li {
+    display: block;
+    margin: 0;
+    padding: 10px;
+}
+.title-box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.white-section {
+    background-color: #fff;
+    color: #555;
+    padding: 1em;
+}
+.white-section p {
+    margin-bottom: 15px;
+}
+.gray-section {
+    padding: 1em;
+}
+.gray-section p {
+    margin-bottom: 15px;
+}
+.gray-section ul li {
+    margin-bottom: 15px;
+}
+.gray-author {
+    padding: 1em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.image-author {
+    margin: 0;
+    width: 100%;
+    padding-top: 100%;
+}
+.author-about {
+    text-align: center;
+}
+.author-bio {
+    margin: 0;
+    padding: 1.5em;
+}
+.author-bio p {
+    font-size: 17px;
+    letter-spacing: .5px;
+}
+img#join {
+    padding-top: 0;
+    width: 100vw;
+    height: auto;
+    margin-left: -5vw;
+}
+.contribute .col-md-6 {
+    padding-right: 0;
+}
+.contribute .col-md-4 {
+    margin-left: 0;
+}
+h2#contribute {
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+#submit-button {
+    padding-bottom: 2em;
+}
+form .row {
+    margin-right: -6px;
+}
+p#join {
+    padding-bottom: 0;
+}
+#team {
+    padding: 1em;
+}
+#team p {
+    font-size: 1em;
+}
+#team .hoverbox {
+    display: none;
+}
+#about-space {
+    display: none;
+}
+
+}
+/*                      end MOBILE STYLES                    */
+/* --------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+

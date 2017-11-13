@@ -15,31 +15,34 @@
         &nbsp;
       </div>
       <div class="col-md-10">
-        <div class="container-fluid">
-          <img src="{{asset('images/bariloche1.jpg')}}" class="about-image" />
-          <h2 class="section">Guac</h2>
-          <ul class="row content-row row-5">
-            <li class="col ingredients">
-              <h3 class="cilantro">Cilantro</h3>
-              <h4 class="meaning">The Connector</h4>
-            </li>
-            <li class="col ingredients">
-              <h3 class="jalapeno">Jalapeno</h3>
-              <h4 class="meaning">The Kick</h4>
-            </li>
-            <li class="col ingredients">
-              <h3 class="tomato">Tomato</h3>
-              <h4 class="meaning">The Facts</h4>
-            </li>
-            <li class="col ingredients">
-              <h3 class="onion">Onion</h3>
-              <h4 class="meaning">The Layers</h4>
-            </li>
-            <li class="col ingredients">
-              <h3 class="avocado">Avocado</h3>
-              <h4 class="meaning">The Base</h4>
-            </li>
-          </ul>
+        <div class="container-fluid no-gutter">
+          <div class="about-image-wrap"></div>
+          <!-- <img src="{{asset('images/guac_walk.png')}}" class="about-image" /> -->
+          <h2 class="section">About Guac</h2>
+          <div class="col-xs-12 about-small">
+            <ul class="row content-row row-5">
+              <li class="col ingredients">
+                <h3 class="cilantro">Cilantro</h3>
+                <h4 class="meaning">The Connector</h4>
+              </li>
+              <li class="col ingredients">
+                <h3 class="jalapeno">Jalapeno</h3>
+                <h4 class="meaning">The Kick</h4>
+              </li>
+              <li class="col ingredients">
+                <h3 class="tomato">Tomato</h3>
+                <h4 class="meaning">The Facts</h4>
+              </li>
+              <li class="col ingredients">
+                <h3 class="onion">Onion</h3>
+                <h4 class="meaning">The Layers</h4>
+              </li>
+              <li class="col ingredients">
+                <h3 class="avocado">Avocado</h3>
+                <h4 class="meaning">The Base</h4>
+              </li>
+            </ul>
+          </div>
     
           <h2 class="section">Our Mission</h2>
           <div class="row content-row">
@@ -50,14 +53,13 @@
           <h2 class="section">Our Vision</h2>
           <div class="row content-row">
             <div class="col-md-12">
-              <p>To SPREAD love, appreciation, and meaningful exchanges across people of all cultures &amp; backgrounds.</p>
+              <p>To spread love, appreciation, and meaningful exchanges across people of all cultures &amp; backgrounds.</p>
             </div>
           </div>
           <h2 class="section">Our Team</h2>
-          <div class="row content-row">
-            <div class="col-md-4">
+          <div class="row content-row" id="team">
+            <div class="col-md-4 col-sm-6 col-xs-6">
               <h3 class="section">Editorial</h3>
-              
           
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
@@ -124,10 +126,9 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-6">
               <h3 class="section">Creative</h3>
-              
-
+        
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Chelsea.jpg')}}')"></div>
@@ -146,7 +147,7 @@
                 </div>
                 <p>Audrey Tirtohadiguno</p>
               </div>
-              <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+              <!-- <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Yanis.jpg')}}')"></div>
                   <p class="member-name">Yanis Park</p>
@@ -154,7 +155,7 @@
                   <p>Seoul, South Korea</p>
                 </div>
                 <p>Yanis Park</p>
-              </div>
+              </div> -->
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Ilayda.jpg')}}')"></div>
@@ -175,7 +176,7 @@
               </div>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
-                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Akanksha.jpg')}}')"></div>
+                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
                   <p class="member-name">Akanksha Jain</p>
                   <p>Marketing Analyst</p>
                   <p>Singapore</p>
@@ -193,7 +194,7 @@
               </div>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
-                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Tony.jpg')}}')"></div>
+                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
                   <p class="member-name">Tony Li</p>
                   <p>Creative Consultant</p>
                   <p>Vancouver, Canada</p>
@@ -202,7 +203,7 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-6">
               <h3 class="section">Content</h3>
               
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
@@ -252,7 +253,7 @@
               </div>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
-                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Christine.jpg')}}')"></div>
+                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
                   <p class="member-name">Christine Relander</p>
                   <p>Writer</p>
                   <p>Espoo, Finland</p>
