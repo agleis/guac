@@ -14,7 +14,7 @@
       <div class="col-md-1">
         &nbsp;
       </div>
-      <div class="col-md-10">
+      <div class="col-md-10 col-sm-12 col-xs-12">
         <div class="container-fluid no-gutter">
           <div class="about-image-wrap"></div>
           <!-- <img src="{{asset('images/guac_walk.png')}}" class="about-image" /> -->
@@ -50,7 +50,7 @@
           </div>
           <div class="row content-row">
             <div class="col-md-12">
-              <p class="zeyu-quote">"Travel, of course, is not just for international students. We live in a globalized age. Every individual is strongly connected to their fellow inhabitants of this planet, as space and time seem to converge at an alarming rate. But oftentimes, this notion of interconnectedness is lost due to political, social or economic externalities, that instead generate a disconnect between cultures." - Zeyu Hu, Editor-In-Chief</p>
+              <p class="zeyu-quote">"Travel, of course, is not just for international students. We live in a globalized age. Every individual is strongly connected to their fellow inhabitants of this planet, as space and time seem to converge at an alarming rate. But oftentimes, this notion of interconnectedness is lost due to political, social or economic externalities, that instead generate a disconnect between cultures."</p><p class="zeyu-quote-right">&mdash; Zeyu Hu, Editor-In-Chief</p>
             </div>
           </div>
     

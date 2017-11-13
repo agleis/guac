@@ -40,6 +40,11 @@
 p.zeyu-quote {
 	font-style: italic;
 }
+p.zeyu-quote-right {
+	font-style: italic;
+	float: right;
+    padding-right: 10px;
+}
 
 @media (max-width: 768px) {
 .about-image-wrap {
