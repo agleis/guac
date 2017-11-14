@@ -11,6 +11,7 @@ function showStory(country) {
             console.log(field.country.name);
             var country = field.country.name,
                 category = field.category.name,
+                region = field.region.name,
                 issue = field.issue,
                 image = field.image,
                 title = field.title,
@@ -23,7 +24,7 @@ function showStory(country) {
             }
 
             $("#content-holder").html("&nbsp;");
-            $("#content-holder").append("<div class='col-md-4'><div class='featured-article featured-3'><a href=" + href + "><div class='image' style=\"background-image: url('"+image+"')\"></div><h4 class='issue'>"+issue+" &nbsp; &nbsp;<span class='"+cls+"'>"+category+"</span></h4><h3>" + title + "</h3></a></div></div>")
+            $("#content-holder").append("<div class='col-md-4'><div class='featured-article featured-3'><a href=" + href + "><div class='image' style=\"background-image: url('" + image + "')\"></div><h4 class='issue'>"+issue+"<span class='fa fa-circle gray circle'></span><span class='region'>"+region+"</span></h4 ><h3>" + title + "</h3></a></div></div>")
         });
     });
 }

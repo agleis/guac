@@ -10,8 +10,8 @@
     <div id="share-text">Share</div>
     
     <ul class="share-social">
-      <!-- <li><a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u={{request()->url()}}" target="_blank"></a></li> -->
-      <li><a class="fa fa-facebook-official fa-lg" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=58567469885&amp;redirect_uri={{request()->url()}}&amp;display=popup', '_blank', 'toolbar=no,scrollbars=yes,resizable=no,fullscreen=no,top=50,left=50,width=555,height=615')" href="#" tabindex="-1"></a></li>
+      <li><a class="fa fa-facebook-official fa-lg" href="https://www.facebook.com/sharer/sharer.php?u={{request()->url()}}" target="_blank"></a></li>
+      {{--  <li><a class="fa fa-facebook-official fa-lg" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=58567469885&amp;redirect_uri={{request()->url()}}&amp;display=popup', '_blank', 'toolbar=no,scrollbars=yes,resizable=no,fullscreen=no,top=50,left=50,width=555,height=615')" href="#" tabindex="-1"></a></li>  --}}
       <li><a class="fa fa-twitter fa-lg" href="http://twitter.com/share?text={{$article->title}}&url={{request()->url()}}" target="_blank"></a></li>
       <li><a class="fa fa-envelope fa-lg mail" href="mailto:?subject=Read%20This&body={{request()->url()}}"></a></li>
       <!-- Edit the links ^^^ -->
@@ -28,7 +28,7 @@
       <div class="title-box">
           <h4 class="issue">{{$article->issue}} 
           <span class="fa fa-circle gray circle"></span>
-          <span @if($article->category_id == 1) class="arts-culture" @endif>{{$article->category->name}}</span>
+          {{$article->region->name}}</h4>
           <h1 class="section">{{$article->title}}</h1>
           <h4>By {{$article->user->name}}</h4>
           @auth

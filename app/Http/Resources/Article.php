@@ -23,6 +23,7 @@ class Article extends Resource
             'user' => new User($this->user),
             'category' => new Category($this->category),
             'country' => new Country($this->country),
+            'region' => new Region($this->region),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

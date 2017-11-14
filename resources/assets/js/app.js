@@ -23,6 +23,8 @@ Vue.component('guideitem', require('./components/GuideItem.vue'));
 
 Vue.component('editor', require('./components/Editor.vue'));
 
+Vue.component('author-editor', require('./components/AuthorEditor.vue'));
+
 Vue.component('guideeditor', require('./components/GuideEditor.vue'));
 
 Vue.component('guideitemeditor', require('./components/GuideItemEditor.vue'));

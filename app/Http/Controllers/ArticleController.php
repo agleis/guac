@@ -27,11 +27,11 @@ class ArticleController extends Controller
     public function index() {
         $featured = Article::featured();
         $articles = Article::list();
-        $guides = Guide::featured();
+        // $guides = Guide::featured();
         return view('index', [
             'featured' => $featured,
             'articles' => $articles,
-            'guides' => $guides
+            // 'guides' => $guides
         ]);
     }
 
@@ -198,9 +198,9 @@ class ArticleController extends Controller
     public function json(Request $request) {
         $country = $request->country;
         $stories = ArticleResource::collection(Article::map($country));
-        $guides = GuideResource::collection(Guide::map($country));
-        $merged = $stories->merge($guides);
-        return response()->json($merged);
+        // $guides = GuideResource::collection(Guide::map($country));
+        // $merged = $stories->merge($guides);
+        return response()->json($stories);
     }
 
     /**

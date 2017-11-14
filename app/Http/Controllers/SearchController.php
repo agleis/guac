@@ -16,11 +16,11 @@ class SearchController extends Controller
      */
     public function search(Request $request) {
         $articles = Article::search($request->search);
-        $guides = Guide::search($request->search);
+        // $guides = Guide::search($request->search);
         $request->flash();
         return view('results', [
             'articles' => $articles,
-            'guides' => $guides
+            // 'guides' => $guides
         ]);
     }
 

@@ -22,13 +22,12 @@
         </div>
     </div>
   @endif
-  @if(count($guides) > 0)
+  {{--  @if(count($guides) > 0)
     @if(count($articles) > 0)
         <hr />
     @endif
     <div class="content featured container-fluid">
         <h2 class="content-section">Guides</h2>
-        {{--  First row  --}}
         <div class="row content-row">
         @foreach($guides as $guide)
             <div class="col-md-4">
@@ -43,8 +42,8 @@
         @endforeach
         </div>
     </div>
-  @endif
-  @if(count($guides) == 0 && count($articles) == 0)
+  @endif  --}}
+  @if(count($articles) == 0)
     <div class="content featured container-fluid">
         <h2 class="content=section">No Results.</h2>
     </div>
