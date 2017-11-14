@@ -1,5 +1,7 @@
 let mix = require('laravel-mix');
 
+process.env.NODE_ENV = 'production';
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
