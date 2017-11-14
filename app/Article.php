@@ -101,7 +101,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch($query, $search) {
-        return $query->select('name', 'title', 'image', 'user_id', 'category_id', 'issue')
+        return $query->select('name', 'title', 'image', 'user_id', 'region_id', 'issue')
                      ->where('title', 'like', "%$search%")
                      ->orWhere('text', 'like', "%$search%")
                      ->orWhereHas('category', function($query) use($search) {
@@ -120,7 +120,7 @@ class Article extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeMap($query, $country) {
-        return $query->select('name', 'title', 'city', 'image', 'user_id', 'category_id', 'country_id', 'issue')
+        return $query->select('name', 'title', 'city', 'image', 'user_id', 'category_id', 'country_id', 'region_id', 'issue')
                      ->whereHas('country', function($query) use($country) {
                          $query->where('code', "$country");
                      })

@@ -33,7 +33,7 @@ class ArticlesTableSeeder extends Seeder
         DB::table('articles')->insert([
           'name' => 'longmen_grottoes',
           'city' => 'Luoyang',
-          'title' => 'Longmen Grottoes - A Forgotten Ancient Wonder',
+          'title' => 'Longmen Grottoes: A Forgotten Ancient Wonder',
           'text' => $this->getText('longmen'),
           'user_id' => 2,
           'image' => '/public/images/Stories%20-%20Issue%201%20-%20Longmen%20Grottoes/Zeyu%20(11).jpg',
@@ -42,7 +42,7 @@ class ArticlesTableSeeder extends Seeder
           'summary' => 'As one of the Four Great Ancient Capitals of China, the city of Luoyang (洛阳) is definitely the least known to visitors outside
         China.',
           'category_id' => 1,
-          'region_id' => 12,
+          'region_id' => 3,
           'country_id' => 46,
           'created_at' => Carbon::now()->addMinutes(1)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(1)->format('Y-m-d H:i:s')
@@ -59,7 +59,7 @@ class ArticlesTableSeeder extends Seeder
           'summary' => 'In the land-locked Bhutan, known to be the last Shangri-La in the world, lies Phobjikha Valley. Phobjikha Valley, a 4-hour
         drive away from Punakha, is an expansive glacial valley',
           'category_id' => 1,
-          'region_id' => 10,
+          'region_id' => 3,
           'country_id' => 25,
           'created_at' => Carbon::now()->addMinutes(2)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(2)->format('Y-m-d H:i:s')
@@ -76,7 +76,7 @@ class ArticlesTableSeeder extends Seeder
           'summary' => 'When I arrived at Malpensa Airport back in June I felt as if I were in another world. The signs in the terminal were in Italian
         and the casual chatter of people around me was unfamiliar to my ear.',
           'category_id' => 1,
-          'region_id' => 4,
+          'region_id' => 5,
           'country_id' => 109,
           'created_at' => Carbon::now()->addMinutes(3)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(3)->format('Y-m-d H:i:s')
@@ -93,7 +93,7 @@ class ArticlesTableSeeder extends Seeder
           'summary' => 'Early August winds sway the grain field as the air cools and the day winds down. On the right is a slow-setting sun that
         shines toward the brightly lit moon on my left.',
           'category_id' => 1,
-          'region_id' => 4,
+          'region_id' => 5,
           'country_id' => 164,
           'created_at' => Carbon::now()->addMinutes(4)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(4)->format('Y-m-d H:i:s')
@@ -109,7 +109,7 @@ class ArticlesTableSeeder extends Seeder
           'issue' => 'Issue 1',
           'summary' => 'Morocco, the gem of northwestern Africa and just a 45 min boat ride from Gibraltar, has been an intriguing country for many.',
           'category_id' => 1,
-          'region_id' => 5,
+          'region_id' => 4,
           'country_id' => 148,
           'created_at' => Carbon::now()->addMinutes(5)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(5)->format('Y-m-d H:i:s')
@@ -126,7 +126,7 @@ class ArticlesTableSeeder extends Seeder
           'summary' => 'Hidden between the unique rock formations of Jimbaran Bay’s magnificent coastline, and perched 14 metres above the rough
         waves of the Indian Ocean, Rock Bar Bali is any sunset lover’s dream come true.',
           'category_id' => 1,
-          'region_id' => 11,
+          'region_id' => 3,
           'country_id' => 103,
           'created_at' => Carbon::now()->addMinutes(6)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(6)->format('Y-m-d H:i:s')
@@ -143,7 +143,7 @@ class ArticlesTableSeeder extends Seeder
           'summary' => 'This summer I had the unforgettable opportunity to study abroad in Tanzania for wildlife conservation policy and research
         techniques.',
           'category_id' => 1,
-          'region_id' => 6,
+          'region_id' => 4,
           'country_id' => 219,
           'created_at' => Carbon::now()->addMinutes(7)->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->addMinutes(7)->format('Y-m-d H:i:s')

@@ -87,9 +87,9 @@
                           <li>
                             <a href="{{route('upload_article')}}">New Story</a>
                           </li>
-                          <li>
+                          {{--  <li>
                             <a href="{{route('upload_guide')}}">New Guide</a>
-                          </li>
+                          </li>  --}}
                           {{--  <li>
                             <a href="{{route('author', ['id' => Auth::id()])}}">Edit User</a>
                           </li>  --}}

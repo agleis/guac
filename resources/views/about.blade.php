@@ -186,7 +186,7 @@
               </div>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
-                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
+                  <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Akanksha.jpg')}}')"></div>
                   <p class="member-name">Akanksha Jain</p>
                   <p>Marketing Analyst</p>
                   <p>Singapore</p>

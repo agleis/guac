@@ -63,7 +63,7 @@
   </div>
   <!-- <hr /> -->
 
-<!--   <div class="content featured container-fluid">
+{{--   <div class="content featured container-fluid">
     <h2 class="content-section">City Guides</h2>
     <div class="row content-row">
       @foreach($guides as $guide)
@@ -87,7 +87,7 @@
         <a href="{{route('articles')}}">Read More</a>
       </div>
     </div>
-  </div> -->
+  </div> --}}
 
 @endsection
 @push('scripts')
