@@ -22,12 +22,12 @@
       @foreach($articles as $article)
         {{--  2-row  --}}
         @if($loop->index % 5 < 2)
-          <div class="col-md-6 featured-col r-{{$article->region->id}} c-{{$article->category->id}}">
+          <div class="col-md-6 col-sm-12 col-xs-12 featured-col r-{{$article->region->id}} c-{{$article->category->id}}">
             @include("includes/summary2")
           </div>
         {{--  3-row  --}}
         @else
-          <div class="col-md-4 featured-col r-{{$article->region->id}} c-{{$article->category->id}}">
+          <div class="col-md-4 col-sm-12 col-xs-12 featured-col r-{{$article->region->id}} c-{{$article->category->id}}">
             @include("includes/summary3")
           </div>
         @endif

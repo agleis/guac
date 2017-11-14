@@ -366,12 +366,17 @@ textarea#msg.form-control {
 /*   end SUBMIT FORM  */
 
 /*   ARTICLE STYLE  */
+@media (min-width: 768px) {
+	.editable .col-md-10 {
+		padding: 0;
+	}
+} 
 .article-container {
     padding: 3.5em 170px;
 }
 .gray-section {
     background-color: #f5f5f5;
-    padding: 3em 11% 1em;
+    padding: 3em 125px 1em;
     color: #3c3c3c;
     margin-bottom: 10px;
 }
@@ -405,7 +410,7 @@ textarea#msg.form-control {
 }
 .white-section {
     background-color: #fff;
-    padding: 3em 11% 1em;
+    padding: 3em 125px 1em;
     color: #555;
 }
 .white-section p {
@@ -457,6 +462,35 @@ textarea#msg.form-control {
 /*                       MOBILE STYLES                       */
 
 @media (max-width: 768px) {
+p {
+    letter-spacing: .5px;
+    color: #6b6b6b;
+    font-size: 16px;
+    line-height: 30px;
+}
+h1 {
+    letter-spacing: 0.05em;
+    font-size: 30px;
+}
+h2 {
+    letter-spacing: 0.03em;
+    font-size: 24px;
+}
+h3 {
+    letter-spacing: 0.03em;
+    font-size: 18px;
+}
+h4 {
+    font-family: CircularStd-Book;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    color: #6d6d6d;
+}
+h5 {
+    font-family: MinionPro-Regular;
+    font-size: 1.1em;
+    margin: 1em 0;
+}
 .footer {
     height: 37vh;
     padding: 30px 0 0;
@@ -586,12 +620,16 @@ ul.footer-social li:first-child {
 }
 .white-section p {
     margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 32px;
 }
 .gray-section {
     padding: 1em;
 }
 .gray-section p {
     margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 32px;
 }
 .gray-section ul li {
     margin-bottom: 15px;
@@ -608,14 +646,15 @@ ul.footer-social li:first-child {
 }
 .author-about {
     text-align: center;
+    margin-bottom: 25px;
 }
 .author-bio {
     margin: 0;
-    padding: 1.5em;
+    padding: 1.5em 0;
 }
 .author-bio p {
-    font-size: 17px;
-    letter-spacing: .5px;
+    font-size: 16px;
+    line-height: 32px;
 }
 img#join {
     padding-top: 0;
@@ -628,6 +667,9 @@ img#join {
 }
 .contribute .col-md-4 {
     margin-left: 0;
+}
+.contribute p {
+    font-size: 16px;
 }
 h2#contribute {
     font-size: 2.5em;
@@ -642,18 +684,22 @@ form .row {
 }
 p#join {
     padding-bottom: 0;
+    font-size: 16px;
 }
 #team {
     padding: 1em;
 }
 #team p {
-    font-size: 1em;
+    font-size: 16px;
 }
 #team .hoverbox {
     display: none;
 }
 #about-space {
     display: none;
+}
+select#region-select {
+    width: 100%;
 }
 
 }
