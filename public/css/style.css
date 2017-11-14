@@ -93,7 +93,7 @@ h3.article-title{
     display: none;
 }
 #header-svg {
-    height: 487px;
+    height: auto;
 }
 #header-svg img {
     width: 100vw;
@@ -109,15 +109,16 @@ h3.article-title{
 
 /*   HOME PAGE   */
 .carousel-caption {
-    bottom: 0;
-    top: 38vh;
+    bottom: 65px;
 }
 .carousel-indicators li {
 	margin: 0 8px;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.5);
     border: none;
 }
 .carousel-indicators .active {
+    width: 11px;
+    height: 11px;
 	margin: 0 8px;
 	background-color: rgba(255, 255, 255, 1);
     border: none;
@@ -559,29 +560,35 @@ ul.footer-social li:first-child {
     margin-top: 20px;
     margin-right: 0;
 }
-.carousel-caption {
-    bottom: 47vh;
-    top: 10vh;
-    padding: 0;
-    left: 10px;
-    right: 10px;
-}
 .carousel {
     position: relative;
     height: 250px;
     /* margin-bottom: -0vh; */
     overflow: hidden;
 }
+.featured-carousel {
+    color: white;
+    height: 250px;
+    width: 100%;
+    position: relative;
+}
 /*for carousel picture resizing*/
 .carousel-inner a {
     background-size: 600px;
     background-position-y: 0;
+    height: 250px;
+    padding: 0;
+}
+.carousel-caption {
+    bottom: 25px;
+    left: 8%;
+    right: 8%;
 }
 .carousel-caption h1 {
     font-size: 20px;
 }
 .carousel-caption h3 {
-    font-size: 15px;
+    font-size: 14px;
 }
 .carousel-indicators {
     position: absolute;
@@ -593,6 +600,14 @@ ul.footer-social li:first-child {
     padding-left: 0;
     list-style: none;
     text-align: center;
+}
+.carousel-indicators li {
+    width: 7px;
+    height: 7px;
+}
+.carousel-indicators .active {
+    width: 7px;
+    height: 7px;
 }
 #share-text {
     display: none;
@@ -642,6 +657,7 @@ ul.footer-social li:first-child {
 }
 .gray-section ul li {
     margin-bottom: 15px;
+    font-size: 16px;
 }
 .gray-author {
     padding: 1em;
