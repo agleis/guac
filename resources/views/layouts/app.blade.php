@@ -69,9 +69,9 @@
                         <li @if(request()->is('stories') || request()->is('stories/*')) class="current" @endif>
                           <a href="{{route('articles')}}">Stories</a>
                         </li>
-<!--                         <li @if(request()->is('guides') || request()->is('guides/*')) class="current" @endif>
+                        {{--<li @if(request()->is('guides') || request()->is('guides/*')) class="current" @endif>
                           <a href="{{route('guides')}}">City Guides</a>
-                        </li> -->
+                        </li> --}}
                       @endguest
                         <li id="map-link" @if(request()->is('map')) class="current" @endif>
                           <a href="{{route('map')}}">Map</a>
