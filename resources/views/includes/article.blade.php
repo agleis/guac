@@ -28,7 +28,7 @@
       <div class="title-box">
           <h4 class="issue">{{$article->issue}} 
           <span class="fa fa-circle gray circle"></span>
-          {{$article->region->name}}</h4>
+          <span class="region">{{$article->region->name}}</span></h4>
           <h1 class="section">{{$article->title}}</h1>
           <h4>By {{$article->user->name}}</h4>
           @auth
