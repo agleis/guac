@@ -113,13 +113,13 @@
                   <a href="{{route('about')}}">About Us</a>
                 </li>
                 <li>
-                  <a href="{{route('index')}}">Contribute</a>
+                  <a href="{{route('contribute')}}">Contribute</a>
                 </li>
                 <li>
-                  <a href="{{route('index')}}">Say Hello</a>
+                  <a href="{{route('contact')}}">Say Hello</a>
                 </li>
                 <li>
-                  <a href="{{route('index')}}">Join Us</a>
+                  <a href="{{route('contribute')}}">Join Us</a>
                 </li>
               </ul>
             </div>
