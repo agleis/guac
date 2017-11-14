@@ -39,9 +39,11 @@ Route::get('stories/{name}', 'ArticleController@article')->name('article');
 
 // Route::post('authors/new', 'AuthorController@register')->name('new_author');
 
-Route::get('authors/{id}', 'AuthorController@getAuthor')->name('author');
-Route::get('authors/{id}/edit', 'AuthorController@showEditAuthor')->name('edit_author');
-Route::post('authors/{id}/edit', 'AuthorController@editAuthor')->name('edit_author_post');
+Route::middleware('auth')->group(function() {
+    Route::get('authors/{id}', 'AuthorController@getAuthor')->name('author');
+    Route::get('authors/{id}/edit', 'AuthorController@showEditAuthor')->name('edit_author');
+    Route::post('authors/{id}/edit', 'AuthorController@editAuthor')->name('edit_author_post');
+});
 
 Route::prefix('admin')->group(function() {
   Route::middleware('auth')->group(function() {

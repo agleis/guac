@@ -210,7 +210,7 @@ class ArticleController extends Controller
      * @return \Illuminate\View\View
      */
     public function makeName($title) {
-        $title = str_replace(" ", "_", $title);
+        $title = str_replace(" ", "-", $title);
         return preg_replace('/[^A-Za-z0-9\_]/', '', $title);
     }
 
