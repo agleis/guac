@@ -33,12 +33,14 @@
     @if(Auth::check() or request()->is('login'))
     <div id="app">
 
-<!--       @if(request()->is('/'))
-      <div id="header-svg"><img src="{{asset('images/header.svg')}}"></div>
-      @endif -->
+      <!-- FALL ISSUE BANNER -->
+      @if(request()->is('/'))
+      <div id="header-svg"><a href="https://issuu.com/guacmag/docs/hidden_20gems" target="_blank"><img src="{{asset('images/header.svg')}}"></a></div>
+      @endif
 
-        <!-- <nav class="navbar navbar-default navbar-static-top"> -->
-        <nav class="navbar navbar-fixed-top navbar-default navbar-static-top">
+      <!-- toggle navbar-fixed-top class -->
+        <nav class="navbar navbar-default navbar-static-top">
+        <!-- <nav class="navbar navbar-fixed-top navbar-default navbar-static-top"> -->
             <div class="container">
                 <div class="navbar-header">
 
@@ -102,6 +104,8 @@
                 </div>
             </div>
         </nav>
+
+        <!-- show class when header is sticky -->
         <div class='nav-placeholder'>&nbsp;</div>
         @yield('content')
 
@@ -206,6 +210,7 @@ var x = setInterval(function() {
     <script src="{{asset('js/chosen/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('js/chosen.js')}}"></script>
     <script src="{{asset('js/subscription.js')}}"></script>
+    <script src="{{ asset('js/banner.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

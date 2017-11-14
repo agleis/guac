@@ -50,7 +50,13 @@
           </div>
           <div class="row content-row">
             <div class="col-md-12">
-              <p class="zeyu-quote">"Travel, of course, is not just for international students. We live in a globalized age. Every individual is strongly connected to their fellow inhabitants of this planet, as space and time seem to converge at an alarming rate. But oftentimes, this notion of interconnectedness is lost due to political, social or economic externalities, that instead generate a disconnect between cultures."</p><p class="zeyu-quote-right">&mdash; Zeyu Hu, Editor-In-Chief</p>
+              <p class="zeyu-quote">"Travel, of course, is not just for international students. We live in a globalized age. Every individual is strongly connected to their fellow inhabitants of this planet, as space and time seem to converge at an alarming rate. But oftentimes, this notion of interconnectedness is lost due to political, social or economic externalities, that instead generate a disconnect between cultures.</p>
+
+              <p class="zeyu-quote">Guac aims to abolish this sense of disconnect.</p>
+
+              <p class="zeyu-quote">Through this magazine, we aspire to bring the diverse beauty of our world to the palms of our readers. We aim to connect and inspire people to go out and immerse themselves in different cultures and places, truly embracing what this wonderful world has to offer."</p>
+
+              <p class="zeyu-quote-right">&mdash; Zeyu Hu, Editor-In-Chief</p>
             </div>
           </div>
     
