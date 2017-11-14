@@ -13,7 +13,7 @@ h2 {
 }
 h3 {
     letter-spacing: 0.03em;
-    font-size: 20px;
+    font-size: 24px;
 }
 h4 {
     font-family: CircularStd-Book;
@@ -28,6 +28,9 @@ h5 {
 }
 a {
     color: #A2D074;
+}
+h3.article-title{
+	color: #352E2E;
 }
 .arts-culture {
     color: #097ABF;
@@ -112,6 +115,7 @@ a {
 	background-color: rgba(255, 255, 255, 1);
     border: none;
 }
+
 /*   end HOME PAGE   */
 
 .content-row .col-md-6 {
@@ -283,7 +287,6 @@ h2#contribute{
     letter-spacing: 1px;    
 }
 .contribute h3 {
-    font-size: 1.4em;
     letter-spacing: 1px;
     margin-top: 2.2em;
 }
