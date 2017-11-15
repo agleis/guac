@@ -1,16 +1,16 @@
 // get positions elements
-var startPos = $('.title-box').offset().top, 
-    divPos = $('#author-div').offset().top, 
-    endPos = divPos - 500;
+var startPos = $('.title-box').offset().top; 
+    // divPos = $('#author-div').offset().top, 
+    // endPos = divPos - 500;
 
-// var body = document.body,
-//     html = document.documentElement,
-//     footer = document.getElementById("footer-div").offsetHeight,
-//     author = document.getElementById("author-div").offsetHeight;
+var body = document.body,
+    html = document.documentElement,
+    footer = document.getElementById("footer-div").offsetHeight,
+    author = document.getElementById("author-div").offsetHeight;
 
-// var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
 
-// var endPos = height-footer-author;
+var endPos = height-footer-author;
 
 $(window).scroll(function() {                  
     
