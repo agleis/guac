@@ -112,7 +112,7 @@
         <div class='nav-placeholder' @if(!request()->is('/')) style="display:block;" @endif>&nbsp;</div>
         @yield('content')
 
-        <div class="footer row">
+        <div class="footer row" id="footer-div">
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div>
               <ul class="footer-nav">

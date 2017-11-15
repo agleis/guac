@@ -1,12 +1,24 @@
 // get positions elements
-var startPos = $('.title-box').offset().top; 
-var endPos = $('.gray-author').offset().top;
+var startPos = $('.title-box').offset().top, 
+    divPos = $('#author-div').offset().top, 
+    endPos = divPos - 500;
+
+// var body = document.body,
+//     html = document.documentElement,
+//     footer = document.getElementById("footer-div").offsetHeight,
+//     author = document.getElementById("author-div").offsetHeight;
+
+// var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+// var endPos = height-footer-author;
 
 $(window).scroll(function() {                  
-
+    
+    console.log(endPos);
     var currentScroll = $(window).scrollTop(); // get current position
     var next = $('.next');
     var prev = $('.prev');
+
     if (currentScroll >= startPos && currentScroll<= endPos) {  
         prev.css("visibility","visible");  
         next.css("visibility","visible"); 
@@ -24,4 +36,5 @@ $(window).scroll(function() {
         next.fadeOut("slow");
         next.fadeOut(3000);                           
     }
+
 });
