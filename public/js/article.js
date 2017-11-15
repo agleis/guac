@@ -1,6 +1,6 @@
 // get positions elements
 var startPos = $('.title-box').offset().top; 
-var endPos = $('.gray-author').offset().top - 500;
+var endPos = $('.gray-author').offset().top;
 
 $(window).scroll(function() {                  
 

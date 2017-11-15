@@ -539,13 +539,12 @@ ul.footer-social li:first-child {
     display: none;
 }
 .navbar-nav > li {
-    padding-left: 0;
-    text-align: center;
+    padding-left: 7px;
 }
 .search-form {
-    float: none;
-    padding-left: 23vw;
-    margin-top: -10px;
+    float: left;
+    margin-left: -9px;
+    margin-bottom: 10px;
 }
 .content-row .col-md-6 {
     height: auto;
