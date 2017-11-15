@@ -30,7 +30,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 </head>
 <body>
-    @if(Auth::check() or request()->is('login'))
+    @if(Auth::check() or request()->is('login') or request()->is('register'))
     <div id="app">
 
       <!-- FALL ISSUE BANNER -->
@@ -106,7 +106,7 @@
         </nav>
 
         <!-- show class when header is sticky -->
-        <div class='nav-placeholder'>&nbsp;</div>
+        <div class='nav-placeholder' @if(!request()->is('/')) style="display:block;" @endif>&nbsp;</div>
         @yield('content')
 
         <div class="footer row">

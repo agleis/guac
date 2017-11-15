@@ -11,3 +11,9 @@ $("#subscribe-button").click(function() {
     subscribe(email);
     $("#subscribe-form").val("");
 });
+
+$("#subscribe-form").keyup(function (event) {
+    if (event.keyCode === 13) {
+        $("#subscribe-button").click();
+    }
+});
