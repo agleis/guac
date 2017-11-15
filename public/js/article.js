@@ -1,6 +1,6 @@
 // get positions elements
-var startPos = $('.title-box').offset().top, 
-    divPos = $('#author-div').offset().top, 
+var startPos = $('.title-box').offset().top,
+    divPos = startPos + $('.editable').outerHeight(true),
     endPos = divPos - 500;
 
 // var body = document.body,

@@ -36,7 +36,7 @@
       @if(request()->is('/'))
         <div id="header-svg">
           <a href="https://issuu.com/guacmag/docs/hidden_20gems" target="_blank">
-            <img src="{{asset('images/header.svg')}}" />
+            <img src="{{asset('images/header.png')}}" />
           </a>
         </div>
       @endif
@@ -44,7 +44,7 @@
       <!-- toggle navbar-fixed-top class -->
         <nav class="navbar navbar-default navbar-static-top @if(!request()->is('/')) navbar-fixed-top @endif">
         <!-- <nav class="navbar navbar-fixed-top navbar-default navbar-static-top"> -->
-            <div class="container">
+            <div class="nav-container">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->

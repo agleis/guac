@@ -730,7 +730,12 @@ select#region-select {
 /*                      end MOBILE STYLES                    */
 /* --------------------------------------------------------- */
 
+/* Adam's fix for navbar. */
 
+.nav-container {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
 
 
 
