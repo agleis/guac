@@ -96,16 +96,16 @@ class ArticleController extends Controller
      */
     public function editText(Request $request, $name) {
         $article = Article::find($name);
-        $article->text = $request->text;
-        $article->title = $request->title;
-        $article->issue = $request->issue;
-        $article->summary = $request->summary;
-        $article->city = $request->city;
-        $article->user_id = $request->author;
-        $article->region_id = $request->region;
-        $article->category_id = $request->category;
-        $article->country_id = $request->country;
-        $article->image = asset($request->image);
+        $article->text = $request->text ?: $article->text;
+        $article->title = $request->title ?: $article->title;
+        $article->issue = $request->issue ?: $article->issue;
+        $article->summary = $request->summary ?: $article->summary;
+        $article->city = $request->city ?: $article->city;
+        $article->user_id = $request->author ?: $article->user_id;
+        $article->region_id = $request->region ?: $article->region_id;
+        $article->category_id = $request->category ?: $article->category_id;
+        $article->country_id = $request->country ?: $article->country_id;
+        $article->image = $request->image ? asset($request->image) : $article->image;
         $article->save();
         return redirect()->route('article', ['name' => $article->name]);
     }

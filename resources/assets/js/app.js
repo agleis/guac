@@ -65,21 +65,20 @@ const app = new Vue({
     el: '#app'
 });
 
-window.Split = require('split.js');
+// window.Split = require('split.js');
 
-Split(["#editor-form", "#editor-article"], {
-  direction: 'vertical'
-});
+// Split(["#editor-form", "#editor-article"], {
+//   direction: 'vertical'
+// });
 
-CKEDITOR.stylesSet.add('my_styles', [
+window.CKEDITOR.stylesSet.add('my_styles', [
   // Block-level styles.
-  { name: 'Row', element: 'div', attributes: { class: 'row' } },
   { name: 'Image Row', element: 'div', attributes: { class: 'row' } },
-  { name: 'Column-4', element: 'div', attributes: { class: 'col-md-4' } },
-  { name: 'Column-6', element: 'div', attributes: { class: 'col-md-6' } },
-  { name: 'Column-8', element: 'div', attributes: { class: 'col-md-8' } },
-  { name: 'Column-10 centered', element: 'div', attributes: { class: 'col-md-10 col-md-offset-1' } },
-  { name: 'Gray full page', element: 'div', attributes: { class: 'gray-section' } },
+  { name: '1/3 Page Width', element: 'div', attributes: { class: 'col-md-4' } },
+  { name: 'Half Page Width', element: 'div', attributes: { class: 'col-md-6' } },
+  { name: '2/3 Page Width', element: 'div', attributes: { class: 'col-md-8' } },
+  { name: 'Gray Section', element: 'div', attributes: { class: 'gray-section' } },
+  { name: 'White Section', element: 'div', attributes: { class: 'white-section' } },
 
   // Inline styles.
   { name: 'Quote', element: 'blockquote', attributes: { class: 'quote_div quote' } },
@@ -87,10 +86,15 @@ CKEDITOR.stylesSet.add('my_styles', [
   { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }
 ]);
 
-// CKFinder.setupCKEditor({type: 'Images'});
+window.CKEDITOR.config.stylesSet = 'my_styles';
+window.CKEDITOR.config.extraPlugins = 'div';
 
-CKEDITOR.config.stylesSet = 'my_styles';
-CKEDITOR.config.extraPlugins = 'div';
+window.CKEDITOR.config.allowedContent = true;
+
+window.CKEDITOR.plugins.widget.definition.draggable = false;
+
+window.CKEDITOR.config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html';
+window.CKEDITOR.config.filebrowserImageUploadUrl = '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
 
 function BrowseServer() {
   var finder = CKFinder.modal({
@@ -101,7 +105,7 @@ function BrowseServer() {
         $("#image").val(file.getUrl());
       });
       finder.on('file:choose:resizedImage', function (evt) {
-        document.getElementById('url').value = evt.data.resizedUrl;
+        $('#url').value = evt.data.resizedUrl;
       })
     }});
 }

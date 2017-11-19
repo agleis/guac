@@ -587,3 +587,7 @@ html {
     float: right;
     border-left: none;
 }
+
+.cke_reset {
+  display: none;
+}
