@@ -69,7 +69,7 @@
   </div>
 <!--   end of main article section -->
 
-  <div class="gray-author container-fluid">
+  <div class="gray-author container-fluid" id="author-div">
     <h3 class="author-about">About {{$article->user->name}}</h3>
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-6 col-md-push-0 col-sm-push-3 col-xs-push-3 ">
