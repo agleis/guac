@@ -22,7 +22,7 @@
     <div class="col-md-10 col-sm-12 col-xs-12">
       <div class="title-box">
           <h4 class="issue">
-            <span v-if="edit" contentEditable=true v-on:keyup="issueEdit" v-on:blur="issueEdit" v-on:paste="issueEdit" v-on:delete="issueEdit" v-on:focus="issueEdit">{{issue}}</span> 
+            <span v-if="edit" contentEditable=true placeholder="Issue..." v-on:keyup="issueEdit" v-on:blur="issueEdit" v-on:paste="issueEdit" v-on:delete="issueEdit" v-on:focus="issueEdit">{{issue}}</span> 
             <span v-if="!edit">{{issue}}</span> 
             <span class="fa fa-circle gray circle"></span>
             <span v-on:click="regionDrop" v-show="!regionDropped">
@@ -37,7 +37,7 @@
               </select>
             </span>
           </h4>
-          <h1 class="section" v-if="edit" contentEditable=true v-on:keyup="titleEdit" v-on:blur="titleEdit" v-on:paste="titleEdit" v-on:delete="titleEdit" v-on:focus="titleEdit">{{title}}</h1>
+          <h1 class="section" v-if="edit" contentEditable=true placeholder="Title..." v-on:keyup="titleEdit" v-on:blur="titleEdit" v-on:paste="titleEdit" v-on:delete="titleEdit" v-on:focus="titleEdit">{{title}}</h1>
           <h1 class="section" v-if="!edit">{{title}}</h1>
           <h4>By 
             <span v-on:click="authorDrop" v-show="!authorDropped">
@@ -58,7 +58,7 @@
 
 
   <!-- <div id="editor" > -->
-    <div v-if="edit" class="col-sm-12 col-xs-12 article-text" v-html="articleText" contentEditable=true v-on:keyup="textEdit" v-on:blur="textEdit" v-on:paste="textEdit" v-on:delete="textEdit" v-on:focus="textEdit">
+    <div v-if="edit" class="col-sm-12 col-xs-12 article-text" v-html="articleText" contentEditable=true placeholder="Article content..." v-on:keyup="textEdit" v-on:blur="textEdit" v-on:paste="textEdit" v-on:delete="textEdit" v-on:focus="textEdit">
       
     </div>
     <div v-if="!edit" class="col-sm-12 col-xs-12 article-text" v-html="articleText">
@@ -211,7 +211,8 @@
 </script>
 
 <style lang="css" scoped>
-  .cke_reset {
-    display: none;
+  [contentEditable=true]:empty:before {
+    content: attr(placeholder);
+    cursor: text;
   }
 </style>

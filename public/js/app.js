@@ -1515,7 +1515,7 @@ window.CKEDITOR.stylesSet.add('my_styles', [
 { name: 'Quote', element: 'blockquote', attributes: { class: 'quote_div quote' } }, { name: 'CSS Style', element: 'span', attributes: { 'class': 'my_style' } }, { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }]);
 
 window.CKEDITOR.config.stylesSet = 'my_styles';
-window.CKEDITOR.config.extraPlugins = 'div';
+window.CKEDITOR.config.extraPlugins = 'div,confighelper';
 
 window.CKEDITOR.config.allowedContent = true;
 
@@ -46206,7 +46206,7 @@ var render = function() {
               ? _c(
                   "span",
                   {
-                    attrs: { contentEditable: "true" },
+                    attrs: { contentEditable: "true", placeholder: "Issue..." },
                     on: {
                       keyup: _vm.issueEdit,
                       blur: _vm.issueEdit,
@@ -46312,7 +46312,7 @@ var render = function() {
                 "h1",
                 {
                   staticClass: "section",
-                  attrs: { contentEditable: "true" },
+                  attrs: { contentEditable: "true", placeholder: "Title..." },
                   on: {
                     keyup: _vm.titleEdit,
                     blur: _vm.titleEdit,
@@ -46424,7 +46424,10 @@ var render = function() {
       _vm.edit
         ? _c("div", {
             staticClass: "col-sm-12 col-xs-12 article-text",
-            attrs: { contentEditable: "true" },
+            attrs: {
+              contentEditable: "true",
+              placeholder: "Article content..."
+            },
             domProps: { innerHTML: _vm._s(_vm.articleText) },
             on: {
               keyup: _vm.textEdit,
@@ -46687,7 +46690,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.cke_reset[data-v-491d28cf] {\n  display: none;\n}\n", ""]);
+exports.push([module.i, "\n[contentEditable=true][data-v-491d28cf]:empty:before {\n  content: attr(placeholder);\n  cursor: text;\n}\n", ""]);
 
 // exports
 

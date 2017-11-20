@@ -147,10 +147,10 @@ class ArticleController extends Controller
       $article->summary = $request->summary ?: "";
       $article->city = $request->city ?: "";
       $article->name = $request->title ? $this->makeName($request->title) : "";
-      $article->user_id = $request->author ?: "";
-      $article->region_id = $request->region ?: "";
-      $article->category_id = $request->category ?: "";
-      $article->country_id = $request->country ?: "";
+      $article->user_id = $request->author ?: 1;
+      $article->region_id = $request->region ?: 1;
+      $article->category_id = $request->category ?: 1;
+      $article->country_id = $request->country ?: 1;
       $article->featured = false;
       $article->image = $request->image ? asset($request->image) : "";
       $article->save();
