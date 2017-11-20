@@ -25,11 +25,11 @@
             <span v-if="edit" contentEditable=true placeholder="Issue..." v-on:keyup="issueEdit" v-on:blur="issueEdit" v-on:paste="issueEdit" v-on:delete="issueEdit" v-on:focus="issueEdit">{{issue}}</span> 
             <span v-if="!edit">{{issue}}</span> 
             <span class="fa fa-circle gray circle"></span>
-            <span v-on:click="regionDrop" v-show="!regionDropped">
+            <span class="edit-drop" v-on:mouseover="regionDrop" v-show="!regionDropped">
               <span class="region">{{currentRegion.name}}</span>
               <span v-if="edit" class="fa fa-caret-down gray"></span>
             </span>
-            <span v-if="edit" v-show="regionDropped">
+            <span v-if="edit" v-show="regionDropped" v-on:mouseleave="regionUp">
               <select name="region" id="region" v-model="regionid" v-on:change="regionUp">
                 <option v-for="area in regions" v-bind:value="area.id">
                   {{ area.name }}
@@ -40,11 +40,11 @@
           <h1 class="section" v-if="edit" contentEditable=true placeholder="Title..." v-on:keyup="titleEdit" v-on:blur="titleEdit" v-on:paste="titleEdit" v-on:delete="titleEdit" v-on:focus="titleEdit">{{title}}</h1>
           <h1 class="section" v-if="!edit">{{title}}</h1>
           <h4>By 
-            <span v-on:click="authorDrop" v-show="!authorDropped">
+            <span class="edit-drop" v-on:mouseover="authorDrop" v-show="!authorDropped">
               <span>{{currentAuthor.name}}</span>
               <span v-if="edit" class="fa fa-caret-down gray"></span>
             </span>
-            <span v-if="edit" v-show="authorDropped">
+            <span v-if="edit" v-show="authorDropped" v-on:mouseleave="authorUp">
               <select name="author" id="author" v-model="authorid" v-on:change="authorUp">
                 <option v-for="area in authors" v-bind:value="area.id">
                   {{ area.name }}
@@ -214,5 +214,8 @@
   [contentEditable=true]:empty:before {
     content: attr(placeholder);
     cursor: text;
+  }
+  .edit-drop {
+    cursor: pointer;
   }
 </style>

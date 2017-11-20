@@ -584,7 +584,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(54)
+var listToStyles = __webpack_require__(45)
 
 /*
 type StyleObject = {
@@ -919,13 +919,13 @@ module.exports = defaults;
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(56)
+  __webpack_require__(58)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(58)
+var __vue_script__ = __webpack_require__(60)
 /* template */
-var __vue_template__ = __webpack_require__(59)
+var __vue_template__ = __webpack_require__(61)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1427,7 +1427,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(82);
+module.exports = __webpack_require__(83);
 
 
 /***/ }),
@@ -1453,19 +1453,19 @@ window.Vue = __webpack_require__(39);
 
 Vue.component('articletext', __webpack_require__(42));
 
-Vue.component('guide', __webpack_require__(45));
+Vue.component('guide', __webpack_require__(48));
 
-Vue.component('guideitem', __webpack_require__(48));
+Vue.component('guideitem', __webpack_require__(51));
 
-Vue.component('editor', __webpack_require__(51));
+Vue.component('editor', __webpack_require__(54));
 
-Vue.component('author-editor', __webpack_require__(61));
+Vue.component('author-editor', __webpack_require__(63));
 
-Vue.component('guideeditor', __webpack_require__(66));
+Vue.component('guideeditor', __webpack_require__(68));
 
-Vue.component('guideitemeditor', __webpack_require__(71));
+Vue.component('guideitemeditor', __webpack_require__(73));
 
-Vue.component('image-upload', __webpack_require__(76));
+Vue.component('image-upload', __webpack_require__(78));
 
 Vue.directive('chosen', {
   twoWay: true,
@@ -43135,13 +43135,13 @@ exports.clearImmediate = clearImmediate;
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(96)
+  __webpack_require__(43)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(43)
+var __vue_script__ = __webpack_require__(46)
 /* template */
-var __vue_template__ = __webpack_require__(95)
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43182,6 +43182,79 @@ module.exports = Component.exports
 
 /***/ }),
 /* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(44);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("b8372698", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-491d28cf\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Article.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-491d28cf\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Article.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n[contentEditable=true][data-v-491d28cf]:empty:before {\n  content: attr(placeholder);\n  cursor: text;\n}\n.edit-drop[data-v-491d28cf] {\n  cursor: pointer;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43397,16 +43470,523 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 44 */,
-/* 45 */
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "share-article" }, [
+      _vm._v("\r\n    Share\r\n    "),
+      _c("ul", { staticClass: "share-social" }, [
+        _c("li", [
+          _c("a", {
+            staticClass: "fa fa-facebook-official fa-lg",
+            attrs: { href: _vm.facebook, target: "_blank" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", {
+            staticClass: "fa fa-twitter fa-lg",
+            attrs: { href: _vm.twitter, target: "_blank" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", {
+            staticClass: "fa fa-envelope fa-lg mail",
+            attrs: { href: _vm.mail }
+          })
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm.edit
+      ? _c("div", {
+          staticClass: "image-article edit-image",
+          style: _vm.background,
+          on: { click: _vm.browseServer }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.edit
+      ? _c("div", { staticClass: "image-article", style: _vm.background })
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "editable container" }, [
+      _c("div", { staticClass: "col-md-10 col-sm-12 col-xs-12" }, [
+        _c("div", { staticClass: "title-box" }, [
+          _c("h4", { staticClass: "issue" }, [
+            _vm.edit
+              ? _c(
+                  "span",
+                  {
+                    attrs: { contentEditable: "true", placeholder: "Issue..." },
+                    on: {
+                      keyup: _vm.issueEdit,
+                      blur: _vm.issueEdit,
+                      paste: _vm.issueEdit,
+                      delete: _vm.issueEdit,
+                      focus: _vm.issueEdit
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.issue))]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.edit ? _c("span", [_vm._v(_vm._s(_vm.issue))]) : _vm._e(),
+            _vm._v(" "),
+            _c("span", { staticClass: "fa fa-circle gray circle" }),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.regionDropped,
+                    expression: "!regionDropped"
+                  }
+                ],
+                staticClass: "edit-drop",
+                on: { mouseover: _vm.regionDrop }
+              },
+              [
+                _c("span", { staticClass: "region" }, [
+                  _vm._v(_vm._s(_vm.currentRegion.name))
+                ]),
+                _vm._v(" "),
+                _vm.edit
+                  ? _c("span", { staticClass: "fa fa-caret-down gray" })
+                  : _vm._e()
+              ]
+            ),
+            _vm._v(" "),
+            _vm.edit
+              ? _c(
+                  "span",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.regionDropped,
+                        expression: "regionDropped"
+                      }
+                    ],
+                    on: { mouseleave: _vm.regionUp }
+                  },
+                  [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.regionid,
+                            expression: "regionid"
+                          }
+                        ],
+                        attrs: { name: "region", id: "region" },
+                        on: {
+                          change: [
+                            function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.regionid = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            },
+                            _vm.regionUp
+                          ]
+                        }
+                      },
+                      _vm._l(_vm.regions, function(area) {
+                        return _c("option", { domProps: { value: area.id } }, [
+                          _vm._v(
+                            "\r\n                  " +
+                              _vm._s(area.name) +
+                              "\r\n                "
+                          )
+                        ])
+                      })
+                    )
+                  ]
+                )
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _vm.edit
+            ? _c(
+                "h1",
+                {
+                  staticClass: "section",
+                  attrs: { contentEditable: "true", placeholder: "Title..." },
+                  on: {
+                    keyup: _vm.titleEdit,
+                    blur: _vm.titleEdit,
+                    paste: _vm.titleEdit,
+                    delete: _vm.titleEdit,
+                    focus: _vm.titleEdit
+                  }
+                },
+                [_vm._v(_vm._s(_vm.title))]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.edit
+            ? _c("h1", { staticClass: "section" }, [_vm._v(_vm._s(_vm.title))])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("h4", [
+            _vm._v("By \r\n            "),
+            _c(
+              "span",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.authorDropped,
+                    expression: "!authorDropped"
+                  }
+                ],
+                staticClass: "edit-drop",
+                on: { mouseover: _vm.authorDrop }
+              },
+              [
+                _c("span", [_vm._v(_vm._s(_vm.currentAuthor.name))]),
+                _vm._v(" "),
+                _vm.edit
+                  ? _c("span", { staticClass: "fa fa-caret-down gray" })
+                  : _vm._e()
+              ]
+            ),
+            _vm._v(" "),
+            _vm.edit
+              ? _c(
+                  "span",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.authorDropped,
+                        expression: "authorDropped"
+                      }
+                    ],
+                    on: { mouseleave: _vm.authorUp }
+                  },
+                  [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.authorid,
+                            expression: "authorid"
+                          }
+                        ],
+                        attrs: { name: "author", id: "author" },
+                        on: {
+                          change: [
+                            function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.authorid = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            },
+                            _vm.authorUp
+                          ]
+                        }
+                      },
+                      _vm._l(_vm.authors, function(area) {
+                        return _c("option", { domProps: { value: area.id } }, [
+                          _vm._v(
+                            "\r\n                  " +
+                              _vm._s(area.name) +
+                              "\r\n                "
+                          )
+                        ])
+                      })
+                    )
+                  ]
+                )
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _vm.auth && !_vm.edit
+            ? _c("a", { attrs: { href: _vm.editroute } }, [
+                _vm._v("Edit this article")
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _vm.edit
+        ? _c("div", {
+            staticClass: "col-sm-12 col-xs-12 article-text",
+            attrs: {
+              contentEditable: "true",
+              placeholder: "Article content..."
+            },
+            domProps: { innerHTML: _vm._s(_vm.articleText) },
+            on: {
+              keyup: _vm.textEdit,
+              blur: _vm.textEdit,
+              paste: _vm.textEdit,
+              delete: _vm.textEdit,
+              focus: _vm.textEdit
+            }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.edit
+        ? _c("div", {
+            staticClass: "col-sm-12 col-xs-12 article-text",
+            domProps: { innerHTML: _vm._s(_vm.articleText) }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("a", { staticClass: "sidebar", attrs: { href: _vm.prevroute } }, [
+        _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
+          _vm.prevroute != ""
+            ? _c("div", { staticClass: "vertical-text" }, [
+                _c("div", { staticClass: "prev" }, [
+                  _c("a", { attrs: { href: _vm.prevroute } }, [
+                    _vm._v("Previous Story")
+                  ])
+                ])
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "sidebar", attrs: { href: _vm.nextroute } }, [
+        _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
+          _vm.nextroute != ""
+            ? _c("div", { staticClass: "vertical-text fixme" }, [
+                _c("div", { staticClass: "next" }, [
+                  _c("a", { attrs: { href: _vm.nextroute } }, [
+                    _vm._v("Next Story")
+                  ])
+                ])
+              ])
+            : _vm._e()
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "gray-author container-fluid" }, [
+      _c("h3", { staticClass: "author-about" }, [
+        _vm._v("About " + _vm._s(_vm.currentAuthor.name))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-3" }, [
+          _c("div", {
+            staticClass: "image-author",
+            style: _vm.authorBackground
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-9" }, [
+          _c("div", { staticClass: "author-bio" }, [
+            _c("p", [_vm._v(_vm._s(_vm.currentAuthor.bio))])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm.edit
+      ? _c("div", { staticClass: "form" }, [
+          _c("form", { attrs: { action: _vm.editroute, method: "post" } }, [
+            _c("input", {
+              attrs: { type: "hidden", name: "_token" },
+              domProps: { value: _vm.csrf }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.text,
+                  expression: "text"
+                }
+              ],
+              attrs: { type: "hidden", name: "text" },
+              domProps: { value: _vm.text, value: _vm.text },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.text = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.titlecontent,
+                  expression: "titlecontent"
+                }
+              ],
+              attrs: { type: "hidden", name: "title" },
+              domProps: { value: _vm.titlecontent, value: _vm.titlecontent },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.titlecontent = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.issuecontent,
+                  expression: "issuecontent"
+                }
+              ],
+              attrs: { type: "hidden", name: "issue" },
+              domProps: { value: _vm.issuecontent, value: _vm.issuecontent },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.issuecontent = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.regionid,
+                  expression: "regionid"
+                }
+              ],
+              attrs: { type: "hidden", name: "region" },
+              domProps: { value: _vm.regionid, value: _vm.regionid },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.regionid = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.authorid,
+                  expression: "authorid"
+                }
+              ],
+              attrs: { type: "hidden", name: "author" },
+              domProps: { value: _vm.authorid, value: _vm.authorid },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.authorid = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.imagecontent,
+                  expression: "imagecontent"
+                }
+              ],
+              attrs: { type: "hidden", name: "image", id: "image" },
+              domProps: { value: _vm.imagecontent, value: _vm.imagecontent },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.imagecontent = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "button more" }, [
+      _c("button", { attrs: { type: "submit" } }, [_vm._v("Submit Article")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-491d28cf", module.exports)
+  }
+}
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(46)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(47)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43446,7 +44026,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43501,7 +44081,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43590,15 +44170,15 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(49)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(50)
+var __vue_template__ = __webpack_require__(53)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43638,7 +44218,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43671,7 +44251,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43716,19 +44296,19 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(52)
+  __webpack_require__(55)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(57)
 /* template */
-var __vue_template__ = __webpack_require__(60)
+var __vue_template__ = __webpack_require__(62)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43768,13 +44348,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(53);
+var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -43794,7 +44374,7 @@ if(false) {
 }
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -43808,40 +44388,7 @@ exports.push([module.i, "\n.image-input[data-v-491d3524] {\r\n    display: -webk
 
 
 /***/ }),
-/* 54 */
-/***/ (function(module, exports) {
-
-/**
- * Translates the list format produced by css-loader into something
- * easier to manipulate.
- */
-module.exports = function listToStyles (parentId, list) {
-  var styles = []
-  var newStyles = {}
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i]
-    var id = item[0]
-    var css = item[1]
-    var media = item[2]
-    var sourceMap = item[3]
-    var part = {
-      id: parentId + ':' + i,
-      css: css,
-      media: media,
-      sourceMap: sourceMap
-    }
-    if (!newStyles[id]) {
-      styles.push(newStyles[id] = { id: id, parts: [part] })
-    } else {
-      newStyles[id].parts.push(part)
-    }
-  }
-  return styles
-}
-
-
-/***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44011,13 +44558,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(57);
+var content = __webpack_require__(59);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -44037,7 +44584,7 @@ if(false) {
 }
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -44051,7 +44598,7 @@ exports.push([module.i, "\n.ckeditor::after {\n  content: \"\";\n  display: tabl
 
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44170,7 +44717,7 @@ var inc = new Date().getTime();
 });
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44200,7 +44747,7 @@ if (false) {
 }
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44631,19 +45178,19 @@ if (false) {
 }
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(62)
+  __webpack_require__(64)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(64)
+var __vue_script__ = __webpack_require__(66)
 /* template */
-var __vue_template__ = __webpack_require__(65)
+var __vue_template__ = __webpack_require__(67)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44683,13 +45230,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(63);
+var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -44709,7 +45256,7 @@ if(false) {
 }
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -44723,7 +45270,7 @@ exports.push([module.i, "\n.image-input[data-v-53a0e462] {\r\n    display: -webk
 
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44782,7 +45329,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44925,19 +45472,19 @@ if (false) {
 }
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(67)
+  __webpack_require__(69)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(69)
+var __vue_script__ = __webpack_require__(71)
 /* template */
-var __vue_template__ = __webpack_require__(70)
+var __vue_template__ = __webpack_require__(72)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44977,13 +45524,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(68);
+var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -45003,7 +45550,7 @@ if(false) {
 }
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -45017,7 +45564,7 @@ exports.push([module.i, "\n.image-input[data-v-2f5e253c] {\r\n    display: -webk
 
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45152,7 +45699,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45440,19 +45987,19 @@ if (false) {
 }
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(72)
+  __webpack_require__(74)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(74)
+var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(75)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45492,13 +46039,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(73);
+var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -45518,7 +46065,7 @@ if(false) {
 }
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -45532,7 +46079,7 @@ exports.push([module.i, "\n.image-input[data-v-4412db56] {\r\n    display: -webk
 
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45654,7 +46201,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45931,19 +46478,19 @@ if (false) {
 }
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(77)
+  __webpack_require__(79)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(79)
+var __vue_script__ = __webpack_require__(81)
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45983,13 +46530,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(78);
+var content = __webpack_require__(80);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -46009,7 +46556,7 @@ if(false) {
 }
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -46023,7 +46570,7 @@ exports.push([module.i, "\n.image-input[data-v-7e5db395] {\r\n    display: -webk
 
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46072,7 +46619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -46133,567 +46680,10 @@ if (false) {
 }
 
 /***/ }),
-/* 81 */,
-/* 82 */
+/* 83 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "share-article" }, [
-      _vm._v("\r\n    Share\r\n    "),
-      _c("ul", { staticClass: "share-social" }, [
-        _c("li", [
-          _c("a", {
-            staticClass: "fa fa-facebook-official fa-lg",
-            attrs: { href: _vm.facebook, target: "_blank" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", {
-            staticClass: "fa fa-twitter fa-lg",
-            attrs: { href: _vm.twitter, target: "_blank" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", {
-            staticClass: "fa fa-envelope fa-lg mail",
-            attrs: { href: _vm.mail }
-          })
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _vm.edit
-      ? _c("div", {
-          staticClass: "image-article edit-image",
-          style: _vm.background,
-          on: { click: _vm.browseServer }
-        })
-      : _vm._e(),
-    _vm._v(" "),
-    !_vm.edit
-      ? _c("div", { staticClass: "image-article", style: _vm.background })
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "editable container" }, [
-      _c("div", { staticClass: "col-md-10 col-sm-12 col-xs-12" }, [
-        _c("div", { staticClass: "title-box" }, [
-          _c("h4", { staticClass: "issue" }, [
-            _vm.edit
-              ? _c(
-                  "span",
-                  {
-                    attrs: { contentEditable: "true", placeholder: "Issue..." },
-                    on: {
-                      keyup: _vm.issueEdit,
-                      blur: _vm.issueEdit,
-                      paste: _vm.issueEdit,
-                      delete: _vm.issueEdit,
-                      focus: _vm.issueEdit
-                    }
-                  },
-                  [_vm._v(_vm._s(_vm.issue))]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            !_vm.edit ? _c("span", [_vm._v(_vm._s(_vm.issue))]) : _vm._e(),
-            _vm._v(" "),
-            _c("span", { staticClass: "fa fa-circle gray circle" }),
-            _vm._v(" "),
-            _c(
-              "span",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.regionDropped,
-                    expression: "!regionDropped"
-                  }
-                ],
-                on: { click: _vm.regionDrop }
-              },
-              [
-                _c("span", { staticClass: "region" }, [
-                  _vm._v(_vm._s(_vm.currentRegion.name))
-                ]),
-                _vm._v(" "),
-                _vm.edit
-                  ? _c("span", { staticClass: "fa fa-caret-down gray" })
-                  : _vm._e()
-              ]
-            ),
-            _vm._v(" "),
-            _vm.edit
-              ? _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.regionDropped,
-                        expression: "regionDropped"
-                      }
-                    ]
-                  },
-                  [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.regionid,
-                            expression: "regionid"
-                          }
-                        ],
-                        attrs: { name: "region", id: "region" },
-                        on: {
-                          change: [
-                            function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.regionid = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            },
-                            _vm.regionUp
-                          ]
-                        }
-                      },
-                      _vm._l(_vm.regions, function(area) {
-                        return _c("option", { domProps: { value: area.id } }, [
-                          _vm._v(
-                            "\r\n                  " +
-                              _vm._s(area.name) +
-                              "\r\n                "
-                          )
-                        ])
-                      })
-                    )
-                  ]
-                )
-              : _vm._e()
-          ]),
-          _vm._v(" "),
-          _vm.edit
-            ? _c(
-                "h1",
-                {
-                  staticClass: "section",
-                  attrs: { contentEditable: "true", placeholder: "Title..." },
-                  on: {
-                    keyup: _vm.titleEdit,
-                    blur: _vm.titleEdit,
-                    paste: _vm.titleEdit,
-                    delete: _vm.titleEdit,
-                    focus: _vm.titleEdit
-                  }
-                },
-                [_vm._v(_vm._s(_vm.title))]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          !_vm.edit
-            ? _c("h1", { staticClass: "section" }, [_vm._v(_vm._s(_vm.title))])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("h4", [
-            _vm._v("By \r\n            "),
-            _c(
-              "span",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.authorDropped,
-                    expression: "!authorDropped"
-                  }
-                ],
-                on: { click: _vm.authorDrop }
-              },
-              [
-                _c("span", [_vm._v(_vm._s(_vm.currentAuthor.name))]),
-                _vm._v(" "),
-                _vm.edit
-                  ? _c("span", { staticClass: "fa fa-caret-down gray" })
-                  : _vm._e()
-              ]
-            ),
-            _vm._v(" "),
-            _vm.edit
-              ? _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.authorDropped,
-                        expression: "authorDropped"
-                      }
-                    ]
-                  },
-                  [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.authorid,
-                            expression: "authorid"
-                          }
-                        ],
-                        attrs: { name: "author", id: "author" },
-                        on: {
-                          change: [
-                            function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.authorid = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            },
-                            _vm.authorUp
-                          ]
-                        }
-                      },
-                      _vm._l(_vm.authors, function(area) {
-                        return _c("option", { domProps: { value: area.id } }, [
-                          _vm._v(
-                            "\r\n                  " +
-                              _vm._s(area.name) +
-                              "\r\n                "
-                          )
-                        ])
-                      })
-                    )
-                  ]
-                )
-              : _vm._e()
-          ]),
-          _vm._v(" "),
-          _vm.auth && !_vm.edit
-            ? _c("a", { attrs: { href: _vm.editroute } }, [
-                _vm._v("Edit this article")
-              ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _vm.edit
-        ? _c("div", {
-            staticClass: "col-sm-12 col-xs-12 article-text",
-            attrs: {
-              contentEditable: "true",
-              placeholder: "Article content..."
-            },
-            domProps: { innerHTML: _vm._s(_vm.articleText) },
-            on: {
-              keyup: _vm.textEdit,
-              blur: _vm.textEdit,
-              paste: _vm.textEdit,
-              delete: _vm.textEdit,
-              focus: _vm.textEdit
-            }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.edit
-        ? _c("div", {
-            staticClass: "col-sm-12 col-xs-12 article-text",
-            domProps: { innerHTML: _vm._s(_vm.articleText) }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c("a", { staticClass: "sidebar", attrs: { href: _vm.prevroute } }, [
-        _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
-          _vm.prevroute != ""
-            ? _c("div", { staticClass: "vertical-text" }, [
-                _c("div", { staticClass: "prev" }, [
-                  _c("a", { attrs: { href: _vm.prevroute } }, [
-                    _vm._v("Previous Story")
-                  ])
-                ])
-              ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "sidebar", attrs: { href: _vm.nextroute } }, [
-        _c("div", { staticClass: "col-md-1 hidden-xs hidden-sm" }, [
-          _vm.nextroute != ""
-            ? _c("div", { staticClass: "vertical-text fixme" }, [
-                _c("div", { staticClass: "next" }, [
-                  _c("a", { attrs: { href: _vm.nextroute } }, [
-                    _vm._v("Next Story")
-                  ])
-                ])
-              ])
-            : _vm._e()
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "gray-author container-fluid" }, [
-      _c("h3", { staticClass: "author-about" }, [
-        _vm._v("About " + _vm._s(_vm.currentAuthor.name))
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3" }, [
-          _c("div", {
-            staticClass: "image-author",
-            style: _vm.authorBackground
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-9" }, [
-          _c("div", { staticClass: "author-bio" }, [
-            _c("p", [_vm._v(_vm._s(_vm.currentAuthor.bio))])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _vm.edit
-      ? _c("div", { staticClass: "form" }, [
-          _c("form", { attrs: { action: _vm.editroute, method: "post" } }, [
-            _c("input", {
-              attrs: { type: "hidden", name: "_token" },
-              domProps: { value: _vm.csrf }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.text,
-                  expression: "text"
-                }
-              ],
-              attrs: { type: "hidden", name: "text" },
-              domProps: { value: _vm.text, value: _vm.text },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.text = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.titlecontent,
-                  expression: "titlecontent"
-                }
-              ],
-              attrs: { type: "hidden", name: "title" },
-              domProps: { value: _vm.titlecontent, value: _vm.titlecontent },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.titlecontent = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.issuecontent,
-                  expression: "issuecontent"
-                }
-              ],
-              attrs: { type: "hidden", name: "issue" },
-              domProps: { value: _vm.issuecontent, value: _vm.issuecontent },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.issuecontent = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.regionid,
-                  expression: "regionid"
-                }
-              ],
-              attrs: { type: "hidden", name: "region" },
-              domProps: { value: _vm.regionid, value: _vm.regionid },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.regionid = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.authorid,
-                  expression: "authorid"
-                }
-              ],
-              attrs: { type: "hidden", name: "author" },
-              domProps: { value: _vm.authorid, value: _vm.authorid },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.authorid = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.imagecontent,
-                  expression: "imagecontent"
-                }
-              ],
-              attrs: { type: "hidden", name: "image", id: "image" },
-              domProps: { value: _vm.imagecontent, value: _vm.imagecontent },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.imagecontent = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(0)
-          ])
-        ])
-      : _vm._e()
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "button more" }, [
-      _c("button", { attrs: { type: "submit" } }, [_vm._v("Submit Article")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-491d28cf", module.exports)
-  }
-}
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(97);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("b8372698", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-491d28cf\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Article.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-491d28cf\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Article.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n[contentEditable=true][data-v-491d28cf]:empty:before {\n  content: attr(placeholder);\n  cursor: text;\n}\n", ""]);
-
-// exports
-
 
 /***/ })
 /******/ ]);
