@@ -188,10 +188,10 @@ html {
 }
 
 .article-text img {
-  max-width: 100%;
+  /* max-width: 100%;
   width: 100%;
   height: auto;
-  padding: 0;
+  padding: 0; */
 }
 
 .featured-carousel {
@@ -590,4 +590,26 @@ html {
 
 .cke_reset {
   display: none;
+}
+
+.edit-image {
+  position: relative;
+}
+
+.edit-image:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
+
+.edit-image:hover:after {
+  opacity: 1;
+  cursor: pointer;
 }

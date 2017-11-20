@@ -141,18 +141,18 @@ class ArticleController extends Controller
      */
     public function upload(Request $request) {
       $article = new Article();
-      $article->text = $request->text;
-      $article->title = $request->title;
-      $article->issue = $request->issue;
-      $article->summary = $request->summary;
-      $article->city = $request->city;
-      $article->name = $this->makeName($request->title);
-      $article->user_id = $request->author;
-      $article->region_id = $request->region;
-      $article->category_id = $request->category;
-      $article->country_id = $request->country;
+      $article->text = $request->text ?: "";
+      $article->title = $request->title ?: "";
+      $article->issue = $request->issue ?: "";
+      $article->summary = $request->summary ?: "";
+      $article->city = $request->city ?: "";
+      $article->name = $request->title ? $this->makeName($request->title) : "";
+      $article->user_id = $request->author ?: "";
+      $article->region_id = $request->region ?: "";
+      $article->category_id = $request->category ?: "";
+      $article->country_id = $request->country ?: "";
       $article->featured = false;
-      $article->image = asset($request->image);
+      $article->image = $request->image ? asset($request->image) : "";
       $article->save();
       return redirect()->route('article', ['name' => $article->name]);
     }

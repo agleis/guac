@@ -11,7 +11,10 @@
     </ul>
   </div>
 
-  <div class="image-article" :style="background">
+  <div v-if="edit" v-on:click="browseServer" class="image-article edit-image" :style="background">
+
+  </div>
+  <div v-if="!edit" class="image-article" :style="background">
 
   </div>
   <div class="editable container">
@@ -49,7 +52,7 @@
               </select>
             </span>
           </h4>
-          <a v-if="auth" :href="editroute">Edit this article</a>
+          <a v-if="auth && !edit" :href="editroute">Edit this article</a>
       </div>
     </div>
 
@@ -106,6 +109,7 @@
       <input type="hidden" v-model="issuecontent" :value="issuecontent" name="issue" />
       <input type="hidden" v-model="regionid" :value="regionid" name="region" />
       <input type="hidden" v-model="authorid" :value="authorid" name="author" />
+      <input type="hidden" v-model="imagecontent" :value="imagecontent" name="image" id="image" />
       <div class="button more">
         <button type="submit">Submit Article</button>
       </div>
@@ -129,11 +133,12 @@
           authorDropped: false,
           regionid: this.region.id ? this.region.id : this.regions[0].id,
           authorid: this.author.id ? this.author.id : this.authors[0].id,
+          imagecontent: this.image
         }
       },
       computed: {
         background: function() {
-          return "background-image: url('"+this.image+"')";
+          return "background-image: url('"+this.imagecontent+"')";
         },
         twitter: function() {
           return "http://twitter.com/share?text="+this.title+"&url="+this.url;
@@ -189,6 +194,17 @@
           },
           authorUp: function(event) {
             this.authorDropped = false;
+          },
+          browseServer: function(event) {
+            var vm = this;
+            var finder = CKFinder.modal({
+              chooseFiles: true,
+              onInit: function (finder) {
+                finder.on('files:choose', function (evt) {
+                  var file = evt.data.files.first();
+                  vm.imagecontent = file.getUrl();
+                });
+              }});
           }
       }
     }

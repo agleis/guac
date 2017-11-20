@@ -1519,10 +1519,27 @@ window.CKEDITOR.config.extraPlugins = 'div';
 
 window.CKEDITOR.config.allowedContent = true;
 
-window.CKEDITOR.plugins.widget.definition.draggable = false;
-
 window.CKEDITOR.config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html';
 window.CKEDITOR.config.filebrowserImageUploadUrl = '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+
+// window.CKEDITOR.plugins.add('timestamp', {
+//   icons: 'timestamp',
+//   init: function (editor) {
+//     editor.addCommand('insertTimestamp', {
+//       exec: function (editor) {
+//         var now = new Date();
+//         editor.insertHtml('The current date and time is: <em>' + now.toString() + '</em>');
+//       }
+//     });
+//     editor.ui.addButton('Timestamp', {
+//       label: 'Insert Timestamp',
+//       command: 'insertTimestamp',
+//       toolbar: 'insert'
+//     });
+//   }
+// });
+
+// window.CKEDITOR.config.extraPlugins = 'timestamp';
 
 function BrowseServer() {
   var finder = CKFinder.modal({
@@ -43285,6 +43302,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'edit', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region', 'regions', 'authors'],
@@ -43297,13 +43318,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       regionDropped: false,
       authorDropped: false,
       regionid: this.region.id ? this.region.id : this.regions[0].id,
-      authorid: this.author.id ? this.author.id : this.authors[0].id
+      authorid: this.author.id ? this.author.id : this.authors[0].id,
+      imagecontent: this.image
     };
   },
 
   computed: {
     background: function background() {
-      return "background-image: url('" + this.image + "')";
+      return "background-image: url('" + this.imagecontent + "')";
     },
     twitter: function twitter() {
       return "http://twitter.com/share?text=" + this.title + "&url=" + this.url;
@@ -43359,6 +43381,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     authorUp: function authorUp(event) {
       this.authorDropped = false;
+    },
+    browseServer: function browseServer(event) {
+      var vm = this;
+      var finder = CKFinder.modal({
+        chooseFiles: true,
+        onInit: function onInit(finder) {
+          finder.on('files:choose', function (evt) {
+            var file = evt.data.files.first();
+            vm.imagecontent = file.getUrl();
+          });
+        } });
     }
   }
 });
@@ -46153,7 +46186,17 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "image-article", style: _vm.background }),
+    _vm.edit
+      ? _c("div", {
+          staticClass: "image-article edit-image",
+          style: _vm.background,
+          on: { click: _vm.browseServer }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.edit
+      ? _c("div", { staticClass: "image-article", style: _vm.background })
+      : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "editable container" }, [
       _c("div", { staticClass: "col-md-10 col-sm-12 col-xs-12" }, [
@@ -46370,7 +46413,7 @@ var render = function() {
               : _vm._e()
           ]),
           _vm._v(" "),
-          _vm.auth
+          _vm.auth && !_vm.edit
             ? _c("a", { attrs: { href: _vm.editroute } }, [
                 _vm._v("Edit this article")
               ])
@@ -46559,6 +46602,27 @@ var render = function() {
                     return
                   }
                   _vm.authorid = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.imagecontent,
+                  expression: "imagecontent"
+                }
+              ],
+              attrs: { type: "hidden", name: "image", id: "image" },
+              domProps: { value: _vm.imagecontent, value: _vm.imagecontent },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.imagecontent = $event.target.value
                 }
               }
             }),

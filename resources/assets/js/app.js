@@ -91,10 +91,27 @@ window.CKEDITOR.config.extraPlugins = 'div';
 
 window.CKEDITOR.config.allowedContent = true;
 
-window.CKEDITOR.plugins.widget.definition.draggable = false;
-
 window.CKEDITOR.config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html';
 window.CKEDITOR.config.filebrowserImageUploadUrl = '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+
+// window.CKEDITOR.plugins.add('timestamp', {
+//   icons: 'timestamp',
+//   init: function (editor) {
+//     editor.addCommand('insertTimestamp', {
+//       exec: function (editor) {
+//         var now = new Date();
+//         editor.insertHtml('The current date and time is: <em>' + now.toString() + '</em>');
+//       }
+//     });
+//     editor.ui.addButton('Timestamp', {
+//       label: 'Insert Timestamp',
+//       command: 'insertTimestamp',
+//       toolbar: 'insert'
+//     });
+//   }
+// });
+
+// window.CKEDITOR.config.extraPlugins = 'timestamp';
 
 function BrowseServer() {
   var finder = CKFinder.modal({
