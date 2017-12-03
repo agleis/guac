@@ -1,10 +1,10 @@
-let mix = require('laravel-mix');
+'use strict';
 
-// process.env.NODE_ENV = 'production';
+const path = require('path');
 
 module.exports = {
     // https://webpack.js.org/configuration/entry-context/
-    entry: 'resources/assets/js/app.js',
+    entry: './resources/assets/js/ck5.js',
 
     // https://webpack.js.org/configuration/output/
     output: {
@@ -38,18 +38,3 @@ module.exports = {
     // Useful for debugging.
     devtool: 'source-map'
 };
-
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
-mix.js('resources/assets/js/app.js', 'public/js')
-   .js('resources/assets/js/chosen.js', 'public/js')
-   .sass('resources/assets/sass/bootstrap.scss', 'public/css');
