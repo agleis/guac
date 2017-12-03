@@ -1,7 +1,4 @@
 // get positions elements
-var startPos = $('.title-box').offset().top,
-    divPos = startPos + $('.editable').outerHeight(true),
-    endPos = divPos - 500;
 
 // var body = document.body,
 //     html = document.documentElement,
@@ -14,12 +11,11 @@ var startPos = $('.title-box').offset().top,
 
 $(window).scroll(function() {                  
     
-    console.log(endPos);
     var currentScroll = $(window).scrollTop(); // get current position
     var next = $('.next');
     var prev = $('.prev');
 
-    if (currentScroll >= startPos && currentScroll<= endPos) {  
+    if (currentScroll >= $('.title-box').offset().top && currentScroll <= $('#author-div').offset().top) {  
         prev.css("visibility","visible");  
         next.css("visibility","visible"); 
         prev.fadeIn();

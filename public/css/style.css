@@ -725,6 +725,15 @@ p#join {
 select#region-select {
     width: 100%;
 }
+.about-image-wrap {
+    height: 180px;
+    width: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    /* background-position-x: -120px; */
+}
 
 }
 /*                      end MOBILE STYLES                    */

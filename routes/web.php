@@ -31,9 +31,9 @@ Route::get('stories/json', 'ArticleController@json')->name('article_json');
 
 Route::get('stories/{name}', 'ArticleController@article')->name('article');
 
-// Route::get('guides', 'GuideController@guides')->name('guides');
+Route::get('guides', 'GuideController@guides')->name('guides');
 
-// Route::get('guides/{id}', 'GuideController@guide')->name('guide');
+Route::get('guides/{id}', 'GuideController@guide')->name('guide');
 
 // Route::get('authors', 'AuthorController@authors')->name('authors');
 
@@ -51,16 +51,16 @@ Route::prefix('admin')->group(function() {
     Route::post('stories/featured', 'ArticleController@editFeatured')->name('post_edit_featured');
     Route::get('stories/upload', 'ArticleController@showUpload')->name('upload_article');
     Route::post('stories/upload', 'ArticleController@upload')->name('post_upload_article');
-    // Route::get('guides/upload', 'GuideController@showUpload')->name('upload_guide');
-    // Route::post('guides/upload', 'GuideController@upload')->name('post_upload_guide');
-    // Route::get('guides/{id}/upload', 'GuideController@showUploadItem')->name('upload_guide_item');
-    // Route::post('guides/{id}/upload', 'GuideController@uploadItem')->name('post_upload_guide_item');
-    // Route::get('guides/{id}/edit', 'GuideController@showEdit')->name('edit_guide');
-    // Route::post('guides/{id}/edit', 'GuideController@edit')
-    //     ->name('post_edit_guide');
-    // Route::get('guides/{id}/{idd}/edit', 'GuideController@showEditItem')->name('edit_guide_item');
-    // Route::post('guides/{id}/{idd}/edit', 'GuideController@editItem')
-    //     ->name('post_edit_guide_item');
+    Route::get('guides/upload', 'GuideController@showUpload')->name('upload_guide');
+    Route::post('guides/upload', 'GuideController@upload')->name('post_upload_guide');
+    Route::get('guides/{id}/upload', 'GuideController@showUploadItem')->name('upload_guide_item');
+    Route::post('guides/{id}/upload', 'GuideController@uploadItem')->name('post_upload_guide_item');
+    Route::get('guides/{id}/edit', 'GuideController@showEdit')->name('edit_guide');
+    Route::post('guides/{id}/edit', 'GuideController@edit')
+        ->name('post_edit_guide');
+    Route::get('guides/{id}/{idd}/edit', 'GuideController@showEditItem')->name('edit_guide_item');
+    Route::post('guides/{id}/{idd}/edit', 'GuideController@editItem')
+        ->name('post_edit_guide_item');
     Route::get('stories/{name}/edit', 'ArticleController@showEditText')->name('edit_article');
     Route::post('stories/{name}/edit', 'ArticleController@editText')
         ->name('post_edit_article');
@@ -73,8 +73,8 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// Route::post('register', 'Auth\RegisterController@register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
