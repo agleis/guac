@@ -613,3 +613,10 @@ html {
   opacity: 1;
   cursor: pointer;
 }
+
+.right-float-button {
+  position: fixed;
+  bottom: 45px;
+  right: 35px;
+  z-index: 1000;
+}

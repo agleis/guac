@@ -34,6 +34,10 @@
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 no-gutter">
                 <h3>Content Contributions</h3>
+                <h3>Want to Join?</h3>
+                <p>
+                    Guac is searching for talented people to help us continue our mission of sharing stories from around the world. If this excites you, visit <a href="https://goo.gl/forms/N3vauexgU8qgkuEJ3">this link</a> to get involved!
+                </p>
                 <h3>City Guides Submission</h3>
                 <p>
                     Have local gems to recommend? Submit your recommendations to <a href="mailto:guacmag@gmail.com">guacmag@gmail.com</a> and our team will get back to you.
