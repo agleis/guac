@@ -103,5 +103,37 @@ class UsersTableSeeder extends Seeder
             'image' => '/public/images/Selected/Chelsea.jpg',
             'password' => bcrypt('guacmag'),
         ]);
+        User::create([
+            'id' => 12,
+            'name' => 'Amanda Chen',
+            'email' => 'aec255@cornell.edu',
+            'bio' => 'Hi! My name is Amanda',
+            'image' => '/public/images/Selected/Amanda.jpg',
+            'password' => bcrypt('guacmag'),
+        ]);
+        User::create([
+            'id' => 13,
+            'name' => 'Natalie Fung',
+            'email' => 'nf238@cornell.edu',
+            'bio' => 'Hi! My name is Natalie',
+            'image' => '/public/images/Selected/Natalie.jpg',
+            'password' => bcrypt('guacmag'),
+        ]);
+        User::create([
+            'id' => 14,
+            'name' => 'Gabriella Alvarez',
+            'email' => 'gga8@cornell.edu',
+            'bio' => 'Hi! My name is Gabriella',
+            'image' => '/public/images/Selected/Gabriella.jpg',
+            'password' => bcrypt('guacmag'),
+        ]);
+        User::create([
+            'id' => 15,
+            'name' => 'Zaeem Rana',
+            'email' => 'zmr5@cornell.edu',
+            'bio' => 'Hi! My name is Zaeem',
+            'image' => '/public/images/Selected/Zaeem.jpg',
+            'password' => bcrypt('guacmag'),
+        ]);
     }
 }
