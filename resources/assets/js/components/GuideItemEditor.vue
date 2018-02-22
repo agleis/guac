@@ -9,27 +9,27 @@
           <input type="hidden" name="_token" :value="csrf">
           <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" v-model="namecontent" name="name" id="name" class="form-control input-lg" :value="namecontent"/>
+              <input type="text" v-model="namecontent" name="name" id="name" class="form-control input-lg" />
           </div>
           <div class="form-group">
             <label for="category">Category</label>
             <select name="category" id="category" v-model="categoryid">
-              <option v-for="area in categories" v-bind:value="area.id">
+              <option v-for="area in categories" v-bind:value="area.id" v-bind:key="area.id">
                 {{ area.name }}
               </option>
             </select>
           </div>
           <div class="form-group">
             <label for="hours">Hours</label>
-            <input type="text" v-model="hourscontent" name="hours" id="hours" class="form-control" :value="hourscontent"/>
+            <input type="text" v-model="hourscontent" name="hours" id="hours" class="form-control" />
           </div>
           <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" v-model="locationcontent" name="location" id="location" class="form-control" :value="locationcontent"/>
+            <input type="text" v-model="locationcontent" name="location" id="location" class="form-control" />
           </div>
           <div class="form-group">
             <label for="summary">Summary</label>
-            <input type="text" v-model="summarycontent" name="summary" id="summary" class="form-control" :value="summarycontent"/>
+            <input type="text" v-model="summarycontent" name="summary" id="summary" class="form-control" />
           </div>
           <div class="form-group">
               <label for="image">Image</label>

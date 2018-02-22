@@ -103,13 +103,13 @@
   </div>
   <div class="form" v-if="edit">
     <form :action="editroute" method="post">
-      <input type="hidden" name="_token" :value="csrf" />
-      <input type="hidden" v-model="text" :value="text" name="text" />
-      <input type="hidden" v-model="titlecontent" :value="titlecontent" name="title" />
-      <input type="hidden" v-model="issuecontent" :value="issuecontent" name="issue" />
-      <input type="hidden" v-model="regionid" :value="regionid" name="region" />
-      <input type="hidden" v-model="authorid" :value="authorid" name="author" />
-      <input type="hidden" v-model="imagecontent" :value="imagecontent" name="image" id="image" />
+      <input type="hidden" name="_token" />
+      <input type="hidden" v-model="text" name="text" />
+      <input type="hidden" v-model="titlecontent" name="title" />
+      <input type="hidden" v-model="issuecontent" name="issue" />
+      <input type="hidden" v-model="regionid" name="region" />
+      <input type="hidden" v-model="authorid" name="author" />
+      <input type="hidden" v-model="imagecontent" name="image" id="image" />
       <div class="button more right-float-button">
         <button type="submit">Submit Article</button>
       </div>

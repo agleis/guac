@@ -9,11 +9,11 @@
             <input type="hidden" name="_token" :value="csrf">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" v-model="namecontent" name="name" id="name" class="form-control" :value="namecontent"/>
+                <input type="text" v-model="namecontent" name="name" id="name" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="bio">Bio</label>
-                <input type="text" v-model="biocontent" name="bio" id="bio" class="form-control" :value="biocontent"/>
+                <input type="text" v-model="biocontent" name="bio" id="bio" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="image">Image</label>
