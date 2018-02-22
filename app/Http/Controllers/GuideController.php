@@ -30,8 +30,12 @@ class GuideController extends Controller
         $guide = Guide::find($id);
         $next = Guide::next($guide->created_at)->first();
         $prev = Guide::prev($guide->created_at)->first();
+        $countries = Country::all();
+        $regions = Region::all();
         return view('guide', [
             'guide' => $guide,
+            'countries' => $countries,
+            'regions' => $regions,
             'next' => $next ? $next->id : '',
             'prev' => $prev ? $prev->id : ''
         ]);

@@ -31,7 +31,7 @@
             </span>
             <span v-if="edit" v-show="regionDropped" v-on:mouseleave="regionUp">
               <select name="region" id="region" v-model="regionid" v-on:change="regionUp">
-                <option v-for="area in regions" v-bind:value="area.id">
+                <option v-for="area in regions" v-bind:value="area.id" v-bind:key="area.id">
                   {{ area.name }}
                 </option>
               </select>
@@ -46,7 +46,7 @@
             </span>
             <span v-if="edit" v-show="authorDropped" v-on:mouseleave="authorUp">
               <select name="author" id="author" v-model="authorid" v-on:change="authorUp">
-                <option v-for="area in authors" v-bind:value="area.id">
+                <option v-for="area in authors" v-bind:value="area.id" v-bind:key="area.id">
                   {{ area.name }}
                 </option>
               </select>
@@ -110,7 +110,7 @@
       <input type="hidden" v-model="regionid" :value="regionid" name="region" />
       <input type="hidden" v-model="authorid" :value="authorid" name="author" />
       <input type="hidden" v-model="imagecontent" :value="imagecontent" name="image" id="image" />
-      <div class="button more">
+      <div class="button more right-float-button">
         <button type="submit">Submit Article</button>
       </div>
     </form>

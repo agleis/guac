@@ -1,16 +1,34 @@
 <template>
-    <div class="col-md-6">
-        <div class="featured-article featured-2 city-featured">
-            <!-- <img :src="image" /> -->
+    <div class="row">
+        <div class="col-md-6">
             <div class="image" :style="background"></div>
-            <p class="issue">{{issue}}  <span class="blue">{{category}}</span></p>
-            <h3>{{name}}</h3>
-            <h5>{{hours}}</h5>
-            <h5>{{location}}</h5>
-            <p>{{summary}}</p>
-            <div v-if="auth">
-                <a :href="editroute">Edit this item</a>
+        </div>
+        <div class="col-md-6">
+            <div class="featured-article featured-2 city-featured">
+                <!-- <img :src="image" /> -->
+                <p class="issue">{{issue}}  <span class="blue">{{category}}</span></p>
+                <h3>{{name}}</h3>
+                <h5>{{hours}}</h5>
+                <h5>{{location}}</h5>
+                <p>{{summary}}</p>
+                <div v-if="auth">
+                    <a :href="editroute">Edit this item</a>
+                </div>
             </div>
+        </div>
+        <div class="form" v-if="edit">
+            <form :action="editroute" method="post">
+                <input type="hidden" name="_token" :value="csrf" />
+                <input type="hidden" v-model="summarycontent" :value="summarycontent" name="summary" />
+                <input type="hidden" v-model="titlecontent" :value="titlecontent" name="title" />
+                <input type="hidden" v-model="issuecontent" :value="issuecontent" name="issue" />
+                <input type="hidden" v-model="countryid" :value="countryid" name="country" />
+                <input type="hidden" v-model="regionid" :value="regionid" name="region" />
+                <input type="hidden" v-model="imagecontent" :value="imagecontent" name="image" id="image" />
+                <div class="button more right-float-button">
+                    <button type="submit">Submit Guide</button>
+                </div>
+            </form>
         </div>
     </div>
 </template>
