@@ -16,7 +16,7 @@ class UpdateUsersTable extends Migration
         Schema::table('users', function(Blueprint $table) {
             $table->boolean('author')->default(false);
             $table->boolean('designer')->default(false);
-            $table->boolean('admin')->default(false);
+            $table->boolean('admin')->default(true);
         });
     }
 
