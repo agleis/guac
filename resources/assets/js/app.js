@@ -87,7 +87,7 @@ window.CKEDITOR.stylesSet.add('my_styles', [
 ]);
 
 window.CKEDITOR.config.stylesSet = 'my_styles';
-window.CKEDITOR.config.extraPlugins = 'div,confighelper';
+window.CKEDITOR.config.extraPlugins = 'div,confighelper,image2';
 
 window.CKEDITOR.config.allowedContent = true;
 

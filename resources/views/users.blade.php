@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="author author-list container-fluid">
-        @foreach($authors as $author)
+        @foreach($users as $user)
             <div class="row">
                 <div class="col-md-1">
                     &nbsp;
                 </div>
                 <div class="col-md-10 author-list-item">
-                    <a href="{{route('author', ['id' => $author->id])}}" class="list-item">
-                        @include('includes.author_summary')
+                    <a href="{{route('user', ['id' => $user->id])}}" class="list-item">
+                        @include('includes.user_summary')
                     </a>
                     <hr />
                 </div>

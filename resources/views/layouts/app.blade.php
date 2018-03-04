@@ -75,7 +75,6 @@
                         {{--<li @if(request()->is('guides') || request()->is('guides/*')) class="current" @endif>
                           <a href="{{route('guides')}}">City Guides</a>
                         </li> --}}
-                      @endguest
                         <li id="map-link" @if(request()->is('map')) class="current" @endif>
                           <a href="{{route('map')}}">Map</a>
                         </li>
@@ -88,17 +87,72 @@
                         <li @if(request()->is('contact')) class="current" @endif>
                           <a class="gray" href="{{route('contact')}}">Contact</a>
                         </li>
-                        @auth
-                          <li>
-                            <a href="{{route('upload_article')}}">New Story</a>
-                          </li>
-                          {{--  <li>
-                            <a href="{{route('upload_guide')}}">New Guide</a>
-                          </li>  --}}
-                          {{--  <li>
-                            <a href="{{route('author', ['id' => Auth::id()])}}">Edit User</a>
-                          </li>  --}}
-                        @endauth
+                      @endguest
+                      @auth
+                        <li class="dropdown">
+                          <a class="dropdown-toggle @if(request()->is('stories/*')) current @endif" data-toggle="dropdown" href="#">Stories<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="{{route('articles')}}">All</a>
+                            </li>
+                            <li>
+                              <a href="{{route('upload_article')}}">New</a>
+                            </li>
+                            @if(Auth::user()->admin)
+                              <li>
+                                <a href="{{route('edit_featured')}}">Featured</a>
+                              </li>
+                              <li>
+                                <a href="{{route('unverified')}}">Unverified</a>
+                              </li>
+                            @endif
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle @if(request()->is('guides/*')) current @endif" data-toggle="dropdown" href="#">Guides<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="{{route('guides')}}">All</a>
+                            </li>
+                            {{--  @if(Auth::user()->admin)
+                              <li>
+                                <a href="{{route('unverified_guides')}}">Unverified</a>
+                              </li>
+                            @endif  --}}
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle @if(request()->is('users/*')) current @endif" data-toggle="dropdown" href="#">Users<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="{{route('user', ['id' => Auth::user()->id])}}">Your Profile</a>
+                            </li>
+                            @if(Auth::user()->admin)
+                              <li>
+                                <a href="{{route('edit_users')}}">Edit Users</a>
+                              </li>
+                            @endif
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Other<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li id="map-link" @if(request()->is('map')) class="current" @endif>
+                              <a href="{{route('map')}}">Map</a>
+                            </li>
+                            <li @if(request()->is('about')) class="current" @endif>
+                              <a href="{{route('about')}}">About</a>
+                            </li>
+                            <li @if(request()->is('contribute')) class="current" @endif>
+                              <a class="gray" href="{{route('contribute')}}">Contribute</a>
+                            </li>
+                            <li @if(request()->is('contact')) class="current" @endif>
+                              <a class="gray" href="{{route('contact')}}">Contact</a>
+                            </li>
+                          </ul>
+                        </li>
+                      @endauth
+                      
                     </ul>
                     <form class="search-form" action="{{route('search')}}">
                       <input type="text" name="search" id="search" value="{{old('search')}}" />
@@ -110,6 +164,7 @@
 
         <!-- show class when header is sticky -->
         <div class='nav-placeholder' @if(!request()->is('/')) style="display:block;" @endif>&nbsp;</div>
+
         @yield('content')
 
         <div class="footer row" id="footer-div">

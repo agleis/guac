@@ -1471,7 +1471,7 @@ window.CKEDITOR.stylesSet.add('my_styles', [
 { name: 'Quote', element: 'blockquote', attributes: { class: 'quote_div quote' } }, { name: 'CSS Style', element: 'span', attributes: { 'class': 'my_style' } }, { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }]);
 
 window.CKEDITOR.config.stylesSet = 'my_styles';
-window.CKEDITOR.config.extraPlugins = 'div,confighelper';
+window.CKEDITOR.config.extraPlugins = 'div,confighelper,image2';
 
 window.CKEDITOR.config.allowedContent = true;
 
@@ -43555,9 +43555,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'edit', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region', 'regions', 'authors'],
+  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'admin', 'image', 'edit', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region', 'regions', 'authors', 'verified'],
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -43568,7 +43572,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       authorDropped: false,
       regionid: this.region.id ? this.region.id : this.regions[0].id,
       authorid: this.author.id ? this.author.id : this.authors[0].id,
-      imagecontent: this.image
+      imagecontent: this.image,
+      verifiedbool: this.verified ? true : false
     };
   },
 
@@ -44005,7 +44010,10 @@ var render = function() {
     _vm.edit
       ? _c("div", { staticClass: "form" }, [
           _c("form", { attrs: { action: _vm.editroute, method: "post" } }, [
-            _c("input", { attrs: { type: "hidden", name: "_token" } }),
+            _c("input", {
+              attrs: { type: "hidden", name: "_token" },
+              domProps: { value: _vm.csrf }
+            }),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -44133,22 +44141,63 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(0)
+            _c("div", { staticClass: "button more right-float-button" }, [
+              _vm.admin
+                ? _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "verify" } }, [
+                      _vm._v("Verify")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.verifiedbool,
+                          expression: "verifiedbool"
+                        }
+                      ],
+                      attrs: { type: "checkbox", name: "verify", id: "verify" },
+                      domProps: {
+                        checked: Array.isArray(_vm.verifiedbool)
+                          ? _vm._i(_vm.verifiedbool, null) > -1
+                          : _vm.verifiedbool
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.verifiedbool,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.verifiedbool = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.verifiedbool = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.verifiedbool = $$c
+                          }
+                        }
+                      }
+                    })
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("button", { attrs: { type: "submit" } }, [
+                _vm._v("Submit Article")
+              ])
+            ])
           ])
         ])
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "button more right-float-button" }, [
-      _c("button", { attrs: { type: "submit" } }, [_vm._v("Submit Article")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

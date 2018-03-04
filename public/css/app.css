@@ -616,7 +616,7 @@ html {
 
 .right-float-button {
   position: fixed;
-  bottom: 45px;
+  bottom: 100px;
   right: 35px;
   z-index: 1000;
 }

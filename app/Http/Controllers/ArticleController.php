@@ -52,6 +52,22 @@ class ArticleController extends Controller
     }
 
     /**
+     * Returns the list of currently unverified articles.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function unverified() {
+        $articles = Article::unverified();
+        $categories = Category::all();
+        $regions = Region::all();
+        return view('articles', [
+            'articles' => $articles,
+            'categories' => $categories,
+            'regions' => $regions
+        ]);
+    }
+
+    /**
      * Returns a single article, based on the name.
      *
      * @param string $name
@@ -61,11 +77,22 @@ class ArticleController extends Controller
         $article = Article::find($name);
         $next = Article::next($article->created_at)->first();
         $prev = Article::prev($article->created_at)->first();
-        return view('article', [
-            'article' => $article,
-            'next' => $next ? $next->name : "",
-            'prev' => $prev ? $prev->name : ""
-        ]);
+        if($article->verified) {
+            return view('article', [
+                'article' => $article,
+                'next' => $next ? $next->name : "",
+                'prev' => $prev ? $prev->name : ""
+            ]);
+        }
+        $user = Auth::user();
+        if($user && $user->can('view', $article)) {
+            return view('article', [
+                'article' => $article,
+                'next' => $next ? $next->name : "",
+                'prev' => $prev ? $prev->name : ""
+            ]);
+        }
+        return redirect()->route('index');
     }
 
     /**
@@ -79,13 +106,17 @@ class ArticleController extends Controller
         $regions = Region::all();
         $categories = Category::all();
         $countries = Country::all();
-        return view('article_edit', [
-          'article' => $article,
-          'authors' => $authors,
-          'regions' => $regions,
-          'categories' => $categories,
-          'countries' => $countries
-        ]);
+        $user = Auth::user();
+        if($user && $user->can('update', $article)) {
+            return view('article_edit', [
+                'article' => $article,
+                'authors' => $authors,
+                'regions' => $regions,
+                'categories' => $categories,
+                'countries' => $countries
+            ]);
+        }
+        return redirect()->route('index');
     }
 
     /**
@@ -96,18 +127,23 @@ class ArticleController extends Controller
      */
     public function editText(Request $request, $name) {
         $article = Article::find($name);
-        $article->text = $request->text ?: $article->text;
-        $article->title = $request->title ?: $article->title;
-        $article->issue = $request->issue ?: $article->issue;
-        $article->summary = $request->summary ?: $article->summary;
-        $article->city = $request->city ?: $article->city;
-        $article->user_id = $request->author ?: $article->user_id;
-        $article->region_id = $request->region ?: $article->region_id;
-        $article->category_id = $request->category ?: $article->category_id;
-        $article->country_id = $request->country ?: $article->country_id;
-        $article->image = $request->image ? asset($request->image) : $article->image;
-        $article->save();
-        return redirect()->route('article', ['name' => $article->name]);
+        $user = Auth::user();
+        if($user && $user->can('update', $article)) {
+            $article->text = $request->text ?: $article->text;
+            $article->title = $request->title ?: $article->title;
+            $article->issue = $request->issue ?: $article->issue;
+            $article->summary = $request->summary ?: $article->summary;
+            $article->city = $request->city ?: $article->city;
+            $article->user_id = $request->author ?: $article->user_id;
+            $article->region_id = $request->region ?: $article->region_id;
+            $article->category_id = $request->category ?: $article->category_id;
+            $article->country_id = $request->country ?: $article->country_id;
+            $article->image = $request->image ? asset($request->image) : $article->image;
+            $article->verified = $request->verify ? true : false;
+            $article->save();
+            return redirect()->route('article', ['name' => $article->name]);
+        }
+        return redirect()->route('index');
     }
 
     /**
@@ -122,15 +158,18 @@ class ArticleController extends Controller
       $countries = Country::all();
       $article = new Article();
       $author = Auth::user();
-      session()->flash('upload');
-      return view('article_edit', [
-        'article' => $article,
-        'authors' => $authors,
-        'author' => $author,
-        'regions' => $regions,
-        'categories' => $categories,
-        'countries' => $countries
-      ]);
+      if($author && $author->can('create', $article)) {
+        session()->flash('upload');
+        return view('article_edit', [
+            'article' => $article,
+            'authors' => $authors,
+            'author' => $author,
+            'regions' => $regions,
+            'categories' => $categories,
+            'countries' => $countries
+        ]);
+      }
+      return redirect()->route('index');
     }
 
     /**
@@ -141,20 +180,25 @@ class ArticleController extends Controller
      */
     public function upload(Request $request) {
       $article = new Article();
-      $article->text = $request->text ?: "";
-      $article->title = $request->title ?: "";
-      $article->issue = $request->issue ?: "";
-      $article->summary = $request->summary ?: "";
-      $article->city = $request->city ?: "";
-      $article->name = $request->title ? $this->makeName($request->title) : "";
-      $article->user_id = $request->author ?: 1;
-      $article->region_id = $request->region ?: 1;
-      $article->category_id = $request->category ?: 1;
-      $article->country_id = $request->country ?: 1;
-      $article->featured = false;
-      $article->image = $request->image ? asset($request->image) : "";
-      $article->save();
-      return redirect()->route('article', ['name' => $article->name]);
+      $author = Auth::user();
+      if($author && $author->can('create', $article)) {
+        $article->text = $request->text ?: "";
+        $article->title = $request->title ?: "";
+        $article->issue = $request->issue ?: "";
+        $article->summary = $request->summary ?: "";
+        $article->city = $request->city ?: "";
+        $article->name = $request->title ? $this->makeName($request->title) : "";
+        $article->user_id = $request->author ?: 1;
+        $article->region_id = $request->region ?: 1;
+        $article->category_id = $request->category ?: 1;
+        $article->country_id = $request->country ?: 1;
+        $article->featured = false;
+        $article->image = $request->image ? asset($request->image) : "";
+        $article->verified = $request->verify ? true : false;
+        $article->save();
+        return redirect()->route('article', ['name' => $article->name]);
+      }
+      return redirect()->route('index');
     }
 
     /**
@@ -210,7 +254,7 @@ class ArticleController extends Controller
      * @return \Illuminate\View\View
      */
     public function makeName($title) {
-        $title = str_replace(" ", "-", $title);
+        $title = str_replace(" ", "-", strtolower($title));
         return preg_replace('/[^A-Za-z0-9\_]/', '', $title);
     }
 

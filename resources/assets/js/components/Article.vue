@@ -103,7 +103,7 @@
   </div>
   <div class="form" v-if="edit">
     <form :action="editroute" method="post">
-      <input type="hidden" name="_token" />
+      <input type="hidden" name="_token" :value="csrf" />
       <input type="hidden" v-model="text" name="text" />
       <input type="hidden" v-model="titlecontent" name="title" />
       <input type="hidden" v-model="issuecontent" name="issue" />
@@ -111,6 +111,10 @@
       <input type="hidden" v-model="authorid" name="author" />
       <input type="hidden" v-model="imagecontent" name="image" id="image" />
       <div class="button more right-float-button">
+        <div class="form-group" v-if="admin">
+          <label for="verify">Verify</label>
+          <input type="checkbox" v-model="verifiedbool" name="verify" id="verify">
+        </div>
         <button type="submit">Submit Article</button>
       </div>
     </form>
@@ -120,9 +124,9 @@
 
 <script>
     export default {
-      props: ['articleText', 'route', 'author', 'title', 'authorroute', 'auth', 'image', 'edit',
+      props: ['articleText', 'route', 'author', 'title', 'authorroute', 'admin', 'image', 'edit',
               'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region',
-              'regions', 'authors'],
+              'regions', 'authors', 'verified'],
       data() {
         return {
           csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -133,7 +137,8 @@
           authorDropped: false,
           regionid: this.region.id ? this.region.id : this.regions[0].id,
           authorid: this.author.id ? this.author.id : this.authors[0].id,
-          imagecontent: this.image
+          imagecontent: this.image,
+          verifiedbool: this.verified ? true : false
         }
       },
       computed: {

@@ -56,6 +56,7 @@ class Article extends Model
     public function scopeFeatured($query) {
         return $query->select('name', 'title', 'city', 'country_id', 'image', 'user_id', 'category_id', 'issue')
                      ->where('featured', true)
+                     ->where('verified', 1)
                      ->orderBy('created_at')->get();
     }
 
@@ -68,6 +69,7 @@ class Article extends Model
     public function scopeNext($query, $created_at) {
         return $query->select('name')
                      ->where('created_at', '>', $created_at)
+                     ->where('verified', 1)
                      ->oldest();
     }
 
@@ -80,6 +82,7 @@ class Article extends Model
     public function scopePrev($query, $created_at) {
         return $query->select('name')
                      ->where('created_at', '<', $created_at)
+                     ->where('verified', 1)
                      ->latest();
     }
 
@@ -91,11 +94,12 @@ class Article extends Model
      */
     public function scopeList($query) {
         return $query->select('name', 'title', 'city', 'image', 'issue', 'user_id', 'featured', 'category_id', 'region_id')
-                     ->orderBy('created_at')->get();
+                     ->orderBy('created_at')
+                     ->where('verified', 1)->get();
     }
 
     /**
-     * Returns the list of all articles sorted by date.
+     * Returns the list of all articles sorted by date matching the specified search query.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
@@ -110,6 +114,7 @@ class Article extends Model
                      ->orWhereHas('region', function($query) use($search) {
                          $query->where('name', 'like', "%$search%");
                      })
+                     ->where('verified', 1)
                      ->orderBy('created_at')->get();
     }
 
@@ -124,7 +129,20 @@ class Article extends Model
                      ->whereHas('country', function($query) use($country) {
                          $query->where('code', "$country");
                      })
+                     ->where('verified', 1)
                      ->orderBy('created_at')->get();
+    }
+
+    /**
+     * Returns the list of currently unverified articles.
+     * 
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUnverified($query) {
+        return $query->select('name', 'title', 'city', 'image', 'issue', 'user_id', 'featured', 'category_id', 'region_id')
+                     ->orderBy('created_at')
+                     ->where('verified', 0)->get();
     }
 
     /**

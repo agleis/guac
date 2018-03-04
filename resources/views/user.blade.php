@@ -8,21 +8,21 @@
       </div>
       <div class="col-md-10">
         <div class="author editable container-fluid">
-          @include('includes.author_summary')
+          @include('includes.user_summary')
           <hr class="dotted" />
           <div class="row">
             <div class="col-md-3">
               &nbsp;
             </div>
             <div class="col-md-6 bio">
-              <p>{{$author->bio}}</p>
+              <p>{{$user->bio}}</p>
             </div>
             <div class="col-md-3">
               &nbsp;
             </div>
           </div>
-          @if(Auth::id() == $author->id)
-            <a href="{{route('edit_author', ['id' => $author->id])}}" class="edit-button btn edit-link">
+          @if(Auth::id() == $user->id)
+            <a href="{{route('edit_user', ['id' => $user->id])}}" class="edit-button btn edit-link">
               <span class="glyphicon glyphicon-pencil"></span>
             </a>
           @endif
@@ -33,7 +33,7 @@
         <div class="content featured container-fluid">
           {{--  First row  --}}
           <div class="row content-row">
-            @foreach($author->articles as $article)
+            @foreach($user->articles as $article)
               {{--  2-row  --}}
                 <div class="col-md-6">
                     <div class="featured-article featured-2">
