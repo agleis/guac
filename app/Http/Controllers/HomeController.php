@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Article;
+use App\Guide;
+
+use Session;
+
 class HomeController extends Controller
 {
     /**
@@ -17,12 +22,19 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the front page of featured articles.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('index');
+        $featured = Article::featured();
+        $articles = Article::list();
+        // $guides = Guide::featured();
+        return view('index', [
+            'featured' => $featured,
+            'articles' => $articles,
+            // 'guides' => $guides
+        ]);
     }
 }

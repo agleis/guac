@@ -165,6 +165,37 @@
         <!-- show class when header is sticky -->
         <div class='nav-placeholder' @if(!request()->is('/')) style="display:block;" @endif>&nbsp;</div>
 
+        <div class="container">
+          <div class="row alert-message">
+            <div class="col-md-10 col-md-offset-1">
+              @if(session()->has('success'))
+                <div class="alert alert-success alert-dismissible">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <p>{{session()->get('success')}}</p>
+                </div>
+              @endif
+              @if(session()->has('info'))
+                <div class="alert alert-info alert-dismissible">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <p>{{session()->get('info')}}</p>
+                </div>
+              @endif
+              @if(session()->has('warning'))
+                <div class="alert alert-warning alert-dismissible">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <p>{{session()->get('warning')}}</p>
+                </div>
+              @endif
+              @if(session()->has('danger'))
+                <div class="alert alert-danger alert-dismissible">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <p>{{session()->get('danger')}}</p>
+                </div>
+              @endif
+            </div>
+          </div>
+        </div>
+
         @yield('content')
 
         <div class="footer row" id="footer-div">

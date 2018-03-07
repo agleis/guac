@@ -25,7 +25,7 @@
             <span v-if="edit" contentEditable=true placeholder="Issue..." v-on:keyup="issueEdit" v-on:blur="issueEdit" v-on:paste="issueEdit" v-on:delete="issueEdit" v-on:focus="issueEdit">{{issue}}</span> 
             <span v-if="!edit">{{issue}}</span> 
             <span class="fa fa-circle gray circle"></span>
-            <span class="edit-drop" v-on:mouseover="regionDrop" v-show="!regionDropped">
+            <span v-bind:class="{edit: edit-drop}" v-on:mouseover="regionDrop" v-show="!regionDropped">
               <span class="region">{{currentRegion.name}}</span>
               <span v-if="edit" class="fa fa-caret-down gray"></span>
             </span>
@@ -40,7 +40,7 @@
           <h1 class="section" v-if="edit" contentEditable=true placeholder="Title..." v-on:keyup="titleEdit" v-on:blur="titleEdit" v-on:paste="titleEdit" v-on:delete="titleEdit" v-on:focus="titleEdit">{{title}}</h1>
           <h1 class="section" v-if="!edit">{{title}}</h1>
           <h4>By 
-            <span class="edit-drop" v-on:mouseover="authorDrop" v-show="!authorDropped">
+            <span v-bind:class="{edit: edit-drop}" v-on:mouseover="authorDrop" v-show="!authorDropped">
               <span>{{currentAuthor.name}}</span>
               <span v-if="edit" class="fa fa-caret-down gray"></span>
             </span>
@@ -195,13 +195,15 @@
             this.issuecontent = $(event.target).html().trim();
           },
           regionDrop: function(event) {
-            this.regionDropped = true;
+            if(edit)
+              this.regionDropped = true;
           },
           regionUp: function(event) {
             this.regionDropped = false;
           },
           authorDrop: function(event) {
-            this.authorDropped = true;
+            if(edit)
+              this.authorDropped = true;
           },
           authorUp: function(event) {
             this.authorDropped = false;

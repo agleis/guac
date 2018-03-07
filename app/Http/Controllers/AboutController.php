@@ -10,7 +10,7 @@ class AboutController extends Controller
 {
 
     /**
-     * Returns the about data for the magazine.
+     * Returns the about page for the magazine.
      *
      * @return \Illuminate\View\View
      */

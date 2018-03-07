@@ -77,6 +77,7 @@ class UserController extends Controller
         $user->bio = $request->bio;
         $user->image = $this->getImage($request);
         $user->save();
+        session()->flash('success', "User $user->name edited successfully!");
         return redirect()->route('user', ['id' => $id]);
     }
 

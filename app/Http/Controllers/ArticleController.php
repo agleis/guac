@@ -20,22 +20,6 @@ class ArticleController extends Controller
 {
 
     /**
-     * Returns the index page of the application, with featured articles.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function index() {
-        $featured = Article::featured();
-        $articles = Article::list();
-        // $guides = Guide::featured();
-        return view('index', [
-            'featured' => $featured,
-            'articles' => $articles,
-            // 'guides' => $guides
-        ]);
-    }
-
-    /**
      * Returns the list of articles.
      *
      * @return \Illuminate\View\View
@@ -75,17 +59,12 @@ class ArticleController extends Controller
      */
     public function article($name) {
         $article = Article::find($name);
+        // Get next and prev articles in order to have links
+        // on the side of the page.
         $next = Article::next($article->created_at)->first();
         $prev = Article::prev($article->created_at)->first();
-        if($article->verified) {
-            return view('article', [
-                'article' => $article,
-                'next' => $next ? $next->name : "",
-                'prev' => $prev ? $prev->name : ""
-            ]);
-        }
         $user = Auth::user();
-        if($user && $user->can('view', $article)) {
+        if($article->verified || ($user && $user->can('view', $article))) {
             return view('article', [
                 'article' => $article,
                 'next' => $next ? $next->name : "",
@@ -100,7 +79,7 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function showEditText($name) {
+    public function showEdit($name) {
         $article = Article::find($name);
         $authors = User::all();
         $regions = Region::all();
@@ -116,6 +95,7 @@ class ArticleController extends Controller
                 'countries' => $countries
             ]);
         }
+        session()->flash('warning', 'Unauthorized to perform that action');
         return redirect()->route('index');
     }
 
@@ -125,7 +105,7 @@ class ArticleController extends Controller
      * @param Request $request
      * @return \Illuminate\View\View
      */
-    public function editText(Request $request, $name) {
+    public function edit(Request $request, $name) {
         $article = Article::find($name);
         $user = Auth::user();
         if($user && $user->can('update', $article)) {
@@ -141,8 +121,10 @@ class ArticleController extends Controller
             $article->image = $request->image ? asset($request->image) : $article->image;
             $article->verified = $request->verify ? true : false;
             $article->save();
+            session()->flash('success', "Article $article->title edited successfully!");
             return redirect()->route('article', ['name' => $article->name]);
         }
+        session()->flash('warning', 'Unauthorized to perform that action');
         return redirect()->route('index');
     }
 
@@ -169,6 +151,7 @@ class ArticleController extends Controller
             'countries' => $countries
         ]);
       }
+      session()->flash('warning', 'Unauthorized to perform that action');
       return redirect()->route('index');
     }
 
@@ -196,8 +179,10 @@ class ArticleController extends Controller
         $article->image = $request->image ? asset($request->image) : "";
         $article->verified = $request->verify ? true : false;
         $article->save();
+        session()->flash('success', "Article $article->title uploaded successfully!");
         return redirect()->route('article', ['name' => $article->name]);
       }
+      session()->flash('warning', 'Unauthorized to perform that action');
       return redirect()->route('index');
     }
 
@@ -206,10 +191,14 @@ class ArticleController extends Controller
      */
     public function delete($name) {
         $article = Article::find($name);
+        $title = $article->title;
         $user = Auth::user();
         if($user && $user->can('delete', $article)) {
             $article->forceDelete();
-            session()->flash('deleted');
+            session()->flash('success', "Article $title deleted successfully");
+        }
+        else {
+            session()->flash('warning', 'Unauthorized to perform that action');
         }
         return redirect()->route('index');
     }
@@ -246,6 +235,7 @@ class ArticleController extends Controller
         }
         $old_featured->save();
       }
+      session()->flash('success', "Featured articles edited successfully");
       return redirect()->route('index');
     }
 
@@ -261,6 +251,10 @@ class ArticleController extends Controller
     }
 
     /**
+     ************** HELPERS ****************
+     */
+
+    /**
      * Makes the name from the title.
      *
      * @param string $title
@@ -268,7 +262,7 @@ class ArticleController extends Controller
      */
     public function makeName($title) {
         $title = str_replace(" ", "-", strtolower($title));
-        return preg_replace('/[^A-Za-z0-9\_]/', '', $title);
+        return preg_replace('/[^A-Za-z0-9\_\-]/', '', $title);
     }
 
     /**

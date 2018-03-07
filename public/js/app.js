@@ -43633,13 +43633,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.issuecontent = $(event.target).html().trim();
     },
     regionDrop: function regionDrop(event) {
-      this.regionDropped = true;
+      if (edit) this.regionDropped = true;
     },
     regionUp: function regionUp(event) {
       this.regionDropped = false;
     },
     authorDrop: function authorDrop(event) {
-      this.authorDropped = true;
+      if (edit) this.authorDropped = true;
     },
     authorUp: function authorUp(event) {
       this.authorDropped = false;
@@ -43741,7 +43741,7 @@ var render = function() {
                     expression: "!regionDropped"
                   }
                 ],
-                staticClass: "edit-drop",
+                class: { edit: _vm.edit - _vm.drop },
                 on: { mouseover: _vm.regionDrop }
               },
               [
@@ -43855,7 +43855,7 @@ var render = function() {
                     expression: "!authorDropped"
                   }
                 ],
-                staticClass: "edit-drop",
+                class: { edit: _vm.edit - _vm.drop },
                 on: { mouseover: _vm.authorDrop }
               },
               [

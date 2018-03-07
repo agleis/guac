@@ -26,7 +26,7 @@ class ContactController extends Controller
         $name = $request->name;
         $text = $request->msg;
         Mail::to('guacmag@gmail.com')->send(new Contact($email, $name, $text));
-        session()->flash('success');
+        session()->flash('success', "Message from $email has been sent to the Guac team!");
         return redirect()->route('contact');
     }
 

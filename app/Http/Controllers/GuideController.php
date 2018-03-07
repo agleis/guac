@@ -57,7 +57,7 @@ class GuideController extends Controller
      }
 
      /**
-     * Displays the page for editing a city guide.
+     * Edits the city guide.
      *
      */
      public function edit(Request $request, $id) {
@@ -69,11 +69,12 @@ class GuideController extends Controller
         $guide->country_id = $request->country;
         $guide->image = asset($request->image);
         $guide->save();
+        session()->flash('success', "Guide $guide->title edited successfully!");
         return redirect()->route('guide', ['id' => $guide->id]);
      }
 
      /**
-     * Displays the page for editing a city guide.
+     * Displays the page for uploading a city guide.
      *
      */
      public function showUpload() {
@@ -89,7 +90,7 @@ class GuideController extends Controller
      }
 
      /**
-     * Displays the page for editing a city guide.
+     * Uploads a city guide.
      *
      */
      public function upload(Request $request) {
@@ -101,11 +102,12 @@ class GuideController extends Controller
         $guide->country_id = $request->country;
         $guide->image = asset($request->image);
         $guide->save();
+        session()->flash('success', "Guide $guide->title successfully uploaded!");
         return redirect()->route('guide', ['id' => $guide->id]);
      }
 
      /**
-     * Displays the page for editing a city guide.
+     * Displays the page for editing a city guide item.
      *
      */
      public function showEditItem($id, $idd) {
@@ -120,7 +122,7 @@ class GuideController extends Controller
      }
 
      /**
-     * Displays the page for editing a city guide.
+     * Edits a city guide item.
      *
      */
      public function editItem(Request $request, $id, $idd) {

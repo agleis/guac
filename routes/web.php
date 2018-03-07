@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'ArticleController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('about', 'AboutController@about')->name('about');
 
@@ -46,8 +46,8 @@ Route::middleware('auth')->group(function() {
     Route::get('stories/unverified', 'ArticleController@unverified')->name('unverified');
     Route::get('stories/upload', 'ArticleController@showUpload')->name('upload_article');
     Route::post('stories/upload', 'ArticleController@upload')->name('post_upload_article');
-    Route::get('stories/{name}/edit', 'ArticleController@showEditText')->name('edit_article');
-    Route::post('stories/{name}/edit', 'ArticleController@editText')
+    Route::get('stories/{name}/edit', 'ArticleController@showEdit')->name('edit_article');
+    Route::post('stories/{name}/edit', 'ArticleController@edit')
         ->name('post_edit_article');
     Route::get('stories/{name}/delete', 'ArticleController@delete')->name('delete_article');
 
