@@ -91,6 +91,8 @@ window.CKEDITOR.config.extraPlugins = 'div,confighelper,image2';
 
 window.CKEDITOR.config.allowedContent = true;
 
+window.CKEDITOR.config.scayt_autoStartup = true;
+
 window.CKEDITOR.config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html';
 window.CKEDITOR.config.filebrowserImageUploadUrl = '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
 

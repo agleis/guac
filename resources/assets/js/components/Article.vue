@@ -52,7 +52,7 @@
               </select>
             </span>
           </h4>
-          <a v-if="auth && !edit" :href="editroute">Edit this article</a>
+          <span v-if="auth && !edit"><a :href="editroute">Edit this article</a> | <a :href="deleteroute">Remove this article</a></span>
       </div>
     </div>
 
@@ -126,7 +126,7 @@
     export default {
       props: ['articleText', 'route', 'author', 'title', 'authorroute', 'admin', 'image', 'edit',
               'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region',
-              'regions', 'authors', 'verified'],
+              'regions', 'authors', 'verified', 'deleteroute'],
       data() {
         return {
           csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -158,6 +158,9 @@
           return "background-image: url('"+this.currentAuthor.image+"')";
         },
         currentRegion: function() {
+          if(this.regions == null) {
+            return this.region;
+          }
           if(this.regionid > 0) {
             for(var i = 0; i < this.regions.length; i++) {
               if(this.regions[i].id == this.regionid) {
@@ -168,6 +171,9 @@
           return this.regions[0];
         },
         currentAuthor: function() {
+          if(this.authors == null) {
+            return this.author;
+          }
           if(this.authorid > 0) {
             for(var i = 0; i < this.authors.length; i++) {
               if(this.authors[i].id == this.authorid) {

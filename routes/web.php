@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function() {
     Route::get('stories/{name}/edit', 'ArticleController@showEditText')->name('edit_article');
     Route::post('stories/{name}/edit', 'ArticleController@editText')
         ->name('post_edit_article');
+    Route::get('stories/{name}/delete', 'ArticleController@delete')->name('delete_article');
 
     Route::get('guides/upload', 'GuideController@showUpload')->name('upload_guide');
     Route::post('guides/upload', 'GuideController@upload')->name('post_upload_guide');

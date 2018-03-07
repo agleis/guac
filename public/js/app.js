@@ -1475,6 +1475,8 @@ window.CKEDITOR.config.extraPlugins = 'div,confighelper,image2';
 
 window.CKEDITOR.config.allowedContent = true;
 
+window.CKEDITOR.config.scayt_autoStartup = true;
+
 window.CKEDITOR.config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html';
 window.CKEDITOR.config.filebrowserImageUploadUrl = '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
 
@@ -43561,7 +43563,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'admin', 'image', 'edit', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region', 'regions', 'authors', 'verified'],
+  props: ['articleText', 'route', 'author', 'title', 'authorroute', 'admin', 'image', 'edit', 'issue', 'category', 'nextroute', 'prevroute', 'auth', 'editroute', 'url', 'region', 'regions', 'authors', 'verified', 'deleteroute'],
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -43594,6 +43596,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return "background-image: url('" + this.currentAuthor.image + "')";
     },
     currentRegion: function currentRegion() {
+      if (this.regions == null) {
+        return this.region;
+      }
       if (this.regionid > 0) {
         for (var i = 0; i < this.regions.length; i++) {
           if (this.regions[i].id == this.regionid) {
@@ -43604,6 +43609,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.regions[0];
     },
     currentAuthor: function currentAuthor() {
+      if (this.authors == null) {
+        return this.author;
+      }
       if (this.authorid > 0) {
         for (var i = 0; i < this.authors.length; i++) {
           if (this.authors[i].id == this.authorid) {
@@ -43925,8 +43933,14 @@ var render = function() {
           ]),
           _vm._v(" "),
           _vm.auth && !_vm.edit
-            ? _c("a", { attrs: { href: _vm.editroute } }, [
-                _vm._v("Edit this article")
+            ? _c("span", [
+                _c("a", { attrs: { href: _vm.editroute } }, [
+                  _vm._v("Edit this article")
+                ]),
+                _vm._v(" | "),
+                _c("a", { attrs: { href: _vm.deleteroute } }, [
+                  _vm._v("Remove this article")
+                ])
               ])
             : _vm._e()
         ])

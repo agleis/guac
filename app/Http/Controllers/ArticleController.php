@@ -202,6 +202,19 @@ class ArticleController extends Controller
     }
 
     /**
+     * Permanently deletes the article specified by $name.
+     */
+    public function delete($name) {
+        $article = Article::find($name);
+        $user = Auth::user();
+        if($user && $user->can('delete', $article)) {
+            $article->forceDelete();
+            session()->flash('deleted');
+        }
+        return redirect()->route('index');
+    }
+
+    /**
      * Shows an editable list of articles.
      *
      * @return \Illuminate\View\View
