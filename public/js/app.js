@@ -44479,6 +44479,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -44529,7 +44530,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           auth: this.auth,
           edit: true,
           editroute: "/guides/" + this.id + "/upload",
-          guide: this.id
+          guide: this.id,
+          id: null
         }
       });
       instance.$mount(); // pass nothing
@@ -44563,7 +44565,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         } });
     },
     submitForms: function submitForms() {
-      console.log("in");
       $(".guide-item-form").each(function () {
         var url = $(this).attr('action');
         $.post(url, $(this).serialize());
@@ -44608,7 +44609,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n[contenteditable][data-v-64d35748]:empty:before {\n  content: attr(data-placeholder);\n  color: grey;\n  cursor: text;\n}\n", ""]);
+exports.push([module.i, "\n[contenteditable][data-v-64d35748]:empty:before {\n  content: attr(data-placeholder);\n  color: grey;\n  cursor: text;\n}\n.delete-button[data-v-64d35748] {\n  position: relative;\n  top: 10px;\n  right: 50px;\n  float: right;\n}\n", ""]);
 
 // exports
 
@@ -44669,9 +44670,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['image', 'issue', 'category', 'categories', 'name', 'hours', 'location', 'summary', 'auth', 'editroute', 'edit', 'guide'],
+  props: ['image', 'issue', 'category', 'categories', 'name', 'hours', 'location', 'summary', 'auth', 'editroute', 'edit', 'guide', 'id'],
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -44682,7 +44686,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       locationcontent: this.location,
       summarycontent: this.summary,
       categoryDropped: false,
-      categoryid: this.category.id ? this.category.id : this.categories[0].id
+      categoryid: this.category.id ? this.category.id : this.categories[0].id,
+      remove: false
     };
   },
 
@@ -44733,6 +44738,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.imagecontent = file.getUrl();
           });
         } });
+    },
+    removeItem: function removeItem(e) {
+      e.preventDefault();
+      console.log("in");
+      if (this.id != null) {
+        $.ajax({
+          type: 'post',
+          url: '/guides/' + this.guide + '/' + this.id + '/remove',
+          headers: {
+            'X-CSRF-TOKEN': this.csrf
+          }
+        });
+      }
+      this.remove = true;
     }
   }
 });
@@ -44745,472 +44764,497 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-6" }, [
-      _c("div", {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.edit,
-            expression: "edit"
-          }
-        ],
-        staticClass: "image edit-image",
-        style: _vm.background,
-        on: { click: _vm.browseServer }
-      }),
-      _vm._v(" "),
-      _c("div", {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.edit,
-            expression: "!edit"
-          }
-        ],
-        staticClass: "image",
-        style: _vm.background
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "featured-article featured-2 city-featured" }, [
-        _c("h5", { staticClass: "issue" }, [
-          _vm.edit
-            ? _c(
-                "span",
+  return !_vm.remove
+    ? _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.edit,
+                expression: "edit"
+              }
+            ],
+            staticClass: "image edit-image",
+            style: _vm.background,
+            on: { click: _vm.browseServer }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !_vm.edit,
+                expression: "!edit"
+              }
+            ],
+            staticClass: "image",
+            style: _vm.background
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6" }, [
+          _c(
+            "div",
+            { staticClass: "featured-article featured-2 city-featured" },
+            [
+              _vm.edit
+                ? _c("div", { staticClass: "button delete-button" }, [
+                    _c(
+                      "button",
+                      {
+                        attrs: { type: "submit" },
+                        on: { click: _vm.removeItem }
+                      },
+                      [_vm._v("×")]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("h5", { staticClass: "issue" }, [
+                _vm.edit
+                  ? _c(
+                      "span",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.categoryDropped,
+                            expression: "!categoryDropped"
+                          }
+                        ],
+                        staticClass: "edit-drop",
+                        on: { mouseover: _vm.categoryDrop }
+                      },
+                      [
+                        _c("span", { staticClass: "category" }, [
+                          _vm._v(_vm._s(_vm.currentCategory.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("span", {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.edit,
+                              expression: "edit"
+                            }
+                          ],
+                          staticClass: "fa fa-caret-down gray"
+                        })
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.edit && _vm.categoryDropped,
+                        expression: "edit && categoryDropped"
+                      }
+                    ]
+                  },
+                  [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.categoryid,
+                            expression: "categoryid"
+                          }
+                        ],
+                        attrs: { name: "category", id: "category" },
+                        on: {
+                          change: [
+                            function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.categoryid = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            },
+                            _vm.categoryUp
+                          ]
+                        }
+                      },
+                      _vm._l(_vm.categories, function(cat) {
+                        return _c(
+                          "option",
+                          { key: cat.id, domProps: { value: cat.id } },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(cat.name) +
+                                "\n                        "
+                            )
+                          ]
+                        )
+                      })
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "h3",
                 {
                   directives: [
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: !_vm.categoryDropped,
-                      expression: "!categoryDropped"
+                      value: _vm.edit,
+                      expression: "edit"
                     }
                   ],
-                  staticClass: "edit-drop",
-                  on: { mouseover: _vm.categoryDrop }
+                  staticClass: "section",
+                  attrs: {
+                    contentEditable: "true",
+                    "data-placeholder": "Name..."
+                  },
+                  on: {
+                    keyup: _vm.nameEdit,
+                    blur: _vm.nameEdit,
+                    paste: _vm.nameEdit,
+                    delete: _vm.nameEdit,
+                    focus: _vm.nameEdit
+                  }
                 },
-                [
-                  _c("span", { staticClass: "category" }, [
-                    _vm._v(_vm._s(_vm.currentCategory.name))
-                  ]),
-                  _vm._v(" "),
-                  _c("span", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.edit,
-                        expression: "edit"
-                      }
-                    ],
-                    staticClass: "fa fa-caret-down gray"
-                  })
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.edit && _vm.categoryDropped,
-                  expression: "edit && categoryDropped"
-                }
-              ]
-            },
-            [
+                [_vm._v(_vm._s(_vm.name))]
+              ),
+              _vm._v(" "),
               _c(
-                "select",
+                "h3",
                 {
                   directives: [
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.categoryid,
-                      expression: "categoryid"
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.edit,
+                      expression: "!edit"
                     }
                   ],
-                  attrs: { name: "category", id: "category" },
+                  staticClass: "section"
+                },
+                [_vm._v(_vm._s(_vm.name))]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.edit,
+                      expression: "edit"
+                    }
+                  ],
+                  staticClass: "section",
+                  attrs: {
+                    contentEditable: "true",
+                    "data-placeholder": "Hours..."
+                  },
                   on: {
-                    change: [
-                      function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.categoryid = $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      },
-                      _vm.categoryUp
-                    ]
+                    keyup: _vm.hoursEdit,
+                    blur: _vm.hoursEdit,
+                    paste: _vm.hoursEdit,
+                    delete: _vm.hoursEdit,
+                    focus: _vm.hoursEdit
                   }
                 },
-                _vm._l(_vm.categories, function(cat) {
-                  return _c(
-                    "option",
-                    { key: cat.id, domProps: { value: cat.id } },
-                    [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(cat.name) +
-                          "\n                        "
-                      )
-                    ]
-                  )
-                })
+                [_vm._v(_vm._s(_vm.hours))]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.edit,
+                      expression: "!edit"
+                    }
+                  ],
+                  staticClass: "section"
+                },
+                [_vm._v(_vm._s(_vm.hours))]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.edit,
+                      expression: "edit"
+                    }
+                  ],
+                  staticClass: "section",
+                  attrs: {
+                    contentEditable: "true",
+                    "data-placeholder": "Location..."
+                  },
+                  on: {
+                    keyup: _vm.locationEdit,
+                    blur: _vm.locationEdit,
+                    paste: _vm.locationEdit,
+                    delete: _vm.locationEdit,
+                    focus: _vm.locationEdit
+                  }
+                },
+                [_vm._v(_vm._s(_vm.location))]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.edit,
+                      expression: "!edit"
+                    }
+                  ],
+                  staticClass: "section"
+                },
+                [_vm._v(_vm._s(_vm.location))]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.edit,
+                      expression: "edit"
+                    }
+                  ],
+                  attrs: {
+                    contentEditable: "true",
+                    "data-placeholder": "Summary..."
+                  },
+                  on: {
+                    keyup: _vm.summaryEdit,
+                    blur: _vm.summaryEdit,
+                    paste: _vm.summaryEdit,
+                    delete: _vm.summaryEdit,
+                    focus: _vm.summaryEdit
+                  }
+                },
+                [_vm._v(_vm._s(_vm.summary))]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.edit,
+                      expression: "!edit"
+                    }
+                  ]
+                },
+                [_vm._v(_vm._s(_vm.summary))]
               )
             ]
           )
         ]),
         _vm._v(" "),
-        _c(
-          "h3",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.edit,
-                expression: "edit"
-              }
-            ],
-            staticClass: "section",
-            attrs: { contentEditable: "true", "data-placeholder": "Name..." },
-            on: {
-              keyup: _vm.nameEdit,
-              blur: _vm.nameEdit,
-              paste: _vm.nameEdit,
-              delete: _vm.nameEdit,
-              focus: _vm.nameEdit
-            }
-          },
-          [_vm._v(_vm._s(_vm.name))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h3",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: !_vm.edit,
-                expression: "!edit"
-              }
-            ],
-            staticClass: "section"
-          },
-          [_vm._v(_vm._s(_vm.name))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h5",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.edit,
-                expression: "edit"
-              }
-            ],
-            staticClass: "section",
-            attrs: { contentEditable: "true", "data-placeholder": "Hours..." },
-            on: {
-              keyup: _vm.hoursEdit,
-              blur: _vm.hoursEdit,
-              paste: _vm.hoursEdit,
-              delete: _vm.hoursEdit,
-              focus: _vm.hoursEdit
-            }
-          },
-          [_vm._v(_vm._s(_vm.hours))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h5",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: !_vm.edit,
-                expression: "!edit"
-              }
-            ],
-            staticClass: "section"
-          },
-          [_vm._v(_vm._s(_vm.hours))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h5",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.edit,
-                expression: "edit"
-              }
-            ],
-            staticClass: "section",
-            attrs: {
-              contentEditable: "true",
-              "data-placeholder": "Location..."
-            },
-            on: {
-              keyup: _vm.locationEdit,
-              blur: _vm.locationEdit,
-              paste: _vm.locationEdit,
-              delete: _vm.locationEdit,
-              focus: _vm.locationEdit
-            }
-          },
-          [_vm._v(_vm._s(_vm.location))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h5",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: !_vm.edit,
-                expression: "!edit"
-              }
-            ],
-            staticClass: "section"
-          },
-          [_vm._v(_vm._s(_vm.location))]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.edit,
-                expression: "edit"
-              }
-            ],
-            attrs: {
-              contentEditable: "true",
-              "data-placeholder": "Summary..."
-            },
-            on: {
-              keyup: _vm.summaryEdit,
-              blur: _vm.summaryEdit,
-              paste: _vm.summaryEdit,
-              delete: _vm.summaryEdit,
-              focus: _vm.summaryEdit
-            }
-          },
-          [_vm._v(_vm._s(_vm.summary))]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: !_vm.edit,
-                expression: "!edit"
-              }
-            ]
-          },
-          [_vm._v(_vm._s(_vm.summary))]
-        )
+        _vm.edit
+          ? _c("div", { staticClass: "form" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "guide-item-form",
+                  attrs: { action: _vm.editroute, method: "post" }
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.summarycontent,
+                        expression: "summarycontent"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "summary" },
+                    domProps: { value: _vm.summarycontent },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.summarycontent = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.namecontent,
+                        expression: "namecontent"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "name" },
+                    domProps: { value: _vm.namecontent },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.namecontent = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.issuecontent,
+                        expression: "issuecontent"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "issue" },
+                    domProps: { value: _vm.issuecontent },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.issuecontent = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.hourscontent,
+                        expression: "hourscontent"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "hours" },
+                    domProps: { value: _vm.hourscontent },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.hourscontent = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.locationcontent,
+                        expression: "locationcontent"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "location" },
+                    domProps: { value: _vm.locationcontent },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.locationcontent = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.categoryid,
+                        expression: "categoryid"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "category" },
+                    domProps: { value: _vm.categoryid },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.categoryid = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.imagecontent,
+                        expression: "imagecontent"
+                      }
+                    ],
+                    attrs: { type: "hidden", name: "image", id: "image" },
+                    domProps: { value: _vm.imagecontent },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.imagecontent = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "guide" },
+                    domProps: { value: _vm.guide }
+                  })
+                ]
+              )
+            ])
+          : _vm._e()
       ])
-    ]),
-    _vm._v(" "),
-    _vm.edit
-      ? _c("div", { staticClass: "form" }, [
-          _c(
-            "form",
-            {
-              staticClass: "guide-item-form",
-              attrs: { action: _vm.editroute, method: "post" }
-            },
-            [
-              _c("input", {
-                attrs: { type: "hidden", name: "_token" },
-                domProps: { value: _vm.csrf }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.summarycontent,
-                    expression: "summarycontent"
-                  }
-                ],
-                attrs: { type: "hidden", name: "summary" },
-                domProps: { value: _vm.summarycontent },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.summarycontent = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.namecontent,
-                    expression: "namecontent"
-                  }
-                ],
-                attrs: { type: "hidden", name: "name" },
-                domProps: { value: _vm.namecontent },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.namecontent = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.issuecontent,
-                    expression: "issuecontent"
-                  }
-                ],
-                attrs: { type: "hidden", name: "issue" },
-                domProps: { value: _vm.issuecontent },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.issuecontent = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.hourscontent,
-                    expression: "hourscontent"
-                  }
-                ],
-                attrs: { type: "hidden", name: "hours" },
-                domProps: { value: _vm.hourscontent },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.hourscontent = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.locationcontent,
-                    expression: "locationcontent"
-                  }
-                ],
-                attrs: { type: "hidden", name: "location" },
-                domProps: { value: _vm.locationcontent },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.locationcontent = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.categoryid,
-                    expression: "categoryid"
-                  }
-                ],
-                attrs: { type: "hidden", name: "category" },
-                domProps: { value: _vm.categoryid },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.categoryid = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.imagecontent,
-                    expression: "imagecontent"
-                  }
-                ],
-                attrs: { type: "hidden", name: "image", id: "image" },
-                domProps: { value: _vm.imagecontent },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.imagecontent = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { type: "hidden", name: "guide" },
-                domProps: { value: _vm.guide }
-              })
-            ]
-          )
-        ])
-      : _vm._e()
-  ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -45540,6 +45584,7 @@ var render = function() {
                   _c("guideitem", {
                     attrs: {
                       image: item.image,
+                      id: item.id,
                       issue: item.issue,
                       category: _vm.categories[item.category_id - 1],
                       categories: _vm.categories,

@@ -69,6 +69,7 @@
             <div class="ref-container" ref="container">
               <div v-for="item in items"  v-bind:value="item" v-bind:key="item.id">
                   <guideitem :image="item.image"
+                          :id="item.id"
                           :issue="item.issue"
                           :category="categories[item.category_id - 1]"
                           :categories="categories"
@@ -158,7 +159,8 @@
                   auth: this.auth,
                   edit: true,
                   editroute: "/guides/"+this.id+"/upload",
-                  guide: this.id
+                  guide: this.id,
+                  id: null
                 }
             })
             instance.$mount() // pass nothing
@@ -193,7 +195,6 @@
               }});
           },
           submitForms: function() {
-            console.log("in");
             $(".guide-item-form").each(function() {
               var url = $(this).attr('action');
               $.post(url, $(this).serialize());

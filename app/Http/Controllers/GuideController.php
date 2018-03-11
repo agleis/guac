@@ -146,6 +146,18 @@ class GuideController extends Controller
      }
 
      /**
+     * Removes a city guide item.
+     *
+     */
+     public function removeItem(Request $request, $id, $idd) {
+        $guide = Guide::find($id);
+        $guide_item = GuideItem::find($idd);
+        $guide_item->forceDelete();
+        return "Hello";
+        // return redirect()->route('guide', ['id' => $guide->id]);
+     }
+
+     /**
      * Upload a guide item to the guide given by $id.
      *
      */

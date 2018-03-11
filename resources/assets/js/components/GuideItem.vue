@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row" v-if="!remove">
         <div class="col-md-6">
             <div v-show="edit" v-on:click="browseServer" class="image edit-image" :style="background">
 
@@ -8,6 +8,9 @@
         </div>
         <div class="col-md-6">
             <div class="featured-article featured-2 city-featured">
+                <div v-if="edit" class="button delete-button">
+                    <button type="submit" v-on:click="removeItem">&times;</button>
+                </div>
                 <!-- <img :src="image" /> -->
                 <h5 class="issue">
                     <span v-if="edit" class="edit-drop" v-on:mouseover="categoryDrop" v-show="!categoryDropped">
@@ -51,7 +54,7 @@
 <script>
     export default {
       props: ['image', 'issue', 'category', 'categories', 'name', 'hours', 
-              'location', 'summary', 'auth', 'editroute', 'edit', 'guide'],
+              'location', 'summary', 'auth', 'editroute', 'edit', 'guide', 'id'],
       data() {
         return {
           csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -63,6 +66,7 @@
           summarycontent: this.summary,
           categoryDropped: false,
           categoryid: this.category.id ? this.category.id : this.categories[0].id,
+          remove: false
         }
       },
       computed: {
@@ -114,6 +118,20 @@
                 });
               }});
           },
+          removeItem: function(e) {
+              e.preventDefault();
+              console.log("in");
+              if(this.id != null) {
+                  $.ajax({
+                      type: 'post',
+                      url: '/guides/'+this.guide+'/'+this.id+'/remove',
+                      headers: {
+                        'X-CSRF-TOKEN': this.csrf
+                      },
+                  });
+              }
+              this.remove = true;
+          }
       }
     }
 </script>
@@ -123,6 +141,13 @@
         content: attr(data-placeholder);
         color: grey;
         cursor: text;
+    }
+
+    .delete-button {
+        position: relative;
+        top: 10px;
+        right: 50px;
+        float: right;
     }
 </style>
 

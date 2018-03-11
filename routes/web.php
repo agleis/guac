@@ -61,6 +61,8 @@ Route::middleware('auth')->group(function() {
     Route::get('guides/{id}/{idd}/edit', 'GuideController@showEditItem')->name('edit_guide_item');
     Route::post('guides/{id}/{idd}/edit', 'GuideController@editItem')
         ->name('post_edit_guide_item');
+    Route::post('guides/{id}/{idd}/remove', 'GuideController@removeItem')
+        ->name('post_remove_guide_item');
 });
 
 // Authentication Routes...
