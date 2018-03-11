@@ -228,7 +228,7 @@
     content: attr(placeholder);
     cursor: text;
   }
-  .edit-drop {
+.edit-drop {
     cursor: pointer;
   }
 </style>

@@ -36,14 +36,7 @@
             @foreach($user->articles as $article)
               {{--  2-row  --}}
                 <div class="col-md-6">
-                    <div class="featured-article featured-2">
-                      <a href="{{route('article', ['name' => $article->name])}}">
-                        <img src="{{asset($article->image)}}" />
-                        <p class="issue">Issue 1 <span class="fa fa-circle blue circle"></span> Arts and Culture</p>
-                        <h3>{{$article->title}}</h3>
-                        <h5>By {{$article->user->name}}</h5>
-                      </a>
-                    </div>
+                    @include('includes.summary2', ['article' => $article])
                   </div>
               {{--  <articlesummary route="{{route('article', ['name' => $article->name])}}"
                       image="{{asset($article->image)}}"

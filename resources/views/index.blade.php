@@ -32,7 +32,7 @@
     {{--  First row  --}}
     <div class="row content-row">
       @foreach($articles as $article)
-        @if($loop->index < 2)
+        @if($loop->index < 4)
             <div class="col-md-6 col-sm-12 col-xs-12">
               @include("includes/summary2")
             </div>
@@ -42,7 +42,7 @@
       @endforeach
     </div>
     {{--  Second row  --}}
-    <div class="row content-row">
+    {{--  <div class="row content-row">
       @foreach($articles as $article)
         @if($loop->index < 2)
           @continue
@@ -54,7 +54,7 @@
           @break
         @endif
       @endforeach
-    </div>
+    </div>  --}}
     <div class="row content-row">
       <div class="button more col-md-12">
         <a href="{{route('articles')}}">Read More</a>

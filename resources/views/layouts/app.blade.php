@@ -132,6 +132,9 @@
                                 <a href="{{route('edit_users')}}">Edit Users</a>
                               </li>
                             @endif
+                            <li>
+                                <a href="{{route('logout')}}">Logout</a>
+                              </li>
                           </ul>
                         </li>
                         <li class="dropdown">

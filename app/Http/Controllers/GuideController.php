@@ -32,10 +32,12 @@ class GuideController extends Controller
         $prev = Guide::prev($guide->created_at)->first();
         $countries = Country::all();
         $regions = Region::all();
+        $categories = Category::all();
         return view('guide', [
             'guide' => $guide,
             'countries' => $countries,
             'regions' => $regions,
+            'categories' => $categories,
             'next' => $next ? $next->id : '',
             'prev' => $prev ? $prev->id : ''
         ]);
@@ -49,10 +51,12 @@ class GuideController extends Controller
         $guide = Guide::find($id);
         $regions = Region::all();
         $countries = Country::all();
+        $categories = Category::all();
         return view('guide_edit', [
             'guide' => $guide,
             'regions' => $regions,
-            'countries' => $countries
+            'countries' => $countries,
+            'categories' => $categories
         ]);
      }
 
@@ -65,7 +69,7 @@ class GuideController extends Controller
         $guide->summary = $request->summary;
         $guide->title = $request->title;
         $guide->issue = $request->issue;
-        $guide->region_id = $request->region;
+        $guide->region_id = $request->region ?: 1;
         $guide->country_id = $request->country;
         $guide->image = asset($request->image);
         $guide->save();
@@ -81,11 +85,13 @@ class GuideController extends Controller
         $guide = new Guide();
         $regions = Region::all();
         $countries = Country::all();
+        $categories = Category::all();
         session()->flash('upload');
         return view('guide_edit', [
             'guide' => $guide,
             'regions' => $regions,
-            'countries' => $countries
+            'countries' => $countries,
+            'categories' => $categories
         ]);
      }
 

@@ -19,15 +19,11 @@ Vue.component('articletext', require('./components/Article.vue'));
 
 Vue.component('guide', require('./components/Guide.vue'));
 
-Vue.component('guideitem', require('./components/GuideItem.vue'));
+var item_constructor = Vue.component('guideitem', require('./components/GuideItem.vue'));
 
 Vue.component('editor', require('./components/Editor.vue'));
 
 Vue.component('author-editor', require('./components/AuthorEditor.vue'));
-
-Vue.component('guideeditor', require('./components/GuideEditor.vue'));
-
-Vue.component('guideitemeditor', require('./components/GuideItemEditor.vue'));
 
 Vue.component('image-upload', require('./components/ImageUpload.vue'));
 
@@ -91,7 +87,7 @@ window.CKEDITOR.config.extraPlugins = 'div,confighelper,image2';
 
 window.CKEDITOR.config.allowedContent = true;
 
-window.CKEDITOR.config.scayt_autoStartup = true;
+// window.CKEDITOR.config.scayt_autoStartup = true;
 
 window.CKEDITOR.config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html';
 window.CKEDITOR.config.filebrowserImageUploadUrl = '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
