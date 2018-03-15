@@ -746,7 +746,18 @@ select#region-select {
     padding-right: 4vw;
 }
 
+.featured-edit {
+    cursor: pointer;
+}
 
+.featured-selected {
+    border: 3px solid green;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
 
 
 

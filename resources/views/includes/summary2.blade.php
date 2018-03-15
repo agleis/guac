@@ -1,5 +1,5 @@
 <div class="featured-article featured-2">
-    <a href="{{route('article', ['name' => $article->name])}}">
+    <a @if(!isset($nolink)) href="{{route('article', ['name' => $article->name])}}" @endif>
         <div class="image" style="background-image: url('{{asset($article->image)}}')"></div>
         <h4 class="issue">
             {{$article->issue}} 
