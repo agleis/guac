@@ -79,6 +79,9 @@
             <h3 class="section">Editorial</h3>
             <p class="zeyu-quote">We direct the operations of each team, ensuring that each one is headed in the direction we believe is best for Guac. We represent and promote the core ideas of Guac, managing its overall growth and development as a travel magazine!</p>
             <br> 
+          <table>  
+          <tr>
+            <td>
             <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
               <div class="hoverbox">
                 <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Zeyu_Hu.jpg')}}')"></div>
@@ -88,6 +91,8 @@
               </div>
               <p>Zeyu Hu</p>
             </div>
+            </td>
+            <td>
             <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
               <div class="hoverbox">
                 <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Fanny.jpg')}}')"></div>
@@ -97,6 +102,7 @@
               </div>
               <p>Fanny Chen</p>
             </div>
+            </td>
               <!-- div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Mind.jpg')}}')"></div>
@@ -106,6 +112,7 @@
                 </div>
                 <p>Mind Apivessa</p>
               </div> -->
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Ami.jpg')}}')"></div>
@@ -115,6 +122,8 @@
                 </div>
                 <p>Ami Kurosaki</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Cathy.jpg')}}')"></div>
@@ -123,7 +132,11 @@
                   <p class="small-text">Nanjing, China / Vancouver, Canada</p>
                 </div>
                 <p>Cathy Zhang</p>
-              </div>
+              </div> 
+              </td>
+             </tr> 
+             <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Eric.jpg')}}')"></div>
@@ -133,6 +146,8 @@
                 </div>
                 <p>Eric Lee</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Adam_Gleisner.jpg')}}')"></div>
@@ -142,6 +157,8 @@
                 </div>
                 <p>Adam Gleisner</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Tony_Li.jpg')}}')"></div>
@@ -151,6 +168,8 @@
                 </div>
                 <p>Tony Li</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -160,6 +179,10 @@
                 </div>
                 <p>Akhil Mithal</p>
               </div>
+              </td>
+              </tr>
+              <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Ethan_Kahm.jpg')}}')"></div>
@@ -169,6 +192,8 @@
                 </div>
                 <p>Ethan Kahm</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Yi_Hsin_Wei.jpg')}}')"></div>
@@ -177,14 +202,18 @@
                   <p>Taiwan, Hong Kong</p>
                 </div>
                 <p>Yi Hsin Wei</p>
-              </div>
-            <!--</div>-->
-            
+              </div> 
+              </td>
+              </tr>
+            </table>    
             <br>
             <!--<div class="col-md-4 col-sm-6 col-xs-6"> -->
               <h3 class="section">Design</h3>
               <p class="zeyu-quote">We give Guac characters. The Design team is responsible for Print and Web Design. We work with the Content team to curate the reader's' experiences and the Marketing team to produce graphic materials. We ensure the consistent look and feel of Guac brand through setting the brand direction and crafting pixel-perfect output.</p>
               <br>
+              <table>
+              <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Lynette_Huang.jpg')}}')"></div>
@@ -194,6 +223,8 @@
                 </div>
                 <p>Lynette Huang</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -203,6 +234,8 @@
                 </div>
                 <p>Daisy Dai</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Yiwen_Sun.jpg')}}')"></div>
@@ -212,6 +245,8 @@
                 </div>
                 <p>Yiwen Sun</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Judy_Lang_Dong.jpg')}}')"></div>
@@ -221,6 +256,8 @@
                 </div>
                 <p>Judy Lang Dong</p>
               </div>
+              </td>
+              </tr>
                <!-- <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Yanis.jpg')}}')"></div>
@@ -230,13 +267,17 @@
                 </div>
                 <p>Yanis Park</p>
               </div>-->
-            <!--</div>-->  
+            <!--</div>--> 
+            </table> 
           
             <br>
             <!--<div class="col-md-4 col-sm-6 col-xs-6"> -->
               <h3 class="section">Marketing</h3>
               <p class="zeyu-quote">We are Guac's storytellers. The Marketing team engages our audience with what we do. We bring inspirations to our audience and are responsible for communicating our values through events and social media. Examples of our projects include strategizing social media engagement and organizing the launch and magazine distribution events.</p>
               <br>
+            <table>
+            <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Ilayda.jpg')}}')"></div>
@@ -246,6 +287,8 @@
                 </div>
                 <p>Ilayda Samilgil</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Duoer_Jia.jpg')}}')"></div>
@@ -255,6 +298,8 @@
                 </div>
                 <p>Duoer Jia</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Xiaoxiang_Ma.jpg')}}')"></div>
@@ -264,6 +309,8 @@
                 </div>
                 <p>Xiaoxiang Ma</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -272,6 +319,10 @@
                 </div>
                 <p>Lolia Briggs</p>
               </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Marertu_Girma.jpg')}}')"></div>
@@ -280,6 +331,8 @@
                 </div>
                 <p>Marertu Girma</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -289,6 +342,8 @@
                 </div>
                 <p>Teresa Liang</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -298,12 +353,18 @@
                 </div>
                 <p>Xiaotong Chen</p>
               </div>
+              </td>
+            </tr>
+            </table>
            <!--</div>-->
               <br>  
             <!--<div class="col-md-4 col-sm-6 col-xs-6"> -->
               <h3 class="section">Technical Operations</h3>
               <p class="zeyu-quote">We sustain Guac's digital platforms. We develop and maintain the digital platforms to make sure they run smoothly. We use data to strategize ways to use lines of codes to innovate new and exciting avenues to engage our readers.</p>
               <br>
+            <table>
+            <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Zaeem_Rana.jpg')}}')"></div>
@@ -313,6 +374,8 @@
                 </div>
                 <p>Zaeem Rana</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Gabriella_Alvarez.jpg')}}')"></div>
@@ -322,6 +385,8 @@
                 </div>
                 <p>Gabriella Alvarez</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Amanda_Chen.jpg')}}')"></div>
@@ -331,6 +396,8 @@
                 </div>
                 <p>Amanda Chen</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Natalie_Fung.jpg')}}')"></div>
@@ -340,6 +407,9 @@
                 </div>
                 <p>Natalie Fung</p>
               </div>
+              </td>
+            </tr>
+            </table>
             <!--</div>-->  
             <br> 
             <!--<div class="col-md-4 col-sm-6 col-xs-6"> -->
@@ -353,6 +423,9 @@
               <h3 class="section">Content</h3>
               <p class="zeyu-quote">We deliver Guac's stories. The Content team is responsible for gathering, creating and polishing stories. We walk our readers through the experiences of people from around the world and bring them joy in expanding their perspectives about what's out there.</p>
               <br>
+            <table>
+            <tr> 
+              <td> 
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Lauren.jpg')}}')"></div>
@@ -362,6 +435,8 @@
                 </div>
                 <p>Lauren McBrearty</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Brandon.jpg')}}')"></div>
@@ -371,6 +446,8 @@
                 </div>
                 <p>Brandon Smith</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Arianne_Seenauth.jpg')}}')"></div>
@@ -380,6 +457,8 @@
                 </div>
                 <p>Arianne Seenauth</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -388,6 +467,10 @@
                 </div>
                 <p>Ami Mehta</p>
               </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Zoe_Hauser.jpg')}}')"></div>
@@ -397,6 +480,8 @@
                 </div>
                 <p>Zoe Hauser</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Ching.jpg')}}')"></div>
@@ -406,6 +491,8 @@
                 </div>
                 <p>Ching Pang</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Katie.jpg')}}')"></div>
@@ -415,6 +502,8 @@
                 </div>
                 <p>Katie Lee</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Jose_Covarrubias.jpg')}}')"></div>
@@ -424,6 +513,10 @@
                 </div>
                 <p>Jose Covarrubias</p>
               </div> 
+              </td>
+            </tr>
+            <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Natalie_Monticello.jpg')}}')"></div>
@@ -433,6 +526,8 @@
                 </div>
                 <p>Natalie Monticello</p>
               </div> 
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -442,6 +537,8 @@
                 </div>
                 <p>Sonya Xu</p>
               </div> 
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -450,7 +547,9 @@
                   <p>USA, Korea</p>
                 </div>
                 <p>Andrew Jhu</p>
-              </div> 
+              </div>
+              </td>
+              <td> 
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Mariana_Seibold.jpg')}}')"></div>
@@ -460,6 +559,10 @@
                 </div>
                 <p>Mariana Seibold</p>
               </div>
+              </td>
+            </tr>
+            <tr> 
+              <td> 
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -467,7 +570,9 @@
                   <p>Writer</p>
                 </div>
                 <p>Qingyi Gong</p>
-              </div>  
+              </div> 
+              </td>
+              <td> 
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -477,6 +582,8 @@
                 </div>
                 <p>TJ Ball</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Marshall_Guan.jpg')}}')"></div>
@@ -486,6 +593,8 @@
                 </div>
                 <p>Marshall Guan</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -494,6 +603,10 @@
                 </div>
                 <p>Ashley Shen</p>
               </div>
+              </td>
+            </tr>
+            <tr> 
+              <td> 
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Julia_Schwartz.jpg')}}')"></div>
@@ -503,6 +616,8 @@
                 </div>
                 <p>Julia Schwartz</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Marisabel_Cabrera .jpg')}}')"></div>
@@ -512,6 +627,8 @@
                 </div>
                 <p>Marisabel Cabrera</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -520,6 +637,8 @@
                 </div>
                 <p>Gabriela Olivera</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -528,6 +647,10 @@
                 </div>
                 <p>Marielisa Cabrera</p>
               </div>
+              </td>
+            </tr>
+            <tr>  
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Pedro_Suau.jpg')}}')"></div>
@@ -536,6 +659,8 @@
                 </div>
                 <p>Pedro Suau</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -544,6 +669,8 @@
                 </div>
                 <p>Alejandro Sanchez</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -552,6 +679,8 @@
                 </div>
                 <p>Andrea Cordero Rivera</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -561,6 +690,10 @@
                 </div>
                 <p>Javier Pareja</p>
               </div>
+              </td>
+            </tr>
+            <tr>  
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -570,6 +703,8 @@
                 </div>
                 <p>Natalia Gulick</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -579,9 +714,16 @@
                 </div>
                 <p>Santos Rivera Cardona</p>
               </div>
+              </td>
+            </tr>
+            </table>
+
               <br>
               <h3 class="section">Past Contributors</h3>
-                 <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
+            <table>
+              <tr>
+              <td>
+               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Pia.jpg')}}')"></div>
                   <p class="member-name">Pia Bocanegra</p>
@@ -590,6 +732,8 @@
                 </div>
                 <p>Pia Bocanegra</p>
               </div> 
+              </td>
+              <td>
                <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Madison.jpg')}}')"></div>
@@ -599,6 +743,8 @@
                 </div>
                 <p>Madison Holden</p>
               </div>
+              </td>
+              <td>
                <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -608,6 +754,8 @@
                 </div>
                 <p>Christine Relander</p>
               </div>
+              </td>
+              <td>
                <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Chiara.jpg')}}')"></div>
@@ -617,6 +765,10 @@
                 </div>
                 <p>Chiara Benitez</p>
               </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/avocado.png')}}')"></div>
@@ -626,6 +778,8 @@
                 </div>
                 <p>Danyal Motiwalla</p>
               </div> 
+              </td>
+              <td>
                <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Chelsea.jpg')}}')"></div>
@@ -635,6 +789,8 @@
                 </div>
                 <p>Chelsea Chan</p>
               </div>
+              </td>
+              <td>
               <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Akanksha.jpg')}}')"></div>
@@ -644,6 +800,8 @@
                 </div>
                 <p>Akanksha Jain</p>
               </div>
+              </td>
+              <td>
                <div class="hoverthis" onmouseover="showBio(this)" onmouseout="hideBio(this)">
                 <div class="hoverbox">
                   <div class="image member-photo" style="background-image: url('{{asset('public/images/Selected/Audrey.jpg')}}')"></div>
@@ -653,6 +811,9 @@
                 </div>
                 <p>Audrey Tirtohadiguno</p>
               </div>
+              </td>
+             </tr>
+            </table>  
             </div>
 
                 </div>
